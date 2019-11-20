@@ -1,4 +1,4 @@
-#include "Projectile.h"
+п»ї#include "Projectile.h"
 #include <cmath>
 
 Projectile::Projectile(sf::Vector2f position, sf::Vector2f direction)
@@ -14,7 +14,7 @@ void Projectile::step()
 	this->move(this->velocity);
 }
 
-// Вычисляет единичный вектор направления и умножает на модуль скорости.
+// Р’С‹С‡РёСЃР»СЏРµС‚ РµРґРёРЅРёС‡РЅС‹Р№ РІРµРєС‚РѕСЂ РЅР°РїСЂР°РІР»РµРЅРёСЏ Рё СѓРјРЅРѕР¶Р°РµС‚ РЅР° РјРѕРґСѓР»СЊ СЃРєРѕСЂРѕСЃС‚Рё.
 void Projectile::setVelocity(sf::Vector2f direction)
 {
 	float length = sqrt(pow(direction.x, 2) + pow(direction.y, 2));

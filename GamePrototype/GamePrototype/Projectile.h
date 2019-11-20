@@ -1,24 +1,24 @@
-#pragma once
+п»ї#pragma once
 #include "Entity.h"
 
-// Суперкласс для всех запускаемых снарядов.
+// РЎСѓРїРµСЂРєР»Р°СЃСЃ РґР»СЏ РІСЃРµС… Р·Р°РїСѓСЃРєР°РµРјС‹С… СЃРЅР°СЂСЏРґРѕРІ.
 class Projectile : public Entity
 {
-	// Вектор скорости снаряда.
+	// Р’РµРєС‚РѕСЂ СЃРєРѕСЂРѕСЃС‚Рё СЃРЅР°СЂСЏРґР°.
 	sf::Vector2f velocity;
 protected:
-	// Модуль скорости.
+	// РњРѕРґСѓР»СЊ СЃРєРѕСЂРѕСЃС‚Рё.
 	float speed;
 public:
 	Projectile(sf::Vector2f position = sf::Vector2f(0, 0),
 		sf::Vector2f direction = sf::Vector2f(0, 0));
 	sf::Vector2f getVelocity();
 	void setVelocity(sf::Vector2f direction);
-    // Малое перемещение снаряда.
+    // РњР°Р»РѕРµ РїРµСЂРµРјРµС‰РµРЅРёРµ СЃРЅР°СЂСЏРґР°.
     void step();
 };
 
-// Круглая пуля.
+// РљСЂСѓРіР»Р°СЏ РїСѓР»СЏ.
 class Bullet : public Projectile
 {
 	sf::CircleShape bullet;
