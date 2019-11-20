@@ -38,7 +38,7 @@ void Bullet::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	target.draw(this->bullet, states);
 }
 
-float Bullet::getRadius()
+float Bullet::getDiameter()
 {
-	return bullet.getRadius();
+	return 2*bullet.getRadius();
 }

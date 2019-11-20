@@ -6,5 +6,5 @@ class Entity : public sf::Drawable, public sf::Transformable
 {
 public:
 	// Оценка для проверки выхода за границу экрана.
-	virtual float getRadius() = 0;
+	virtual float getDiameter() = 0;
 };

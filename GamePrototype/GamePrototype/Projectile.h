@@ -26,6 +26,6 @@ class Bullet : public Projectile
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 public:
 	Bullet(sf::Vector2f position = sf::Vector2f(0, 0), sf::Vector2f direction = sf::Vector2f(0, 0));
-	float getRadius() override;
+	float getDiameter() override;
 
 };
