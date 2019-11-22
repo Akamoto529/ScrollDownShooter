@@ -1,11 +1,12 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
+#include "Enemy.h"
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(800, 1000), "SFML works!");
-	Projectile pr(500.f,400.f);
+	sf::RenderWindow window(sf::VideoMode(800, 900), "SFML works!");
 	Player pl;
-	pl.sprite.setPosition(window.getSize().x / 2,window.getSize().y-30.f);
+	Enemy en(window.getSize().x/2,100.f);
+	pl.sp.setPosition(window.getSize().x / 2,window.getSize().y-30.f);
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -15,14 +16,15 @@ int main()
 				window.close();
 		}
 		pl.Shoot();
-		pl.sprite.move(pl.Speed * pl.getDir());
+		pl.sp.move(pl.speed * pl.getDir());
 		window.clear();
-		for (int i = 0; i < pl.proj.size(); i++) {
-			pl.proj[i].sprite.move(pl.proj[i].speed*pl.proj[i].dir);
-			//if (pl.proj[i].sprite.getPosition().y < 100.f) pl.proj.erase(pl.proj.begin() + i);
-			window.draw(pl.proj[i].sprite);
+		for (int i = pl.gun.proj.size()-1; i >=0; i--) {
+			pl.gun.proj[i].sp.move(pl.gun.proj[i].speed*pl.gun.proj[i].dir);
+			if (pl.gun.proj[i].sp.getPosition().y < 0.f) pl.gun.proj.erase(pl.gun.proj.begin() + i--);
+			else	window.draw(pl.gun.proj[i].sp);
 		}
-		window.draw(pl.sprite);
+		window.draw(en.sp);
+		window.draw(pl.sp);
 		window.display();
 	}
 	return 0;

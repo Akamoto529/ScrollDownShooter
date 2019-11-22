@@ -1,13 +1,10 @@
 #include "Player.h"
-#include <iostream>
 Player::Player(){
 	this->Health = 0;
-	this->Speed = 0.1f;
+	this->speed = 0.1f;
 	this->tx.loadFromFile("Assets/Player.png");
-	this->sprite.setTexture(tx);
-	this->sprite.setOrigin(tx.getSize().x / 2, 0.f);
-	this->timer.restart();
-	this->frate = 0.2f;
+	this->sp.setTexture(tx);
+	this->sp.setOrigin(tx.getSize().x / 2, 0.f);
 }
 sf::Vector2f Player::getDir() {
 	sf::Vector2f dir = sf::Vector2f(0.f, 0.f);
@@ -30,12 +27,5 @@ sf::Vector2f Player::getDir() {
 	return dir;
 }
 void Player::Shoot() {
-	if (timer.getElapsedTime().asSeconds() > frate) {
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
-		{
-			std::cout << "+" <<std::endl;
-			proj.push_back(Projectile(sprite.getPosition().x, sprite.getPosition().y - 0.2f));
-			timer.restart();
-		}
-	}
+	gun.Shoot(sp.getPosition());
 	}

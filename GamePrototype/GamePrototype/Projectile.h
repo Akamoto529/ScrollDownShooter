@@ -1,14 +1,10 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-class Projectile
+#include "Entity.h"
+class Projectile:public Entity
 {
-private:
-	sf::Texture tx;
 public:
-	float speed;
 	sf::Vector2f dir;
-	sf::Sprite sprite;
-	Projectile(float x, float y);
-	Projectile(const Projectile &obj);
+	Projectile(float x, float y,sf::Texture &tx);
 };
 
