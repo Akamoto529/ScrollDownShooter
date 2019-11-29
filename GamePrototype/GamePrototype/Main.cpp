@@ -4,7 +4,7 @@
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(800, 900), "SFML works!");
-	Player pl;
+	Player pl;//12345
 	Enemy en(window.getSize().x/2,100.f);
 	pl.sp.setPosition(window.getSize().x / 2,window.getSize().y-30.f);
 	while (window.isOpen())
