@@ -3,7 +3,7 @@
 #include "Enemy.h"
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(800, 900), "SFML works!");
+	sf::RenderWindow window(sf::VideoMode(600, 700), "SFML works!");
 	Player pl;//12345
 	Enemy en(window.getSize().x/2,100.f);
 	pl.sp.setPosition(window.getSize().x / 2,window.getSize().y-30.f);
