@@ -1,0 +1,22 @@
+﻿  Entity.cpp
+C:\Users\Maksim\Desktop\ScrollDownShooter-master\GamePrototype\GamePrototype\Entity.cpp(6,56): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter-master\GamePrototype\GamePrototype\Entity.cpp(6,56): warning C4244:         with
+C:\Users\Maksim\Desktop\ScrollDownShooter-master\GamePrototype\GamePrototype\Entity.cpp(6,56): warning C4244:         [
+C:\Users\Maksim\Desktop\ScrollDownShooter-master\GamePrototype\GamePrototype\Entity.cpp(6,56): warning C4244:             T=unsigned int
+C:\Users\Maksim\Desktop\ScrollDownShooter-master\GamePrototype\GamePrototype\Entity.cpp(6,56): warning C4244:         ]
+C:\Users\Maksim\Desktop\ScrollDownShooter-master\GamePrototype\GamePrototype\Entity.cpp(6,36): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter-master\GamePrototype\GamePrototype\Entity.cpp(6,36): warning C4244:         with
+C:\Users\Maksim\Desktop\ScrollDownShooter-master\GamePrototype\GamePrototype\Entity.cpp(6,36): warning C4244:         [
+C:\Users\Maksim\Desktop\ScrollDownShooter-master\GamePrototype\GamePrototype\Entity.cpp(6,36): warning C4244:             T=unsigned int
+C:\Users\Maksim\Desktop\ScrollDownShooter-master\GamePrototype\GamePrototype\Entity.cpp(6,36): warning C4244:         ]
+  Gun.cpp
+  Main.cpp
+  Projectile.cpp
+  Scene.cpp
+  Generating Code...
+C:\Users\Maksim\Desktop\ScrollDownShooter-master\GamePrototype\GamePrototype\Entity.cpp(15,32): warning C4244: '=': conversion from 'T' to 'float', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter-master\GamePrototype\GamePrototype\Entity.cpp(15,32): warning C4244:         with
+C:\Users\Maksim\Desktop\ScrollDownShooter-master\GamePrototype\GamePrototype\Entity.cpp(15,32): warning C4244:         [
+C:\Users\Maksim\Desktop\ScrollDownShooter-master\GamePrototype\GamePrototype\Entity.cpp(15,32): warning C4244:             T=unsigned int
+C:\Users\Maksim\Desktop\ScrollDownShooter-master\GamePrototype\GamePrototype\Entity.cpp(15,32): warning C4244:         ]
+  GamePrototype.vcxproj -> C:\Users\Maksim\Desktop\ScrollDownShooter-master\GamePrototype\x64\Debug\GamePrototype.exe

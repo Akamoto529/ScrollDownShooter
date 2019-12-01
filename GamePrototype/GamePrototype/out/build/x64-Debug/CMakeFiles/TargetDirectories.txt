@@ -1,0 +1,2 @@
+C:/Users/Maksim/Desktop/ScrollDownShooter-master/GamePrototype/GamePrototype/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/Maksim/Desktop/ScrollDownShooter-master/GamePrototype/GamePrototype/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir

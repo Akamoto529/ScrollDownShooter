@@ -1,5 +1,6 @@
 ﻿#include "Scene.h"
 #include <iostream>
+#include "config.h"
 
 Scene::Scene(sf::Vector2u windowSize)
 {
@@ -31,10 +32,10 @@ void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 bool Scene::outOfBounds(Entity* entity)
 {
-	if (entity->getPosition().x - entity->getDiameter() > this->size.x
-		|| entity->getPosition().x + entity->getDiameter() < 0.f
-		|| entity->getPosition().y - entity->getDiameter() > this->size.y
-		|| entity->getPosition().y + entity->getDiameter() < 0.f)
+	if (entity->getPosition().x - entity->getRadius() > this->size.x
+		|| entity->getPosition().x + entity->getRadius() < 0.f
+		|| entity->getPosition().y - entity->getRadius() > this->size.y
+		|| entity->getPosition().y + entity->getRadius() < 0.f)
 		return true;
 	return false;
 }
@@ -43,13 +44,13 @@ void Scene::update()
 {
 	for (Projectile* projectile : this->projectiles)
 	{
-		projectile->step();
+		projectile->step(sf::milliseconds(MSEC_PER_FRAME));
 	}
 
 	for (std::list<Projectile*>::iterator it = this->projectiles.begin(); it != this->projectiles.end(); it++)
 	{
 		if (outOfBounds(*it))
-		it = DestroyEntity(it);
+			it = DestroyEntity(it);
 		if (this->projectiles.empty())
 			break;
 	}
