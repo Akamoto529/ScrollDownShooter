@@ -2,7 +2,7 @@
 #include "Projectile.h"
 Gun::Gun() {
 	this->speed = 0.1f;
-	this->tx.loadFromFile("Assets/Projectile.png");
+	this->tx.loadFromFile("Assets/projectiles/2x/1.png");
 	this->timer.restart();
 	this->frate = 0.2f;
 }

@@ -2,7 +2,7 @@
 Player::Player(){
 	this->Health = 0;
 	this->speed = 0.1f;
-	this->tx.loadFromFile("Assets/Player.png");
+	this->tx.loadFromFile("Assets/Pl.png");
 	this->sp.setTexture(tx);
 	this->sp.setOrigin(tx.getSize().x / 2, 0.f);
 }

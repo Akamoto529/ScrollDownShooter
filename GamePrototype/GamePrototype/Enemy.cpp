@@ -2,7 +2,7 @@
 Enemy::Enemy(float x,float y) {
 	this->Health = 6;
 	this->speed = 0.f;
-	this->tx.loadFromFile("Assets/Enemy.png");
+	this->tx.loadFromFile("Assets/Enemy/5.png");
 	this->sp.setTexture(tx);
 	this->sp.setPosition(x, y);
 	this->sp.setOrigin(tx.getSize().x / 2, 0.f);
