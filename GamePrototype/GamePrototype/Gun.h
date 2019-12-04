@@ -1,6 +1,7 @@
 ﻿#pragma once
+#include <list>
 #include <SFML/Graphics.hpp>
-#include "Scene.h"
+#include "Projectile.h"
 
 // Базовый класс для пушек.
 class Gun
@@ -17,12 +18,12 @@ public:
 	sf::Vector2f getDirection();
 	void setDirection(sf::Vector2f direction);
 	// Добавление снарядов в сцену.
-	virtual void Shoot(Scene* scene, sf::Vector2f position) = 0;
+	virtual std::list<Projectile*> Shoot(sf::Vector2f position) = 0;
 };
 
 class Rifle : public Gun
 {
 public:
-	Rifle(sf::Vector2f direction);
-	void Shoot(Scene* scene, sf::Vector2f position);
+	Rifle(sf::Vector2f direction, sf::Texture tx);
+	std::list<Projectile*> Shoot(sf::Vector2f position);
 };

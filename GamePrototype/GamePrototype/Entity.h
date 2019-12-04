@@ -12,9 +12,11 @@ protected:
 	float radius;
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 public:
-	Entity(sf::Texture tx, float speed, sf::Vector2f pos, float hitboxRatio);
+	Entity(sf::Texture &tx, float speed, sf::Vector2f pos, float hitboxRatio);
+	//~Entity();
 	float getRadius();
 	sf::Vector2f getPosition();
 	void move(sf::Vector2f offset);
 	void setPosition(sf::Vector2f position);
+	void setTexture(sf::Texture &tx, sf::Vector2f pos, float hitboxRatio);
 };

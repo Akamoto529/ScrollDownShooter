@@ -3,15 +3,11 @@
 #include "Projectile.h"
 #include "Scene.h"
 #include "Gun.h"
-#include "loader.h"
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(600,800), "test v2");
+	sf::RenderWindow window(sf::VideoMode(800,900), "test v2");
 	Scene scene(window.getSize());
-	sf::Texture tx;
-	tx.loadFromFile("Assets/Projectile.png");
-	Rifle test(sf::Vector2f(0,-1));
 
 	const int FRAME_TIME = 16;
 
@@ -30,7 +26,6 @@ int main()
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
-		test.Shoot(&scene, sf::Vector2f(300, 400));
 		scene.update();
 		window.clear();
 		window.draw(scene);

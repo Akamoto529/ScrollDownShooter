@@ -1,13 +1,17 @@
 ﻿#pragma once
 #include <list>
 #include "Projectile.h"
+#include "Player.h"
+#include "Loader.h"
 
 // Игровое поле.
 class Scene : public sf::Drawable
 {
+	Loader* loader;
 	// Размер игрового поля.
 	sf::Vector2u size;
 	// Списки игровых объектов для отслеживания.
+	Player* player;
 	std::list<Projectile*> projectiles;
 	//...
 

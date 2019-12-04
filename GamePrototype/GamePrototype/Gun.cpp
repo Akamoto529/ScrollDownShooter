@@ -15,20 +15,21 @@ void Gun::setDirection(sf::Vector2f direction)
 	this->direction = direction;
 }
 
-Rifle::Rifle(sf::Vector2f direction)
+Rifle::Rifle(sf::Vector2f direction, sf::Texture projTx)
 	:Gun(direction)
 {
-	this->reload = sf::milliseconds(1000);
-	this->projTx.loadFromFile("Assets/Projectile.png");
+	this->reload = sf::milliseconds(500);
+	this->projTx = projTx;
 	this->timer.restart();
 }
 
-void Rifle::Shoot(Scene* scene, sf::Vector2f position)
+std::list<Projectile*> Rifle::Shoot(sf::Vector2f position)
 {
 	if (this->timer.getElapsedTime() >= this->reload)
 	{
-		Projectile* proj = new Projectile(this->getDirection(), this->projTx, 0.1f, position);
-		scene->AddEntity(proj);
 		this->timer.restart();
+		return std::list<Projectile*>(1
+			, new Projectile(this->getDirection(), this->projTx, 0.8f, position));
 	}
+	return {};
 }
