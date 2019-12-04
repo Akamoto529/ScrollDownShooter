@@ -7,7 +7,8 @@
 class Player : public Entity
 {
 	Gun* gun;
-	int Health;
+	int health;
+	void TakeDamage(int dmg);
 public:
 	Player(sf::Texture& tx, float speed, sf::Vector2f pos, float hitboxRatio);
 	void move();

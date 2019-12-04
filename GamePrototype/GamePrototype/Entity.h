@@ -14,8 +14,9 @@ protected:
 public:
 	Entity(sf::Texture &tx, float speed, sf::Vector2f pos, float hitboxRatio);
 	//~Entity();
-	float getRadius();
-	sf::Vector2f getPosition();
+	float getRadius() const;
+	sf::Vector2f getPosition() const;
+	sf::Vector2f* getVertices() const;
 	void move(sf::Vector2f offset);
 	void setPosition(sf::Vector2f position);
 	void setTexture(sf::Texture &tx, sf::Vector2f pos, float hitboxRatio);

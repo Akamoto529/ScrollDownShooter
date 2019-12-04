@@ -3,7 +3,7 @@
 Player::Player(sf::Texture& tx, float speed, sf::Vector2f pos, float hitboxRatio)
 	: Entity(tx, speed, pos, hitboxRatio)
 {
-	this->Health = 5;
+	this->health = 5;
 	this->gun = new Rifle(sf::Vector2f(0,-1), Loader::getInstance()->GetProjectile());
 }
 
@@ -36,4 +36,9 @@ void Player::move()
 std::list<Projectile*> Player::Shoot()
 {
 	return gun->Shoot(this->getPosition());
+}
+
+void Player::TakeDamage(int dmg)
+{
+	this->health -= dmg;
 }

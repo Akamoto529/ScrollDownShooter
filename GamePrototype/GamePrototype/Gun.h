@@ -24,6 +24,6 @@ public:
 class Rifle : public Gun
 {
 public:
-	Rifle(sf::Vector2f direction, sf::Texture tx);
+	Rifle(sf::Vector2f direction, sf::Texture projTx);
 	std::list<Projectile*> Shoot(sf::Vector2f position);
 };

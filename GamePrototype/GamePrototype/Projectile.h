@@ -6,6 +6,7 @@ class Projectile : public Entity
 {
 	// Вектор скорости снаряда (px/msec).
 	sf::Vector2f velocity;
+	int damage;
 public:
 	Projectile(sf::Vector2f direction, sf::Texture& tx, float speed, sf::Vector2f pos, float hitboxRatio = 1.f);
 	sf::Vector2f getVelocity();

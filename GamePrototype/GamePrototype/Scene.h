@@ -3,6 +3,7 @@
 #include "Projectile.h"
 #include "Player.h"
 #include "Loader.h"
+#include "Enemy.h"
 
 // Игровое поле.
 class Scene : public sf::Drawable
@@ -12,6 +13,7 @@ class Scene : public sf::Drawable
 	sf::Vector2u size;
 	// Списки игровых объектов для отслеживания.
 	Player* player;
+	std::list<Enemy*> enemies;
 	std::list<Projectile*> projectiles;
 	//...
 

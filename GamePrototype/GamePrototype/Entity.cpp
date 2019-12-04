@@ -17,12 +17,12 @@ void Entity::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	target.draw(this->sp, states);
 }
 
-float Entity::getRadius()
+float Entity::getRadius() const
 {
 	return radius;
 }
 
-sf::Vector2f Entity::getPosition()
+sf::Vector2f Entity::getPosition() const
 {
 	return this->sp.getPosition();
 }

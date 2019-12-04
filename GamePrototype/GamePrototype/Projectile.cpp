@@ -5,6 +5,7 @@
 Projectile::Projectile(sf::Vector2f direction, sf::Texture& tx, float speed, sf::Vector2f pos, float hitboxRatio)
 	: Entity(tx, speed, pos, hitboxRatio)
 {
+	this->damage = 1;
 	this->setVelocity(direction);
 }
 
@@ -16,7 +17,7 @@ sf::Vector2f Projectile::getVelocity()
 // Вычисляет единичный вектор направления и умножает на модуль скорости.
 void Projectile::setVelocity(sf::Vector2f direction)
 {
-	float length = sqrt(pow(direction.x, 2) + pow(direction.y, 2));
+	float length = sqrt(direction.x*direction.x + direction.y * direction.y);
 	this->velocity.x = direction.x / length * this->speed;
 	this->velocity.y = direction.y / length * this->speed;
 }

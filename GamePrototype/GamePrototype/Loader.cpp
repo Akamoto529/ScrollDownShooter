@@ -17,3 +17,8 @@ sf::Texture& Loader::GetProjectile()
 {
 	return projectile;
 }
+
+sf::Texture& Loader::GetEnemy()
+{
+	return enemy;
+}

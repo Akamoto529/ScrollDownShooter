@@ -6,6 +6,9 @@ Scene::Scene(sf::Vector2u windowSize)
 {
 	size = windowSize;
 	player = new Player(Loader::getInstance()->GetPlayer(), 5.f, sf::Vector2f(size.x / 2, size.y), 0.7f);
+	enemies = {};
+	enemies.push_back(new Enemy(Loader::getInstance()->GetEnemy()
+								, sf::Vector2f(400,400), 0.7));
 	projectiles = {};
 	// ...
 }
@@ -24,13 +27,17 @@ std::list<Projectile*>::iterator Scene::DestroyEntity(std::list<Projectile*>::it
 
 void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
-	target.draw(*player, states);
-
 	for (Projectile* projectile : this->projectiles)
 	{
 		target.draw(*projectile, states);
 	}
 	// ...
+	for (Enemy* enemy : this->enemies)
+	{
+		target.draw(*enemy, states);
+	}
+
+	target.draw(*player, states);
 }
 
 bool Scene::outOfBounds(Entity* entity)
@@ -49,6 +56,10 @@ void Scene::update()
 
 	// Утечка памяти?
 	projectiles.splice(projectiles.end(), player->Shoot());
+	for (Enemy* enemy : this->enemies)
+	{
+		projectiles.splice(projectiles.end(), enemy->Shoot());
+	}
 
 	for (Projectile* projectile : this->projectiles)
 	{

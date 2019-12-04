@@ -1,7 +1,7 @@
-#pragma once
+п»ї#pragma once
 #include "SFML/Graphics.hpp"
 
-// Загружает и хранит в себе текстуры (Singleton).
+// Р—Р°РіСЂСѓР¶Р°РµС‚ Рё С…СЂР°РЅРёС‚ РІ СЃРµР±Рµ С‚РµРєСЃС‚СѓСЂС‹ (Singleton).
 class Loader
 {
 	static Loader* instance;
