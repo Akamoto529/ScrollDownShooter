@@ -1,11 +1,13 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
 #include "Enemy.h"
+#include "UI.h"
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(600, 800), "SFML works!");
 	Player pl;
 	Enemy en(window.getSize().x/2,100.f);
+	//UI hp(10.f, 20.f,3);
 	pl.sp.setPosition(window.getSize().x / 2,window.getSize().y-30.f);
 	while (window.isOpen())
 	{
@@ -25,6 +27,8 @@ int main()
 		}
 		window.draw(en.sp);
 		window.draw(pl.sp);
+		UI hp(10.f, 20.f,pl.GetHP());
+		window.draw(hp.sp);
 		window.display();
 	}
 	return 0;

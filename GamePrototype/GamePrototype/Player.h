@@ -13,5 +13,6 @@ public:
 	Player();
 	sf::Vector2f getDir();			//Функция, возвращающая направление движения
 	void Shoot();
+	int GetHP();
 };
 

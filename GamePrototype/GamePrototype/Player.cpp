@@ -1,6 +1,6 @@
 #include "Player.h"
 Player::Player(){
-	this->Health = 0;
+	this->Health = 3;
 	this->speed = 0.1f;
 	this->tx.loadFromFile("Assets/Pl.png");
 	this->sp.setTexture(tx);
@@ -29,3 +29,6 @@ sf::Vector2f Player::getDir() {
 void Player::Shoot() {
 	gun.Shoot(sp.getPosition());
 	}
+int Player::GetHP() {
+	return Health;
+}
