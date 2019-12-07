@@ -1,23 +1,24 @@
 ﻿#pragma once
 #include "SFML/Graphics.hpp"
+#include "Hitbox.h"
+#include "Loader.h"
 
 // Суперкласс для физических игровых объектов
 class Entity : public sf::Drawable
 {
 protected:
-	sf::Sprite sp;
-	sf::RectangleShape hitbox;
+	Hitbox hitbox;
 	float speed;
-	// Оценка для обработки выхода за экран и коллизий.
-	float radius;
+	sf::Sprite sp;
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 public:
-	Entity(sf::Texture &tx, float speed, sf::Vector2f pos, float hitboxRatio);
+	Entity(const sf::Vector2f pos, const float speed, const int entityID);
 	//~Entity();
-	float getRadius() const;
+	sf::FloatRect getGlobalBounds()	const;
+	Hitbox getHitbox() const;
 	sf::Vector2f getPosition() const;
-	sf::Vector2f* getVertices() const;
-	void move(sf::Vector2f offset);
-	void setPosition(sf::Vector2f position);
-	void setTexture(sf::Texture &tx, sf::Vector2f pos, float hitboxRatio);
+	void move(const sf::Vector2f offset);
+	void setPosition(const sf::Vector2f position);
+	void setTexture(const int ID, const sf::Vector2f currentPos);
+	// virtual void step?
 };

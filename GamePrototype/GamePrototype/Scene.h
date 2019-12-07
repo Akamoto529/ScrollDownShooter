@@ -8,6 +8,7 @@
 // Игровое поле.
 class Scene : public sf::Drawable
 {
+	// Загрузка ресурсов.
 	Loader* loader;
 	// Размер игрового поля.
 	sf::Vector2u size;
@@ -21,12 +22,13 @@ class Scene : public sf::Drawable
 	// Удаление объекта при смерти или выходе за экран.
 	std::list<Projectile*>::iterator DestroyEntity(std::list<Projectile*>::iterator pos);
 	// Проверка выхода за границы экрана.
-	bool outOfBounds(Entity* entity);
+	bool outOfBounds(const Entity* entity) const;
 public:
-	Scene(sf::Vector2u windowSize = sf::Vector2u(0,0));
+	Scene();
 	// Добавление объектов.
-	void AddEntity(Projectile* projectile);
+	void AddEntities(std::list<Enemy*> enemies);
+	void AddEntities(std::list<Projectile*> projectiles);
 	// ...
 
-	void update();
+	void update(const sf::Time dt);
 };

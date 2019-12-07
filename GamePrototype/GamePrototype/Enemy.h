@@ -7,9 +7,9 @@ class Enemy : public Entity
 {
 	int health;
 	Gun* gun;
-	void TakeDamage(int dmg);
+	void TakeDamage(const int dmg);
 public:
-	Enemy(sf::Texture& tx, sf::Vector2f pos, float hitboxRatio);
-	std::list<Projectile*> Shoot();
+	Enemy(const sf::Vector2f pos);
+	std::list<Projectile*> Shoot() const;
 };
 

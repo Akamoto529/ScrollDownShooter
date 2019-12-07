@@ -4,14 +4,15 @@
 #include "SFML/Graphics.hpp"
 #include "Loader.h"
 
+// Gun = Rifle(Bullet); Health = 5; Speed = 400.
 class Player : public Entity
 {
 	Gun* gun;
 	int health;
-	void TakeDamage(int dmg);
+	void TakeDamage(const int dmg);
 public:
-	Player(sf::Texture& tx, float speed, sf::Vector2f pos, float hitboxRatio);
-	void move();
-	std::list<Projectile*> Shoot();
+	Player(sf::Vector2f pos);
+	void step(const sf::Time dt);
+	std::list<Projectile*> Shoot() const;
 };
 

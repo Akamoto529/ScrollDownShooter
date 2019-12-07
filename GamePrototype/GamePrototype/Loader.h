@@ -1,7 +1,12 @@
 ﻿#pragma once
 #include "SFML/Graphics.hpp"
+#include <list>
+#include <vector>
+#include "config.h"
+#include "Hitbox.h"
 
-// Загружает и хранит в себе текстуры (Singleton).
+// Загружает и хранит в себе текстуры и схемы хитбоксов (Singleton).
+// список объектов - см. config.h.
 class Loader
 {
 	static Loader* instance;
@@ -9,18 +14,16 @@ class Loader
 	Loader(const Loader&);
 	Loader& operator=(Loader&);
 
-	sf::Texture player;
-	sf::Texture enemy;
-	sf::Texture projectile;
+	std::vector<sf::Texture> textures;
+	std::vector<Hitbox> hitboxes;
 public:
-	static Loader* getInstance()
+	static Loader* get()
 	{
 		if (!instance)
 			instance = new Loader();
 		return instance;
 	}
 
-	sf::Texture& GetPlayer();
-	sf::Texture& GetEnemy();
-	sf::Texture& GetProjectile();
+	Hitbox& HB(const int ID);
+	sf::Texture& TX(const int ID);
 };

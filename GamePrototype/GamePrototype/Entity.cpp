@@ -1,10 +1,9 @@
 #include "Entity.h"
 
-Entity::Entity(sf::Texture &tx, float speed, sf::Vector2f pos, float hitboxRatio)
+Entity::Entity(const sf::Vector2f pos, const float speed, const int entityID)
 {
-	this->setTexture(tx, pos, hitboxRatio);
 	this->speed = speed;
-	this->radius = tx.getSize().x + tx.getSize().y;
+	this->setTexture(entityID, pos);
 }
 
 //Entity::~Entity()
@@ -17,9 +16,14 @@ void Entity::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	target.draw(this->sp, states);
 }
 
-float Entity::getRadius() const
+sf::FloatRect Entity::getGlobalBounds() const
 {
-	return radius;
+	return this->sp.getGlobalBounds();
+}
+
+Hitbox Entity::getHitbox() const
+{
+	return this->hitbox;
 }
 
 sf::Vector2f Entity::getPosition() const
@@ -27,26 +31,25 @@ sf::Vector2f Entity::getPosition() const
 	return this->sp.getPosition();
 }
 
-void Entity::move(sf::Vector2f offset)
+void Entity::move(const sf::Vector2f offset)
 {
 	this->sp.move(offset);
 	this->hitbox.move(offset);
 }
 
-void Entity::setPosition(sf::Vector2f position)
+void Entity::setPosition(const sf::Vector2f position)
 {
 	this->sp.setPosition(position);
 	this->hitbox.setPosition(position);
 }
 
-void Entity::setTexture(sf::Texture& tx, sf::Vector2f pos, float hitboxRatio)
+void Entity::setTexture(const int ID, const sf::Vector2f currentPos)
 {
-	this->sp.setTexture(tx);
-	this->sp.setOrigin(tx.getSize().x / 2, tx.getSize().y / 2);
-	this->sp.setPosition(pos);
+	this->sp.setTexture(Loader::get()->TX(ID));
+	this->sp.setOrigin(this->sp.getTexture()->getSize().x / 2, this->sp.getTexture()->getSize().y / 2);
+	this->sp.setPosition(currentPos);
 
-	// Относительный размер хитбокса.
-	this->hitbox.setSize(sf::Vector2f(tx.getSize().x * hitboxRatio, tx.getSize().y * hitboxRatio));
-	this->hitbox.setOrigin(hitbox.getSize() / 2.f);
-	this->hitbox.setPosition(pos);
+	this->hitbox = Loader::get()->HB(ID);
+	this->hitbox.setOrigin(this->sp.getOrigin());
+	this->hitbox.setPosition(currentPos);
 }

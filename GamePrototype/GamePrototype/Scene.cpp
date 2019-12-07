@@ -1,21 +1,36 @@
 ﻿#include "Scene.h"
 #include <iostream>
 #include "config.h"
+#include "Collision.h"
 
-Scene::Scene(sf::Vector2u windowSize)
+Scene::Scene()
 {
-	size = windowSize;
-	player = new Player(Loader::getInstance()->GetPlayer(), 5.f, sf::Vector2f(size.x / 2, size.y), 0.7f);
+	size.x = (uint16_t)WINDOW_X;
+	size.y = (uint16_t)WINDOW_Y;
+
+	player = new Player(sf::Vector2f(WINDOW_X/2, WINDOW_Y - 100));
 	enemies = {};
-	enemies.push_back(new Enemy(Loader::getInstance()->GetEnemy()
-								, sf::Vector2f(400,400), 0.7));
+	AddEntities({
+		new Enemy(sf::Vector2f(400, 400)),
+		new Enemy(sf::Vector2f(350, 400)),
+		new Enemy(sf::Vector2f(300, 400)),
+		new Enemy(sf::Vector2f(450, 400)),
+		new Enemy(sf::Vector2f(400, 470))
+		});
 	projectiles = {};
 	// ...
 }
 
-void Scene::AddEntity(Projectile* projectile)
+void Scene::AddEntities(std::list<Enemy*> enemies)
 {
-	projectiles.push_back(projectile);
+	for (Enemy* enemy : enemies)
+		this->enemies.push_back(enemy);
+}
+
+void Scene::AddEntities(std::list<Projectile*> projectiles)
+{
+	for (Projectile* projectile : projectiles)
+	this->projectiles.push_back(projectile);
 }
 
 // Уничтожает объект по ссылке и удаляет ссылку на него из списка.
@@ -40,37 +55,46 @@ void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	target.draw(*player, states);
 }
 
-bool Scene::outOfBounds(Entity* entity)
+bool Scene::outOfBounds(const Entity* entity) const
 {
-	if (entity->getPosition().x - entity->getRadius() > this->size.x
-		|| entity->getPosition().x + entity->getRadius() < 0.f
-		|| entity->getPosition().y - entity->getRadius() > this->size.y
-		|| entity->getPosition().y + entity->getRadius() < 0.f)
-		return true;
-	return false;
+	sf::FloatRect box = entity->getGlobalBounds();
+	if (box.top+box.height < 0
+		|| box.left+box.width < 0
+		|| box.top > this->size.y
+		|| box.left > this->size.x)
+		return 1;
+	return 0;
 }
 
-void Scene::update()
+void Scene::update(sf::Time dt)
 {
-	player->move();
+	player->step(dt);
 
-	// Утечка памяти?
-	projectiles.splice(projectiles.end(), player->Shoot());
+	AddEntities(this->player->Shoot());
 	for (Enemy* enemy : this->enemies)
+		AddEntities(enemy->Shoot());
+	
+	for (auto i = this->projectiles.begin(); i != this->projectiles.end(); ++i)
 	{
-		projectiles.splice(projectiles.end(), enemy->Shoot());
-	}
+		auto& projectile = *i;
+		projectile->step(dt);
+		if (outOfBounds(projectile))
+		{
+			i = DestroyEntity(i);
+			continue;
+		}
 
-	for (Projectile* projectile : this->projectiles)
-	{
-		projectile->step(sf::milliseconds(MSEC_PER_FRAME));
-	}
+		for (auto j = this->enemies.begin(); j != this->enemies.end(); ++j)
+		{
+			auto& enemy = *j;
+			if (projectile->getOwner() == this->player && Collision::CollisionTest(enemy, projectile))
+			{
+				i = DestroyEntity(i);
+				break;
+			}
+		}
 
-	for (std::list<Projectile*>::iterator it = this->projectiles.begin(); it != this->projectiles.end(); it++)
-	{
-		if (outOfBounds(*it))
-			it = DestroyEntity(it);
-		if (this->projectiles.empty())
+		if (this->projectiles.empty() || i == this->projectiles.end())
 			break;
 	}
 }

@@ -3,22 +3,17 @@
 #include "Projectile.h"
 #include "Scene.h"
 #include "Gun.h"
+#include "config.h"
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(800,900), "test v2");
-	Scene scene(window.getSize());
-
-	const int FRAME_TIME = 16;
-
-	sf::Clock timer1;
+	sf::RenderWindow window(sf::VideoMode(WINDOW_X,WINDOW_Y), "test v2");
+	Scene scene;
+	sf::Clock dt;
+	sf::Clock frame;
 
 	while (window.isOpen())
 	{
-		if (timer1.getElapsedTime() < sf::milliseconds(FRAME_TIME))
-		{
-			continue;
-		}
 		//std::cout << timer1.getElapsedTime().asMicroseconds() << std::endl;
 		sf::Event event;
 		while (window.pollEvent(event))
@@ -26,11 +21,18 @@ int main()
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
-		scene.update();
+		if (frame.getElapsedTime() <= sf::milliseconds(MSEC_PER_FRAME - 1))
+		scene.update(dt.getElapsedTime());
+		//std::cout << dt.getElapsedTime().asMicroseconds() << std::endl;
+		dt.restart();
 		window.clear();
+		if (frame.getElapsedTime() >= sf::milliseconds(MSEC_PER_FRAME))
+		{
+			window.draw(scene);
+			frame.restart();
+		}
 		window.draw(scene);
 		window.display();
-		timer1.restart();
 	}
 
 	return 0;

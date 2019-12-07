@@ -140,10 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Collision.cpp" />
-    <ClCompile Include="config.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Gun.cpp" />
+    <ClCompile Include="Hitbox.cpp" />
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -155,8 +155,8 @@
     <ClInclude Include="config.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Entity.h" />
-    <ClInclude Include="game.h" />
     <ClInclude Include="Gun.h" />
+    <ClInclude Include="Hitbox.h" />
     <ClInclude Include="Loader.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Projectile.h" />
