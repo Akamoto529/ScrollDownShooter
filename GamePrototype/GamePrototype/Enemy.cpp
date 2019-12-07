@@ -1,19 +1,18 @@
-#include "Enemy.h"
-Enemy::Enemy(float x,float y) {
-	this->Health = 6;
-	this->speed = 0.f;
-	this->tx.loadFromFile("Assets/Enemy.png");
-	this->sp.setTexture(tx);
-	this->sp.setPosition(x, y);
-	this->sp.setOrigin(tx.getSize().x / 2, 0.f);
+﻿#include "Enemy.h"
+
+Enemy::Enemy(const sf::Vector2f pos)
+	: Entity(pos, 400.f, enemy2_ID)
+{
+	gun = new Rifle(sf::Vector2f(0, 1), bullet_ID, this);
+	health = 10;
 }
-sf::Vector2f Enemy::getDir() {
-	sf::Vector2f dir = sf::Vector2f(0.f, 0.f);
-	return dir;
+
+void Enemy::TakeDamage(const int dmg)
+{
+	this->health -= dmg;
 }
-void Enemy::Shoot() {
-	gun.Shoot(sp.getPosition());
-}
-void Enemy::TakeDamage(int dmg) {
-	Health -= dmg;
+
+std::list<Projectile*> Enemy::Shoot() const
+{
+	return gun->Shoot(this->getPosition());
 }

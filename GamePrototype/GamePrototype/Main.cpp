@@ -1,31 +1,39 @@
-#include <SFML/Graphics.hpp>
-#include "Player.h"
-#include "Enemy.h"
+﻿#include <SFML/Graphics.hpp>
+#include <iostream>
+#include "Projectile.h"
+#include "Scene.h"
+#include "Gun.h"
+#include "config.h"
+
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(800, 900), "SFML works!");
-	Player pl;
-	Enemy en(window.getSize().x/2,100.f);
-	pl.sp.setPosition(window.getSize().x / 2,window.getSize().y-30.f);
+	sf::RenderWindow window(sf::VideoMode(WINDOW_X,WINDOW_Y), "test v2");
+	Scene scene;
+	sf::Clock dt;
+	sf::Clock frame;
+
 	while (window.isOpen())
 	{
+		//std::cout << timer1.getElapsedTime().asMicroseconds() << std::endl;
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
-		pl.Shoot();
-		pl.sp.move(pl.speed * pl.getDir());
+		if (frame.getElapsedTime() <= sf::milliseconds(MSEC_PER_FRAME - 1))
+		scene.update(dt.getElapsedTime());
+		//std::cout << dt.getElapsedTime().asMicroseconds() << std::endl;
+		dt.restart();
 		window.clear();
-		for (int i = pl.gun.proj.size()-1; i >=0; i--) {
-			pl.gun.proj[i].sp.move(pl.gun.proj[i].speed*pl.gun.proj[i].dir);
-			if (pl.gun.proj[i].sp.getPosition().y < 0.f) pl.gun.proj.erase(pl.gun.proj.begin() + i--);
-			else	window.draw(pl.gun.proj[i].sp);
+		if (frame.getElapsedTime() >= sf::milliseconds(MSEC_PER_FRAME))
+		{
+			window.draw(scene);
+			frame.restart();
 		}
-		window.draw(en.sp);
-		window.draw(pl.sp);
+		window.draw(scene);
 		window.display();
 	}
+
 	return 0;
 }

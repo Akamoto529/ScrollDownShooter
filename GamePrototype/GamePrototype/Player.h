@@ -1,17 +1,18 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include <list>
 #include "Gun.h"
-#include "Entity.h"
-#include<vector>
-class Player:public Entity
+#include "SFML/Graphics.hpp"
+#include "Loader.h"
+
+// Gun = Rifle(Bullet); Health = 5; Speed = 400.
+class Player : public Entity
 {
-private:
+	Gun* gun;
+	int health;
+	void TakeDamage(const int dmg);
 public:
-	Gun gun;
-	int Health;	
-	sf::Texture tx;
-	Player();
-	sf::Vector2f getDir();			//Функция, возвращающая направление движения
-	void Shoot();
+	Player(sf::Vector2f pos);
+	void step(const sf::Time dt);
+	std::list<Projectile*> Shoot() const;
 };
 

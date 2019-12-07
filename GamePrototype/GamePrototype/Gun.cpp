@@ -1,17 +1,44 @@
-#include "Gun.h"
-#include "Projectile.h"
-Gun::Gun() {
-	this->speed = 0.1f;
-	this->tx.loadFromFile("Assets/Projectile.png");
-	this->timer.restart();
-	this->frate = 0.2f;
+﻿#include "Gun.h"
+
+
+// Gun.
+
+
+Gun::Gun(const sf::Vector2f direction, const int projID, const sf::Time reloadTime, Entity* owner)
+{
+	this->direction = direction;
+	this->reloadTime = reloadTime;
+	this->projID = projID;
+	this->owner = owner;
+	timer.restart();
 }
-void Gun::Shoot(sf::Vector2f pos) {
-	if (timer.getElapsedTime().asSeconds() > frate) {
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
-		{
-			proj.push_back(Projectile(pos.x,pos.y,tx));
-			timer.restart();
-		}
+
+sf::Vector2f Gun::getDirection() const
+{
+	return this->direction;
+}
+
+void Gun::setDirection(const sf::Vector2f direction)
+{
+	this->direction = direction;
+}
+
+
+// Rifle.
+
+
+Rifle::Rifle(const sf::Vector2f direction, int projID, Entity* owner)
+	:Gun(direction, projID, sf::milliseconds(500), owner)
+{}
+
+std::list<Projectile*> Rifle::Shoot(const sf::Vector2f position)
+{
+	if (this->timer.getElapsedTime() >= this->reloadTime)
+	{
+		this->timer.restart();
+		return{
+			Projectile::createProjectile(this->projID, position, this->getDirection(), this->owner)
+		};
 	}
+	return {};
 }
