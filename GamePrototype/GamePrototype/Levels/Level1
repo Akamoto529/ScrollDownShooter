@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Level>
+	<amount>1</amount>
+	<Enemy>
+		<posx>100</posx>
+		<posy>100</posy>
+    <PointsAmount>0</PointsAmount>
+	</Enemy>
+</Level>

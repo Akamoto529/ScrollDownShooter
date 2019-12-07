@@ -1,15 +1,15 @@
 #include "Enemy.h"
-Enemy::Enemy(float x,float y) {
+Enemy::Enemy(float x,float y,sf::Texture &tx) {
+	this->curPoint = 0;
 	this->Health = 6;
-	this->speed = 0.f;
-	this->tx.loadFromFile("Assets/Enemy.png");
+	this->speed = 1.f;
 	this->sp.setTexture(tx);
 	this->sp.setPosition(x, y);
 	this->sp.setOrigin(tx.getSize().x / 2, 0.f);
 }
 sf::Vector2f Enemy::getDir() {
-	sf::Vector2f dir = sf::Vector2f(0.f, 0.f);
-	return dir;
+
+	return sf::Vector2f(0.f, 0.f);
 }
 void Enemy::Shoot() {
 	gun.Shoot(sp.getPosition());
