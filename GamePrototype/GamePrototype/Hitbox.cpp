@@ -11,9 +11,7 @@ Hitbox::Hitbox(std::list<sf::Vector2f> vertices)
 {
 	this->vertices = {};
 	this->vertices.push_back(vertices.front());
-	vertices.pop_front();
 	this->vertices.push_back(vertices.front());
-	vertices.pop_front();
 
 	this->area = 0.f;
 	for (sf::Vector2f vertice : vertices)
@@ -21,6 +19,11 @@ Hitbox::Hitbox(std::list<sf::Vector2f> vertices)
 		area += TriangleArea(this->vertices.front(), this->vertices.back(), vertice);
 		this->vertices.push_back(vertice);
 	}
+}
+
+float Hitbox::getArea() const
+{
+	return this->area;
 }
 
 std::list<sf::Vector2f> Hitbox::getVerticesAbs() const

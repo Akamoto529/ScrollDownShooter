@@ -10,18 +10,27 @@ Scene::Scene()
 
 	player = new Player(sf::Vector2f(WINDOW_X/2, WINDOW_Y - 100));
 	enemies = {};
-	enemies.push_back(new Enemy(sf::Vector2f(400, 400)));
-	enemies.push_back(new Enemy(sf::Vector2f(350, 400)));
-	enemies.push_back(new Enemy(sf::Vector2f(300, 400)));
-	enemies.push_back(new Enemy(sf::Vector2f(450, 400)));
-	enemies.push_back(new Enemy(sf::Vector2f(400, 470)));
+	AddEntities({
+		new Enemy(sf::Vector2f(400, 400)),
+		new Enemy(sf::Vector2f(350, 400)),
+		new Enemy(sf::Vector2f(300, 400)),
+		new Enemy(sf::Vector2f(450, 400)),
+		new Enemy(sf::Vector2f(400, 470))
+		});
 	projectiles = {};
 	// ...
 }
 
-void Scene::AddEntity(Projectile* projectile)
+void Scene::AddEntities(std::list<Enemy*> enemies)
 {
-	projectiles.push_back(projectile);
+	for (Enemy* enemy : enemies)
+		this->enemies.push_back(enemy);
+}
+
+void Scene::AddEntities(std::list<Projectile*> projectiles)
+{
+	for (Projectile* projectile : projectiles)
+	this->projectiles.push_back(projectile);
 }
 
 // Уничтожает объект по ссылке и удаляет ссылку на него из списка.
@@ -61,34 +70,31 @@ void Scene::update(sf::Time dt)
 {
 	player->step(dt);
 
-	// Утечка памяти?
-	// Запись в обход AddEntity!
-	projectiles.splice(projectiles.end(), player->Shoot());
-	/*for (Enemy* enemy : this->enemies)
+	AddEntities(this->player->Shoot());
+	for (Enemy* enemy : this->enemies)
+		AddEntities(enemy->Shoot());
+	
+	for (auto i = this->projectiles.begin(); i != this->projectiles.end(); ++i)
 	{
-		projectiles.splice(projectiles.end(), enemy->Shoot());
-	}*/
-
-	for (Projectile* projectile : this->projectiles)
+		auto& projectile = *i;
 		projectile->step(dt);
-
-	for(auto i = projectiles.begin(); i != projectiles.end(); ++i)
-	{
-		if (outOfBounds(*i))
+		if (outOfBounds(projectile))
 		{
 			i = DestroyEntity(i);
 			continue;
 		}
 
-		for (auto j = enemies.begin(); j != enemies.end(); ++j)
+		for (auto j = this->enemies.begin(); j != this->enemies.end(); ++j)
 		{
-			if (typeid(*i == typeid(Player)  && Collision::RectangleTest(projectile, enemy))
+			auto& enemy = *j;
+			if (projectile->getOwner() == this->player && Collision::CollisionTest(enemy, projectile))
 			{
 				i = DestroyEntity(i);
 				break;
 			}
 		}
-		if (this->projectiles.empty())
+
+		if (this->projectiles.empty() || i == this->projectiles.end())
 			break;
 	}
 }

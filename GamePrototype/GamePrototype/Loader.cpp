@@ -21,7 +21,7 @@ Loader::Loader()
 		});
 
 	hitboxes[enemy2_ID] = Hitbox({
-		sf::Vector2f(-16, -16),
+		sf::Vector2f(24,0),
 		sf::Vector2f(-16, 16),
 		sf::Vector2f(16, -16),
 		sf::Vector2f(16, 16)
@@ -29,10 +29,9 @@ Loader::Loader()
 
 	hitboxes[pl_ID] = Hitbox({
 		sf::Vector2f(0,-140),
-		sf::Vector2f(-146,12),
-		sf::Vector2f(-56,119),
-		sf::Vector2f(56,119),
-		sf::Vector2f(146,12)
+		sf::Vector2f(11,56),
+		sf::Vector2f(24,74),
+		sf::Vector2f(37,56)
 		});
 
 	hitboxes[bullet_ID] = Hitbox({

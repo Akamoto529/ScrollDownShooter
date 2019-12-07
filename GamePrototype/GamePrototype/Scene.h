@@ -26,8 +26,8 @@ class Scene : public sf::Drawable
 public:
 	Scene();
 	// Добавление объектов.
-	void AddEntity(Enemy* enemy);
-	void AddEntity(Projectile* projectile);
+	void AddEntities(std::list<Enemy*> enemies);
+	void AddEntities(std::list<Projectile*> projectiles);
 	// ...
 
 	void update(const sf::Time dt);
