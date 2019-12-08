@@ -21,7 +21,7 @@ bool Collision::PolygonTest(const Entity* ent1, const Entity* ent2)
 
 	for (sf::Vector2f vertice : ver1)
 	{
-		previous = ver2.front();
+		previous = ver2.back();
 		area = 0.f;
 		for (sf::Vector2f current : ver2)
 		{
@@ -35,7 +35,7 @@ bool Collision::PolygonTest(const Entity* ent1, const Entity* ent2)
 
 	for (sf::Vector2f vertice : ver2)
 	{
-		previous = ver1.front();
+		previous = ver1.back();
 		area = 0.f;
 		for (sf::Vector2f current : ver1)
 		{

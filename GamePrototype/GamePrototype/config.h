@@ -2,6 +2,7 @@
 
 const int FPS = 60;
 const int MSEC_PER_FRAME = 1000 / FPS;
+
 const int WINDOW_X = 800;
 const int WINDOW_Y = 900;
 

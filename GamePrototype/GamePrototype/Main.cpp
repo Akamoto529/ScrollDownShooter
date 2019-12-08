@@ -14,25 +14,26 @@ int main()
 
 	while (window.isOpen())
 	{
-		//std::cout << timer1.getElapsedTime().asMicroseconds() << std::endl;
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
-		if (frame.getElapsedTime() <= sf::milliseconds(MSEC_PER_FRAME - 1))
-		scene.update(dt.getElapsedTime());
-		//std::cout << dt.getElapsedTime().asMicroseconds() << std::endl;
-		dt.restart();
-		window.clear();
+		if (frame.getElapsedTime() < sf::milliseconds(MSEC_PER_FRAME-5) && dt.getElapsedTime() >= sf::milliseconds(1))
+		{
+			scene.update(dt.getElapsedTime());
+			//std::cout << dt.getElapsedTime().asMicroseconds() << std::endl;
+			dt.restart();
+		}
 		if (frame.getElapsedTime() >= sf::milliseconds(MSEC_PER_FRAME))
 		{
+			window.clear();
 			window.draw(scene);
+			window.display();
+			//std::cout << frame.getElapsedTime().asMilliseconds() << std::endl;
 			frame.restart();
 		}
-		window.draw(scene);
-		window.display();
 	}
 
 	return 0;

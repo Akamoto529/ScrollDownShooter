@@ -12,32 +12,24 @@ Loader::Loader()
 
 	hitboxes.resize(ID_count);
 
-	hitboxes[enemy1_ID] = Hitbox({
-	sf::Vector2f(0,-140),
-	sf::Vector2f(-146,12),
-	sf::Vector2f(-56,119),
-	sf::Vector2f(56,119),
-	sf::Vector2f(146,12)
-		});
-
 	hitboxes[enemy2_ID] = Hitbox({
-		sf::Vector2f(24,0),
-		sf::Vector2f(-16, 16),
-		sf::Vector2f(16, -16),
-		sf::Vector2f(16, 16)
-		});
-
-	hitboxes[pl_ID] = Hitbox({
-		sf::Vector2f(0,-140),
+		sf::Vector2f(25,0),
 		sf::Vector2f(11,56),
 		sf::Vector2f(24,74),
 		sf::Vector2f(37,56)
 		});
 
+	hitboxes[pl_ID] = Hitbox({
+		sf::Vector2f(32,0),
+		sf::Vector2f(21,35),
+		sf::Vector2f(32,45),
+		sf::Vector2f(43,31)
+		});
+
 	hitboxes[bullet_ID] = Hitbox({
-		sf::Vector2f(0,-9),
-		sf::Vector2f(-7,7),
-		sf::Vector2f(7,7)
+		sf::Vector2f(8,2),
+		sf::Vector2f(0,20),
+		sf::Vector2f(18,21)
 		});
 }
 

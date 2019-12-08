@@ -11,5 +11,6 @@ class Enemy : public Entity
 public:
 	Enemy(const sf::Vector2f pos);
 	std::list<Projectile*> Shoot() const;
+	void step(const sf::Time dt);
 };
 

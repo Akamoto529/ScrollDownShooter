@@ -17,7 +17,6 @@ public:
 	static Projectile* createProjectile(const int ID, const sf::Vector2f pos, const sf::Vector2f direction, Entity* shooter);
 	Entity* getOwner() const;
 	sf::Vector2f getVelocity() const;
-    virtual void step(const sf::Time dt) = 0;
 };
 
 // Damage = 3; Speed = 800; Texture = bullet.

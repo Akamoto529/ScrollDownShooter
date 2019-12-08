@@ -2,6 +2,7 @@
 #include <iostream>
 #include "config.h"
 #include "Collision.h"
+#include <typeinfo>
 
 Scene::Scene()
 {
@@ -84,17 +85,20 @@ void Scene::update(sf::Time dt)
 			continue;
 		}
 
-		for (auto j = this->enemies.begin(); j != this->enemies.end(); ++j)
+		if (projectile->getOwner() == this->player)
 		{
-			auto& enemy = *j;
-			if (projectile->getOwner() == this->player && Collision::CollisionTest(enemy, projectile))
+			for (auto j = this->enemies.begin(); j != this->enemies.end(); ++j)
 			{
-				i = DestroyEntity(i);
-				break;
+				auto& enemy = *j;
+				if (Collision::CollisionTest(enemy, projectile))
+				{
+					i = DestroyEntity(i);
+					break;
+				}
 			}
 		}
 
-		if (this->projectiles.empty() || i == this->projectiles.end())
+		if (this->projectiles.empty())
 			break;
 	}
 }

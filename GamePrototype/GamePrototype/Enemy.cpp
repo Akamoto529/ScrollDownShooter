@@ -16,3 +16,8 @@ std::list<Projectile*> Enemy::Shoot() const
 {
 	return gun->Shoot(this->getPosition());
 }
+
+void Enemy::step(sf::Time dt)
+{
+
+}

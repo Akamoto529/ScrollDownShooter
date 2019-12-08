@@ -20,5 +20,5 @@ public:
 	void move(const sf::Vector2f offset);
 	void setPosition(const sf::Vector2f position);
 	void setTexture(const int ID, const sf::Vector2f currentPos);
-	// virtual void step?
+	virtual void step(const sf::Time dt) = 0;
 };

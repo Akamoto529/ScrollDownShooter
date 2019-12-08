@@ -11,7 +11,9 @@ Hitbox::Hitbox(std::list<sf::Vector2f> vertices)
 {
 	this->vertices = {};
 	this->vertices.push_back(vertices.front());
+	vertices.pop_front();
 	this->vertices.push_back(vertices.front());
+	vertices.pop_front();
 
 	this->area = 0.f;
 	for (sf::Vector2f vertice : vertices)
@@ -30,7 +32,7 @@ std::list<sf::Vector2f> Hitbox::getVerticesAbs() const
 {
 	std::list<sf::Vector2f> absolute;
 	for (sf::Vector2f vertice : this->vertices)
-		absolute.push_back(this->getPosition() + vertice);
+		absolute.push_back(this->getPosition() - this->getOrigin() + vertice);
 	return absolute;
 }
 
