@@ -32,6 +32,11 @@ Projectile* Projectile::createProjectile(const int ID, const sf::Vector2f pos, c
 	return p;
 }
 
+int Projectile::getDamage() const
+{
+	return this->damage;
+}
+
 Entity* Projectile::getOwner() const
 {
 	return owner;

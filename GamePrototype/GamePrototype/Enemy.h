@@ -7,9 +7,9 @@ class Enemy : public Entity
 {
 	int health;
 	Gun* gun;
-	void TakeDamage(const int dmg);
 public:
 	Enemy(const sf::Vector2f pos);
+	bool TakeDamage(const int dmg);
 	std::list<Projectile*> Shoot() const;
 	void step(const sf::Time dt);
 };

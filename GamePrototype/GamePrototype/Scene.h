@@ -19,7 +19,8 @@ class Scene : public sf::Drawable
 	//...
 
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-	// Удаление объекта при смерти или выходе за экран.
+	// Удаление объекта.
+	std::list<Enemy*>::iterator DestroyEntity(std::list<Enemy*>::iterator pos);
 	std::list<Projectile*>::iterator DestroyEntity(std::list<Projectile*>::iterator pos);
 	// Проверка выхода за границы экрана.
 	bool outOfBounds(const Entity* entity) const;

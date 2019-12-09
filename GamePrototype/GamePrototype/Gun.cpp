@@ -29,7 +29,7 @@ void Gun::setDirection(const sf::Vector2f direction)
 
 
 Rifle::Rifle(const sf::Vector2f direction, int projID, Entity* owner)
-	:Gun(direction, projID, sf::milliseconds(100), owner)
+	:Gun(direction, projID, sf::milliseconds(500), owner)
 {}
 
 std::list<Projectile*> Rifle::Shoot(const sf::Vector2f position)

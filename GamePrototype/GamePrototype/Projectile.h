@@ -15,6 +15,7 @@ public:
 	Projectile(const sf::Vector2f direction, const int damage, Entity* owner,
 		const sf::Vector2f pos, const float speed, const int ID);
 	static Projectile* createProjectile(const int ID, const sf::Vector2f pos, const sf::Vector2f direction, Entity* shooter);
+	int getDamage() const;
 	Entity* getOwner() const;
 	sf::Vector2f getVelocity() const;
 };

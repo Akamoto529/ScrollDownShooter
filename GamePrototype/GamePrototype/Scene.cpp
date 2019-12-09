@@ -34,6 +34,12 @@ void Scene::AddEntities(std::list<Projectile*> projectiles)
 	this->projectiles.push_back(projectile);
 }
 
+std::list<Enemy*>::iterator Scene::DestroyEntity(std::list<Enemy*>::iterator pos)
+{
+	delete* pos;
+	return this->enemies.erase(pos);
+}
+
 // Уничтожает объект по ссылке и удаляет ссылку на него из списка.
 std::list<Projectile*>::iterator Scene::DestroyEntity(std::list<Projectile*>::iterator pos)
 {
@@ -72,8 +78,14 @@ void Scene::update(sf::Time dt)
 	player->step(dt);
 
 	AddEntities(this->player->Shoot());
-	for (Enemy* enemy : this->enemies)
-		AddEntities(enemy->Shoot());
+	for (auto i = this->enemies.begin(); i != this->enemies.end(); ++i)
+	{
+		auto& enemy = *i;
+		if (enemy == nullptr)
+			i = DestroyEntity(i);
+		else
+			AddEntities(enemy->Shoot());
+	}
 	
 	for (auto i = this->projectiles.begin(); i != this->projectiles.end(); ++i)
 	{
@@ -92,6 +104,8 @@ void Scene::update(sf::Time dt)
 				auto& enemy = *j;
 				if (Collision::CollisionTest(enemy, projectile))
 				{
+					if (!enemy->TakeDamage(projectile->getDamage()))
+						j = DestroyEntity(j);
 					i = DestroyEntity(i);
 					break;
 				}

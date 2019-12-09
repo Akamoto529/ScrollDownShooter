@@ -7,9 +7,13 @@ Enemy::Enemy(const sf::Vector2f pos)
 	health = 10;
 }
 
-void Enemy::TakeDamage(const int dmg)
+bool Enemy::TakeDamage(const int dmg)
 {
 	this->health -= dmg;
+	if (this->health <= 0)
+		// Удаление происходит в сцене, не здесь.
+		return 0;
+	return 1;
 }
 
 std::list<Projectile*> Enemy::Shoot() const
