@@ -1,7 +1,7 @@
 #include "Player.h"
 Player::Player(){
 	this->Health = 0;
-	this->speed = 0.1f;
+	this->speed = 0.3f;
 	this->tx.loadFromFile("Assets/Player.png");
 	this->sp.setTexture(tx);
 	this->sp.setOrigin(tx.getSize().x / 2, 0.f);
