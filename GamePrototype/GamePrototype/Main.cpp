@@ -4,9 +4,8 @@
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(600, 800), "SFML works!");
-	Level lvl("123");
-	lvl.LoadWave();
-	//lvl.waves[0].enemies.erase(lvl.waves[0].enemies.begin());
+	Level lvl;
+	lvl.Load(1);
 	Player pl;
 	pl.sp.setPosition(window.getSize().x / 2,window.getSize().y-30.f);
 	while (window.isOpen())
@@ -20,9 +19,10 @@ int main()
 		pl.Shoot();
 		pl.sp.move(pl.speed * pl.getDir());
 		window.clear();
-		for (int i = lvl.waves[0].enemies.size()-1; i >=0; i--)
+		for (int i = lvl.waves[0].Enemies.size()-1; i >=0; i--)
 		{
-			window.draw(lvl.waves[0].enemies[i].sp);
+			lvl.waves[0].Enemies[i].move();
+			window.draw(lvl.waves[0].Enemies[i].sp);
 		}
 		for (int i = pl.gun.proj.size()-1; i >=0; i--) {
 			pl.gun.proj[i].sp.move(pl.gun.proj[i].speed*pl.gun.proj[i].dir);

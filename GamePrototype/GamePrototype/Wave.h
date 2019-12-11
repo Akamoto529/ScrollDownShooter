@@ -4,6 +4,7 @@
 class Wave
 {
 public:
-	std::vector<Enemy> enemies;
+	float Time;
+	std::vector<Enemy> Enemies;
 	//Wave();
 };

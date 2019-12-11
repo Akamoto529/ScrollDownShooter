@@ -6,8 +6,9 @@ class Level
 public:
 	sf::Texture EnemyTx[1];
 	sf::Texture ProjectileTx[1];
-	Wave waves[1];
-	void LoadWave();
-	Level(std::string filename);
+	Wave *waves;
+	void Load(int Number);
+	std::string IntToStr(int a);
+	Level();
 };
 
