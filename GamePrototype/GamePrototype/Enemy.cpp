@@ -1,30 +1,37 @@
-#include "Enemy.h"
-#include <iostream>
-Enemy::Enemy(float x,float y,sf::Texture &tx) {
-	this->curPoint = 0;
-	this->Health = 6;
-	this->speed = 0.05f;
-	this->sp.setTexture(tx);
-	this->sp.setPosition(x, y);
-	this->sp.setOrigin(tx.getSize().x / 2, 0.f);
+﻿#include "Enemy.h"
+
+Enemy::Enemy(const sf::Vector2f pos)
+	: Entity(pos, 400.f, enemy2_ID)
+{
+	gun = new Rifle(sf::Vector2f(0, 1), bullet_ID, this);
+	health = 10;
 }
-void Enemy::Shoot() {
-	gun.Shoot(sp.getPosition());
+
+bool Enemy::TakeDamage(const int dmg)
+{
+	this->health -= dmg;
+	if (this->health <= 0)
+		// Удаление происходит в сцене, не здесь.
+		return 0;
+	return 1;
 }
-void Enemy::TakeDamage(int dmg) {
-	Health -= dmg;
+
+std::list<Projectile*> Enemy::Shoot() const
+{
+	return gun->Shoot(this->getPosition());
 }
-void Enemy::move(float frametime) {
-	if (curPoint < Path.size()-1) {
+
+void Enemy::step(sf::Time dt)
+{
+	if (curPoint < Path.size() - 1) {
 		float x = Path[curPoint + 1].x - Path[curPoint].x;
 		float y = Path[curPoint + 1].y - Path[curPoint].y;
 		float length = sqrt(x * x + y * y);
 		if ((abs(x / length * speed) > abs(Path[curPoint + 1].x - sp.getPosition().x)) || (abs(y / length * speed) > abs(Path[curPoint + 1].y - sp.getPosition().y))) {
 			curPoint++;
-			sp.setPosition(Path[curPoint].x,Path[curPoint].y);
+			sp.setPosition(Path[curPoint].x, Path[curPoint].y);
 		}
 		else {
-			sp.move(sf::Vector2f(x / length, y / length) * speed*frametime);
+			sp.move(sf::Vector2f(x / length, y / length) * speed * frametime);
 		}
-	}
 }

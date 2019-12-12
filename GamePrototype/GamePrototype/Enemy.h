@@ -1,16 +1,16 @@
-#pragma once
+﻿#pragma once
 #include "Entity.h"
 #include "Gun.h"
-class Enemy:public Entity
+#include "Loader.h"
+
+class Enemy : public Entity
 {
+	int health;
+	Gun* gun;
 public:
-	int Health;
-	Gun gun;
-	int curPoint;
-	Enemy(float x,float y,sf::Texture &tx);
-	std::vector<sf::Vector2f> Path;
-	void Shoot();
-	void TakeDamage(int dmg);
-	void move(float frametime);
+	Enemy(const sf::Vector2f pos);
+	bool TakeDamage(const int dmg);
+	std::list<Projectile*> Shoot() const;
+	void step(const sf::Time dt);
 };
 

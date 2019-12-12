@@ -1,39 +1,41 @@
-#include <SFML/Graphics.hpp>
+﻿#include <SFML/Graphics.hpp>
+#include <iostream>
+#include "Projectile.h"
+#include "Scene.h"
+#include "Gun.h"
+#include "config.h"
 #include "Player.h"
 #include "Level.h"
 #include <iostream>
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(600, 800), "SFML works!");
-	Level lvl;
-	lvl.Load(1);
-	Player pl;
-	sf::Clock Timer;
-	float frametime;
-	pl.sp.setPosition(window.getSize().x / 2,window.getSize().y-30.f);
-	while (window.isOpen()){
-		frametime = Timer.restart().asMicroseconds()/1000.f;
+	sf::RenderWindow window(sf::VideoMode(WINDOW_X,WINDOW_Y), "test v2");
+	Scene scene;
+	sf::Clock dt;
+	sf::Clock frame;
+
+	while (window.isOpen())
+	{
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
-		pl.Shoot();
-		pl.sp.move(pl.speed * pl.getDir()*frametime);
-		window.clear();
-		for (int i = lvl.waves[0].Enemies.size()-1; i >=0; i--)
+		if (frame.getElapsedTime() < sf::milliseconds(MSEC_PER_FRAME-5) && dt.getElapsedTime() >= sf::milliseconds(1))
 		{
-			lvl.waves[0].Enemies[i].move(frametime);
-			window.draw(lvl.waves[0].Enemies[i].sp);
+			scene.update(dt.getElapsedTime());
+			//std::cout << dt.getElapsedTime().asMicroseconds() << std::endl;
+			dt.restart();
 		}
-		for (int i = pl.gun.proj.size()-1; i >=0; i--) {
-			pl.gun.proj[i].sp.move(pl.gun.proj[i].speed*pl.gun.proj[i].dir);
-			if (pl.gun.proj[i].sp.getPosition().y < 0.f) pl.gun.proj.erase(pl.gun.proj.begin() + i--);
-			else	window.draw(pl.gun.proj[i].sp);
+		if (frame.getElapsedTime() >= sf::milliseconds(MSEC_PER_FRAME))
+		{
+			window.clear();
+			window.draw(scene);
+			window.display();
+			//std::cout << frame.getElapsedTime().asMilliseconds() << std::endl;
+			frame.restart();
 		}
-		window.draw(pl.sp);
-		window.display();
 	}
 	return 0;
 }
