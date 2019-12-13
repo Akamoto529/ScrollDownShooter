@@ -5,6 +5,7 @@ Enemy::Enemy(const sf::Vector2f pos)
 {
 	gun = new Rifle(sf::Vector2f(0, 1), bullet_ID, this);
 	health = 10;
+	curPoint = 0;
 }
 
 bool Enemy::TakeDamage(const int dmg)
@@ -32,6 +33,7 @@ void Enemy::step(sf::Time dt)
 			sp.setPosition(Path[curPoint].x, Path[curPoint].y);
 		}
 		else {
-			sp.move(sf::Vector2f(x / length, y / length) * speed * frametime);
+			sp.move(sf::Vector2f(x / length, y / length) * speed * (dt.asMicroseconds() / 1000000.f));
 		}
+	}
 }

@@ -6,19 +6,12 @@
 
 Scene::Scene()
 {
-	size.x = (uint16_t)WINDOW_X;
-	size.y = (uint16_t)WINDOW_Y;
-
-	player = new Player(sf::Vector2f(WINDOW_X/2, WINDOW_Y - 100));
-	enemies = {};
-	AddEntities({
-		new Enemy(sf::Vector2f(400, 400)),
-		new Enemy(sf::Vector2f(350, 400)),
-		new Enemy(sf::Vector2f(300, 400)),
-		new Enemy(sf::Vector2f(450, 400)),
-		new Enemy(sf::Vector2f(400, 470))
-		});
-	projectiles = {};
+	this->WindowSize.x = (uint16_t)WINDOW_X;
+	this->WindowSize.y = (uint16_t)WINDOW_Y;
+	this->player = new Player(sf::Vector2f(WINDOW_X/2, WINDOW_Y - 100));
+	this->enemies = {};
+	this->projectiles = {};
+	this->lvl.Load(1);
 	// ...
 }
 
@@ -67,8 +60,8 @@ bool Scene::outOfBounds(const Entity* entity) const
 	sf::FloatRect box = entity->getGlobalBounds();
 	if (box.top+box.height < 0
 		|| box.left+box.width < 0
-		|| box.top > this->size.y
-		|| box.left > this->size.x)
+		|| box.top > this->WindowSize.y
+		|| box.left > this->WindowSize.x)
 		return 1;
 	return 0;
 }
@@ -76,7 +69,6 @@ bool Scene::outOfBounds(const Entity* entity) const
 void Scene::update(sf::Time dt)
 {
 	player->step(dt);
-
 	AddEntities(this->player->Shoot());
 	for (auto i = this->enemies.begin(); i != this->enemies.end(); ++i)
 	{
@@ -86,7 +78,6 @@ void Scene::update(sf::Time dt)
 		else
 			AddEntities(enemy->Shoot());
 	}
-	
 	for (auto i = this->projectiles.begin(); i != this->projectiles.end(); ++i)
 	{
 		auto& projectile = *i;
@@ -111,7 +102,6 @@ void Scene::update(sf::Time dt)
 				}
 			}
 		}
-
 		if (this->projectiles.empty())
 			break;
 	}

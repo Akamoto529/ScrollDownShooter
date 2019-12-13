@@ -1,4 +1,36 @@
-﻿  Enemy.cpp
-  Scene.cpp
+﻿  Gun1.cpp
+  Level.cpp
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(22,53): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(22,53): warning C4244:         with
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(22,53): warning C4244:         [
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(22,53): warning C4244:             T=float
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(22,53): warning C4244:         ]
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(22,50): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(22,50): warning C4244:         with
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(22,50): warning C4244:         [
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(22,50): warning C4244:             T=float
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(22,50): warning C4244:         ]
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(23,55): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(23,55): warning C4244:         with
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(23,55): warning C4244:         [
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(23,55): warning C4244:             T=float
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(23,55): warning C4244:         ]
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(23,52): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(23,52): warning C4244:         with
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(23,52): warning C4244:         [
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(23,52): warning C4244:             T=float
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(23,52): warning C4244:         ]
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,55): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,55): warning C4244:         with
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,55): warning C4244:         [
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,55): warning C4244:             T=float
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,55): warning C4244:         ]
+  Wave.cpp
   Generating Code...
-  GamePrototype.vcxproj -> C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,53): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,53): warning C4244:         with
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,53): warning C4244:         [
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,53): warning C4244:             T=float
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,53): warning C4244:         ]
+  LINK : D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe not found or not built by the last incremental link; performing full link
+  GamePrototype.vcxproj -> D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe

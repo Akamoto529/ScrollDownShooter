@@ -1,7 +1,6 @@
 #include "Loader.h"
 
 Loader* Loader::instance = 0;
-
 Loader::Loader()
 {
 	textures.resize(ID_count);
@@ -9,7 +8,6 @@ Loader::Loader()
 	textures[enemy1_ID].loadFromFile("Assets/Enemies/1.png");
 	textures[enemy2_ID].loadFromFile("Assets/Enemies/2.png");
 	textures[pl_ID].loadFromFile("Assets/pl.png");
-
 	hitboxes.resize(ID_count);
 
 	hitboxes[enemy2_ID] = Hitbox({
@@ -32,7 +30,6 @@ Loader::Loader()
 		sf::Vector2f(18,21)
 		});
 }
-
 Hitbox& Loader::HB(const int ID)
 {
 	return hitboxes[ID];

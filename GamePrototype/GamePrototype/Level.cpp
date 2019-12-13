@@ -19,7 +19,7 @@ void Level::Load(int Number) {
 		{
 			fin >> PointsAmount;
 			fin >> x >> y;
-			waves[k].Enemies.push_back(Enemy(x, y, EnemyTx[0]));
+			waves[k].Enemies.push_back(Enemy(sf::Vector2f(x, y)));
 			waves[k].Enemies[i].Path.push_back(sf::Vector2f(x, y));
 			for (int j = 0; j < PointsAmount-1; j++) {
 				fin >> x >> y;

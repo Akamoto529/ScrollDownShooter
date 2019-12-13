@@ -4,14 +4,16 @@
 #include "Player.h"
 #include "Loader.h"
 #include "Enemy.h"
+#include "Level.h"
 
 // Игровое поле.
 class Scene : public sf::Drawable
 {
+	Level lvl;
 	// Загрузка ресурсов.
 	Loader* loader;
 	// Размер игрового поля.
-	sf::Vector2u size;
+	sf::Vector2u WindowSize;
 	// Списки игровых объектов для отслеживания.
 	Player* player;
 	std::list<Enemy*> enemies;
