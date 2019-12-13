@@ -9,6 +9,7 @@ int main()
 	sf::Clock frame;
 	while (window.isOpen())
 	{
+		deltaTime = clock.restart().asMicroseconds()/1000000.f;
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
@@ -29,6 +30,14 @@ int main()
 			window.display();
 			//std::cout << frame.getElapsedTime().asMilliseconds() << std::endl;
 		}
+		window.draw(en.sp);
+		window.draw(pl.sp);
+		UI ui;
+		for (int i = 0; i < 3; i++)
+		{
+			window.draw(ui.mas[i]);
+		}
+		window.display();
 	}
 	return 0;
 }
