@@ -7,13 +7,7 @@ int main()
 {
 	sf::RenderWindow window(sf::VideoMode(600, 800), "SFML works!");
 	Player pl;
-	Enemy en(window.getSize().x/2,100.f);
 	pl.sp.setPosition(window.getSize().x / 2,window.getSize().y-230.f);
-
-	Animation animation(pl.tx,sf::Vector2u(3,1),0.01f);
-	float deltaTime = 0.f;
-	sf::Clock clock;
-
 	while (window.isOpen())
 	{
 		deltaTime = clock.restart().asMicroseconds()/1000000.f;
