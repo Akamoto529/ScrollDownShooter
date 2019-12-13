@@ -1,12 +1,14 @@
 #pragma once
-#include "Entity.h"
 #include "Player.h"
-class UI :public Entity
+class UI
 {
 public:
-	sf::Texture tx;
-	UI(float x, float y,int health);
-	void drawHP(int health);
+	sf::Texture FullHeart;
+	sf::Texture EmptyHeart;
+	sf::Sprite *mas;
+	int fullHP = 5;
+	int curHp = 5;
+	UI();
 };
 
 

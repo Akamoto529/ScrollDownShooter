@@ -2,15 +2,21 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "UI.h"
+#include "Animation.h"
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(600, 800), "SFML works!");
 	Player pl;
 	Enemy en(window.getSize().x/2,100.f);
-	//UI hp(10.f, 20.f,3);
-	pl.sp.setPosition(window.getSize().x / 2,window.getSize().y-30.f);
+	pl.sp.setPosition(window.getSize().x / 2,window.getSize().y-230.f);
+
+	Animation animation(pl.tx,sf::Vector2u(3,1),0.01f);
+	float deltaTime = 0.f;
+	sf::Clock clock;
+
 	while (window.isOpen())
 	{
+		deltaTime = clock.restart().asMicroseconds()/1000000.f;
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
@@ -19,6 +25,7 @@ int main()
 		}
 		pl.Shoot();
 		pl.sp.move(pl.speed * pl.getDir());
+		animation.Update(0, deltaTime);
 		window.clear();
 		for (int i = pl.gun.proj.size()-1; i >=0; i--) {
 			pl.gun.proj[i].sp.move(pl.gun.proj[i].speed*pl.gun.proj[i].dir);
@@ -27,8 +34,11 @@ int main()
 		}
 		window.draw(en.sp);
 		window.draw(pl.sp);
-		UI hp(10.f, 20.f,pl.GetHP());
-		window.draw(hp.sp);
+		UI ui;
+		for (int i = 0; i < 3; i++)
+		{
+			window.draw(ui.mas[i]);
+		}
 		window.display();
 	}
 	return 0;

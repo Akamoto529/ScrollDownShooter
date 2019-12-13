@@ -2,7 +2,7 @@
 Player::Player(){
 	this->Health = 3;
 	this->speed = 0.1f;
-	this->tx.loadFromFile("Assets/Pl.png");
+	this->tx.loadFromFile("Assets/2x/Blue_ani.png");
 	this->sp.setTexture(tx);
 	this->sp.setOrigin(tx.getSize().x / 2, 0.f);
 }
@@ -29,6 +29,3 @@ sf::Vector2f Player::getDir() {
 void Player::Shoot() {
 	gun.Shoot(sp.getPosition());
 	}
-int Player::GetHP() {
-	return Health;
-}
