@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include "SFML/Graphics.hpp"
-#include <list>
 #include <vector>
 #include "config.h"
 #include "Hitbox.h"
@@ -12,8 +11,10 @@ class Loader
 	static Loader* instance;
 	Loader();
 	Loader(const Loader&);
-	Loader& operator=(Loader&);
-
+	//Loader& operator=(Loader&);
+	std::vector<sf::Texture> EnemyTx;
+	std::vector<sf::Texture> ProjTx;
+	std::vector<sf::Texture> PlayerTx;
 	std::vector<sf::Texture> textures;
 	std::vector<Hitbox> hitboxes;
 public:
@@ -23,7 +24,6 @@ public:
 			instance = new Loader();
 		return instance;
 	}
-
 	Hitbox& HB(const int ID);
 	sf::Texture& TX(const int ID);
 };
