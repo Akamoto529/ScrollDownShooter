@@ -8,11 +8,11 @@ Scene::Scene()
 {
 	this->WindowSize.x = (uint16_t)WINDOW_X;
 	this->WindowSize.y = (uint16_t)WINDOW_Y;
-	this->player = new Player(sf::Vector2f(WINDOW_X/2, WINDOW_Y - 100));
 	this->enemies = {};
 	this->projectiles = {};
 	this->lvl.Load(1);
-	// ...
+	this->player = new Player();
+	AddEntities(lvl.getEnemies());
 }
 
 void Scene::AddEntities(std::list<Enemy*> enemies)
@@ -69,14 +69,16 @@ bool Scene::outOfBounds(const Entity* entity) const
 void Scene::update(sf::Time dt)
 {
 	player->step(dt);
-	AddEntities(this->player->Shoot());
+	AddEntities(player->Shoot());
 	for (auto i = this->enemies.begin(); i != this->enemies.end(); ++i)
 	{
 		auto& enemy = *i;
-		if (enemy == nullptr)
-			i = DestroyEntity(i);
-		else
+		//if (enemy == nullptr)
+		//	i = DestroyEntity(i);
+		//else {
+			enemy->step(dt);
 			AddEntities(enemy->Shoot());
+		//}
 	}
 	for (auto i = this->projectiles.begin(); i != this->projectiles.end(); ++i)
 	{

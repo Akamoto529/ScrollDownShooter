@@ -1,10 +1,6 @@
 ﻿#include "Gun.h"
 #include <iostream>
-
-
 // Gun.
-
-
 Gun::Gun(const sf::Vector2f direction, const int projID, const sf::Time reloadTime, Entity* owner)
 {
 	this->direction = direction;

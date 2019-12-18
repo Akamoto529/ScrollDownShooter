@@ -1,10 +1,11 @@
 #include "Player.h"
 #include "config.h"
 
-Player::Player(sf::Vector2f pos)
-	: Entity(pos, 400.f, pl_ID)
+Player::Player()
+	: Entity(sf::Vector2f(PLAYER_POS_X,PLAYER_POS_Y), 400.f, pl_ID)
 {
-	this->health = 5;
+	this->sp.setScale(0.5f, 0.5f);
+	this->HP = 5;
 	this->gun = new Rifle(sf::Vector2f(0, -1), bullet_ID, this);
 }
 
@@ -40,7 +41,13 @@ std::list<Projectile*> Player::Shoot() const
 
 void Player::TakeDamage(const int dmg)
 {
-	this->health -= dmg;
-	if (this->health < 0)
-		this->health = 0;
+	this->HP -= dmg;
+	if (this->HP < 0)
+		this->HP = 0;
+}
+int Player::getHP() {
+	return this->HP;
+}
+const int Player::getFullHP() {
+	return this->fullHP;
 }

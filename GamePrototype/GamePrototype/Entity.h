@@ -6,8 +6,6 @@
 // Суперкласс для физических игровых объектов
 class Entity : public sf::Drawable, public sf::Transformable
 {
-private:
-	void setTexture(const int ID, const sf::Vector2f currentPos);
 protected:
 	Hitbox hitbox;
 	float speed;

@@ -2,13 +2,13 @@
 #include "Player.h"
 class UI
 {
-public:
+	Player* player;
 	sf::Texture FullHeart;
 	sf::Texture EmptyHeart;
+public:
 	sf::Sprite *mas;
-	int fullHP = 5;
-	int curHp = 5;
-	UI();
+	UI(Player *pl);
+	void Update();
 };
 
 

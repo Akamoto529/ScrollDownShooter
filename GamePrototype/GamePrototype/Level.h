@@ -1,14 +1,16 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Wave.h"
+#include "Loader.h"
 class Level
 {
+private:
+	int curWave;
 public:
-	sf::Texture EnemyTx[1];
-	sf::Texture ProjectileTx[1];
 	Wave *waves;
 	void Load(int Number);
 	std::string IntToStr(int a);
 	Level();
+	std::list<Enemy*> getEnemies();
 };
 

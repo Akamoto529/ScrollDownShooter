@@ -2,10 +2,9 @@
 #include <fstream>
 #include <sstream>
 Level::Level() {
-	EnemyTx[0].loadFromFile("Assets/Enemy.png");
-	ProjectileTx[0].loadFromFile("Assets/Projectile.png");
 }
 void Level::Load(int Number) {
+	curWave = 0;
 	std::string path = "Levels/Lvl" + IntToStr(Number) + "/LvlInfo.txt";
 	std::ifstream fin(path);
 	int WaveAmount,EnemyAmount,PointsAmount, x, y;
@@ -19,16 +18,20 @@ void Level::Load(int Number) {
 		{
 			fin >> PointsAmount;
 			fin >> x >> y;
-			waves[k].Enemies.push_back(Enemy(sf::Vector2f(x, y)));
-			waves[k].Enemies[i].Path.push_back(sf::Vector2f(x, y));
+			waves[k].Enemies.push_back(new Enemy(sf::Vector2f(x, y)));
+			Enemy*& en = waves[k].Enemies.back();
+			en->Path.push_back(sf::Vector2f(x, y));
 			for (int j = 0; j < PointsAmount-1; j++) {
 				fin >> x >> y;
-				waves[k].Enemies[i].Path.push_back(sf::Vector2f(x,y));
+				en->Path.push_back(sf::Vector2f(x, y));
 			}
 		}
 	}
 	fin.close();
 	return;
+}
+std::list<Enemy*> Level::getEnemies() {
+	return waves[curWave].Enemies;
 }
 std::string Level::IntToStr(int a) {
 	std::stringstream ss;
