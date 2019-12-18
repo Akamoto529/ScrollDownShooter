@@ -2,19 +2,20 @@
 #include "Entity.h"
 #include "Gun.h"
 #include "Loader.h"
-#include<vector>
+#include <vector>
 
 class Enemy : public Entity
 {
 private:
-	int curPoint;
 	int health;
 	Gun* gun;
-public:
+	int nextCheckpoint;
 	std::vector<sf::Vector2f> Path;
+public:
 	Enemy(const sf::Vector2f pos);
-	bool TakeDamage(const int dmg);
-	std::list<Projectile*> Shoot() const;
+	void addCheckpoint(const sf::Vector2f pos);
+	std::list<Projectile*> shoot() const;
 	void step(const sf::Time dt);
+	bool TakeDamage(const int dmg);
 };
 

@@ -27,19 +27,6 @@ void Scene::AddEntities(std::list<Projectile*> projectiles)
 	this->projectiles.push_back(projectile);
 }
 
-std::list<Enemy*>::iterator Scene::DestroyEntity(std::list<Enemy*>::iterator pos)
-{
-	delete* pos;
-	return this->enemies.erase(pos);
-}
-
-// Уничтожает объект по ссылке и удаляет ссылку на него из списка.
-std::list<Projectile*>::iterator Scene::DestroyEntity(std::list<Projectile*>::iterator pos)
-{
-	delete* pos;
-	return this->projectiles.erase(pos);
-}
-
 void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	for (Projectile* projectile : this->projectiles)
@@ -69,28 +56,37 @@ bool Scene::outOfBounds(const Entity* entity) const
 void Scene::update(sf::Time dt)
 {
 	player->step(dt);
-	AddEntities(player->Shoot());
-	for (auto i = this->enemies.begin(); i != this->enemies.end(); ++i)
+	this->AddEntities(player->shoot());
+	for (auto j = this->enemies.begin(); j != this->enemies.end(); ++j)
 	{
-		auto& enemy = *i;
-		//if (enemy == nullptr)
-		//	i = DestroyEntity(i);
-		//else {
+		auto& enemy = *j;
+		if (enemy == nullptr)
+			j = enemies.erase(j);
+		else
+		{
 			enemy->step(dt);
-			AddEntities(enemy->Shoot());
+			AddEntities(enemy->shoot());
+		}
+
+		//if (Collision::CollisionTest(enemy, this->player))
+		//{
+		//	enemy = nullptr;
+		//	i = enemies.erase(i);
 		//}
+
+		if (this->enemies.empty() || j == this->enemies.end())
+			break;
 	}
+
 	for (auto i = this->projectiles.begin(); i != this->projectiles.end(); ++i)
 	{
 		auto& projectile = *i;
 		projectile->step(dt);
-		if (outOfBounds(projectile))
-		{
-			i = DestroyEntity(i);
-			continue;
-		}
 
-		if (projectile->getOwner() == this->player)
+		if (outOfBounds(projectile))
+			projectile = nullptr;
+
+		if (projectile != nullptr && projectile->getHostility() != hostile)
 		{
 			for (auto j = this->enemies.begin(); j != this->enemies.end(); ++j)
 			{
@@ -98,13 +94,26 @@ void Scene::update(sf::Time dt)
 				if (Collision::CollisionTest(enemy, projectile))
 				{
 					if (!enemy->TakeDamage(projectile->getDamage()))
-						j = DestroyEntity(j);
-					i = DestroyEntity(i);
+					{
+						enemy = nullptr;
+						j = enemies.erase(j);
+					}
+					projectile = nullptr;
 					break;
 				}
 			}
 		}
-		if (this->projectiles.empty())
+
+		if (projectile != nullptr && projectile->getHostility() != friendly && Collision::CollisionTest(this->player, projectile))
+		{
+			projectile = nullptr;
+			i = projectiles.erase(i);
+		}
+
+		if (projectile == nullptr)
+			i = projectiles.erase(i);
+
+		if (this->projectiles.empty() || i == this->projectiles.end())
 			break;
 	}
 }

@@ -4,9 +4,8 @@
 Player::Player()
 	: Entity(sf::Vector2f(PLAYER_POS_X,PLAYER_POS_Y), 400.f, pl_ID)
 {
-	this->sp.setScale(0.5f, 0.5f);
 	this->HP = 5;
-	this->gun = new Rifle(sf::Vector2f(0, -1), bullet_ID, this);
+	this->gun = new Rifle(sf::Vector2f(0, -1), bullet_ID, friendly);
 }
 
 void Player::step(const sf::Time dt)
@@ -34,9 +33,9 @@ void Player::step(const sf::Time dt)
 		this->move(speed * dt.asMicroseconds() / 1000000 * dir);
 }
 
-std::list<Projectile*> Player::Shoot() const
+std::list<Projectile*> Player::shoot() const
 {
-	return gun->Shoot(this->getPosition());
+	return gun->shoot(this->getPosition());
 }
 
 void Player::TakeDamage(const int dmg)

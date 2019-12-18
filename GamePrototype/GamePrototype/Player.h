@@ -13,7 +13,7 @@ class Player : public Entity
 public:
 	Player();
 	void step(const sf::Time dt);
-	std::list<Projectile*> Shoot() const;
+	std::list<Projectile*> shoot() const;
 	int getHP();
 	const int getFullHP();
 };

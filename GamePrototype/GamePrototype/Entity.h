@@ -11,7 +11,6 @@ protected:
 	float speed;
 	sf::Sprite sp;
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-
 public:
 	Entity(const sf::Vector2f pos, const float speed, const int entityID);
 	//~Entity();

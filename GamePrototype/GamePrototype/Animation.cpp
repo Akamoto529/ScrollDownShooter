@@ -10,7 +10,7 @@ Animation::Animation(sf::Texture& texture, sf::Vector2u imageCount, float switch
 	textureRect.width = texture.getSize().x / float(imageCount.x);
 	textureRect.height = texture.getSize().y / float(imageCount.y);
 }
-void Animation::Update(int row, float deltaTime) {
+void Animation::update(int row, float deltaTime) {
 	currentImage.x = row;
 	totalTime += deltaTime;
 

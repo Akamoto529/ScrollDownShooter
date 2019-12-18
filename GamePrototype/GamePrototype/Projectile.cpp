@@ -8,22 +8,22 @@
 
 
 // Использует конструктор класса Entity.
-Projectile::Projectile(const sf::Vector2f direction, const int damage, Entity* shooter,
+Projectile::Projectile(const sf::Vector2f direction, const int damage, const  int hostility,
 	const sf::Vector2f pos, const float speed, const int ID)
 	: Entity(pos, speed, ID)
 {
 	this->damage = damage;
 	this->setVelocity(direction);
-	this->owner = shooter;
+	this->hostility = hostility;
 }
 
-Projectile* Projectile::createProjectile(const int ID, const sf::Vector2f pos, const sf::Vector2f direction, Entity* shooter)
+Projectile* Projectile::createProjectile(const int ID, const sf::Vector2f pos, const sf::Vector2f direction, const int hostility)
 {
 	Projectile* p = 0;
 	switch (ID)
 	{
 	case (bullet_ID):
-		p = new Bullet(pos, direction, shooter);
+		p = new Bullet(pos, direction, hostility);
 		break;
 	default:
 		std::cout << "Неправильный код снаряда" << std::endl;
@@ -37,9 +37,9 @@ int Projectile::getDamage() const
 	return this->damage;
 }
 
-Entity* Projectile::getOwner() const
+int Projectile::getHostility() const
 {
-	return owner;
+	return this->hostility;
 }
 
 sf::Vector2f Projectile::getVelocity() const
@@ -59,11 +59,11 @@ void Projectile::setVelocity(const sf::Vector2f direction)
 // Bullet.
 
 
-Bullet::Bullet(const sf::Vector2f pos, const sf::Vector2f direction, Entity* shooter)
-	: Projectile(direction, 3, shooter, pos, 800.f, bullet_ID)
+Bullet::Bullet(const sf::Vector2f pos, const sf::Vector2f direction, const int hostility)
+	: Projectile(direction, 3, hostility, pos, 800.f, bullet_ID)
 {};
 
 void Bullet::step(const sf::Time dt)
 {
-	this->move((float)dt.asMicroseconds()/1000000*this->getVelocity());
+	this->move((float)dt.asMicroseconds() / 1000000 * this->getVelocity());
 }

@@ -1,21 +1,22 @@
 ﻿#pragma once
-#include <SFML/Graphics.hpp>
 #include "Entity.h"
-class Projectile:public Entity
+
+// Суперкласс для всех запускаемых снарядов.
+class Projectile : public Entity
 {
 	int damage;
-	// "Владелец" снаряда - игрок, враг, ...
-	Entity* owner;
+	// hostile, friendly, neutral.
+	int hostility;
 	// Вектор скорости снаряда (px/sec).
 	sf::Vector2f velocity;
 	void setVelocity(const sf::Vector2f direction);
 	// Малое перемещение снаряда.
 public:
-	Projectile(const sf::Vector2f direction, const int damage, Entity* owner,
+	Projectile(const sf::Vector2f direction, const int damage, const int hostility,
 		const sf::Vector2f pos, const float speed, const int ID);
-	static Projectile* createProjectile(const int ID, const sf::Vector2f pos, const sf::Vector2f direction, Entity* shooter);
+	static Projectile* createProjectile(const int ID, const sf::Vector2f pos, const sf::Vector2f direction, const int hostility);
 	int getDamage() const;
-	Entity* getOwner() const;
+	int getHostility() const;
 	sf::Vector2f getVelocity() const;
 };
 
@@ -24,7 +25,7 @@ public:
 class Bullet : public Projectile
 {
 public:
-	Bullet(const sf::Vector2f pos, const sf::Vector2f direction, Entity* shooter);
+	Bullet(const sf::Vector2f pos, const sf::Vector2f direction, const int hostility);
 	virtual void step(const sf::Time dt) override;
 };
 

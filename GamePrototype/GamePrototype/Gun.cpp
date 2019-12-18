@@ -1,12 +1,16 @@
 ﻿#include "Gun.h"
 #include <iostream>
+
+
 // Gun.
-Gun::Gun(const sf::Vector2f direction, const int projID, const sf::Time reloadTime, Entity* owner)
+
+
+Gun::Gun(const sf::Vector2f direction, const int projID, const sf::Time reloadTime, const int hostility)
 {
 	this->direction = direction;
 	this->reloadTime = reloadTime;
 	this->projID = projID;
-	this->owner = owner;
+	this->hostility = hostility;
 	timer.restart();
 }
 
@@ -24,17 +28,17 @@ void Gun::setDirection(const sf::Vector2f direction)
 // Rifle.
 
 
-Rifle::Rifle(const sf::Vector2f direction, int projID, Entity* owner)
-	:Gun(direction, projID, sf::milliseconds(500), owner)
+Rifle::Rifle(const sf::Vector2f direction, int projID, const int hostility)
+	:Gun(direction, projID, sf::milliseconds(500), hostility)
 {}
 
-std::list<Projectile*> Rifle::Shoot(const sf::Vector2f position)
+std::list<Projectile*> Rifle::shoot(const sf::Vector2f position)
 {
 	if (this->timer.getElapsedTime() >= this->reloadTime)
 	{
 		this->timer.restart();
 		return{
-			Projectile::createProjectile(this->projID, position, this->getDirection(), this->owner)
+			Projectile::createProjectile(this->projID, position, this->getDirection(), this->hostility)
 		};
 	}
 	return {};

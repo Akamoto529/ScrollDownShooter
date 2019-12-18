@@ -16,6 +16,8 @@ const enum ObjectID {
 	enemy_ID, enemy1_ID, enemy2_ID, enemy5_ID,
 	proj_ID, bullet_ID, proj1_1ID, proj2_ID, proj3_ID,
 	hp0_ID, hp1_ID,
-	background_ID,
+	background_ID, polytech_ID, space_ID,
 	ID_count
 };
+
+const enum Hostility { friendly, hostile, neutral };

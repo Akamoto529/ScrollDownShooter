@@ -3,9 +3,11 @@
 Entity::Entity(const sf::Vector2f pos, const float speed, const int entityID)
 {
 	this->speed = speed;
+
 	this->sp.setTexture(Loader::get()->TX(entityID));
 	this->sp.setOrigin(this->sp.getTexture()->getSize().x / 2, this->sp.getTexture()->getSize().y / 2);
 	this->sp.setPosition(pos);
+
 	this->hitbox = Loader::get()->HB(entityID);
 	this->hitbox.setOrigin(this->sp.getOrigin());
 	this->hitbox.setPosition(pos);
@@ -13,6 +15,7 @@ Entity::Entity(const sf::Vector2f pos, const float speed, const int entityID)
 void Entity::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(this->sp, states);
+	target.draw(this->hitbox, states);
 }
 
 sf::FloatRect Entity::getGlobalBounds() const{

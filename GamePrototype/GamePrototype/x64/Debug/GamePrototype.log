@@ -1,10 +1,2 @@
-﻿  Player.cpp
-  UI.cpp
-  Scene.cpp
-  Generating Code...
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:  'argument': conversion from 'T' to 'float', possible loss of data
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         with
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         [
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:             T=unsigned int
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         ]
-  GamePrototype.vcxproj -> D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe
+﻿  Hitbox.cpp
+  GamePrototype.vcxproj -> C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe

@@ -3,9 +3,38 @@
 Enemy::Enemy(const sf::Vector2f pos)
 	: Entity(pos, 40.f, enemy2_ID)
 {
-	gun = new Rifle(sf::Vector2f(0, 1), bullet_ID, this);
+	gun = new Rifle(sf::Vector2f(0, 1), bullet_ID, hostile);
 	health = 10;
-	curPoint = 0;
+	nextCheckpoint = 0;
+}
+
+void Enemy::addCheckpoint(const sf::Vector2f pos)
+{
+	this->Path.push_back(pos);
+}
+
+std::list<Projectile*> Enemy::shoot() const
+{
+	return gun->shoot(this->getPosition());
+}
+
+void Enemy::step(const sf::Time dt)
+{
+	if (nextCheckpoint < Path.size()) {
+		float distX = Path[nextCheckpoint].x - this->getPosition().x;
+		float distY = Path[nextCheckpoint].y - this->getPosition().y;
+		float length = sqrt(distX*distX + distY*distY);
+		sf::Vector2f movement(distX, distY);
+		movement = movement / length * speed * (dt.asMicroseconds() / 1000000.f);
+		if ((abs(movement.x) <= abs(distX)) && (abs(movement.y) <= abs(distY)))
+		{
+			this->move(movement);
+		}
+		else
+		{
+			this->setPosition(Path[nextCheckpoint++]);
+		}
+	}
 }
 
 bool Enemy::TakeDamage(const int dmg)
@@ -15,29 +44,4 @@ bool Enemy::TakeDamage(const int dmg)
 		// Удаление происходит в сцене, не здесь.
 		return 0;
 	return 1;
-}
-
-std::list<Projectile*> Enemy::Shoot() const
-{
-	return gun->Shoot(this->getPosition());
-}
-
-void Enemy::step(sf::Time dt)
-{
-	if (curPoint < Path.size() - 1) {
-		float x = Path[curPoint + 1].x - Path[curPoint].x;
-		float y = Path[curPoint + 1].y - Path[curPoint].y;
-		float length = sqrt(x * x + y * y);
-		x = x / length * speed * (dt.asMicroseconds() / 1000000.f);
-		y = y / length * speed * (dt.asMicroseconds() / 1000000.f);
-		if ((abs(x) > abs(Path[curPoint + 1].x - sp.getPosition().x)) || (abs(y) > abs(Path[curPoint + 1].y - sp.getPosition().y))) {
-			curPoint++;
-			sp.setPosition(Path[curPoint].x, Path[curPoint].y);
-			hitbox.setPosition(Path[curPoint].x, Path[curPoint].y);
-		}
-		else {
-			sp.move(sf::Vector2f(x, y));
-			hitbox.move(sf::Vector2f(x, y));
-		}
-	}
 }

@@ -20,10 +20,9 @@ void Level::Load(int Number) {
 			fin >> x >> y;
 			waves[k].Enemies.push_back(new Enemy(sf::Vector2f(x, y)));
 			Enemy*& en = waves[k].Enemies.back();
-			en->Path.push_back(sf::Vector2f(x, y));
 			for (int j = 0; j < PointsAmount-1; j++) {
 				fin >> x >> y;
-				en->Path.push_back(sf::Vector2f(x, y));
+				en->addCheckpoint(sf::Vector2f(x, y));
 			}
 		}
 	}

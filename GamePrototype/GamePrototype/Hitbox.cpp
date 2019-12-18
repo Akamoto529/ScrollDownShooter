@@ -23,6 +23,15 @@ Hitbox::Hitbox(std::list<sf::Vector2f> vertices)
 	}
 }
 
+void Hitbox::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+	sf::VertexArray box(sf::TrianglesStrip);
+	for (sf::Vector2f vertex : this->getVerticesAbs())
+		box.append(sf::Vertex(vertex, sf::Color(128,0,0)));
+	box.append(sf::Vertex(this->getVerticesAbs().front(), sf::Color(128, 0, 0)));
+	target.draw(box);
+}
+
 float Hitbox::getArea() const
 {
 	return this->area;
