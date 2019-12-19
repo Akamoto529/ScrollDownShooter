@@ -4,13 +4,14 @@
 // Суперкласс для всех запускаемых снарядов.
 class Projectile : public Entity
 {
+private:
 	int damage;
 	// hostile, friendly, neutral.
 	int hostility;
 	// Вектор скорости снаряда (px/sec).
 	sf::Vector2f velocity;
+
 	void setVelocity(const sf::Vector2f direction);
-	// Малое перемещение снаряда.
 public:
 	Projectile(const sf::Vector2f direction, const int damage, const int hostility,
 		const sf::Vector2f pos, const float speed, const int ID);

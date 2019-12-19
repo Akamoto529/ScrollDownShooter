@@ -3,12 +3,14 @@
 
 bool Collision::CollisionTest(const Entity* ent1, const Entity* ent2)
 {
+	if (ent1 == nullptr || ent2 == nullptr)
+		return false;
 	return RectangleTest(ent1, ent2) && PolygonTest(ent1, ent2);
 }
 
 bool Collision::RectangleTest(const Entity* ent1, const Entity* ent2)
 {
-	return ent1->getGlobalBounds().intersects(ent2->getGlobalBounds());
+	return ent1->getHitboxBounds().intersects(ent2->getHitboxBounds());
 }
 
 bool Collision::PolygonTest(const Entity* ent1, const Entity* ent2)

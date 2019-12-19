@@ -14,11 +14,13 @@ protected:
 public:
 	Entity(const sf::Vector2f pos, const float speed, const int entityID);
 	//~Entity();
-	sf::FloatRect getGlobalBounds()	const;
 	Hitbox getHitbox() const;
-	sf::Vector2f getPosition() const;
+	sf::FloatRect getHitboxBounds() const;
+	sf::FloatRect getSpriteBounds()	const;
 	void move(const sf::Vector2f offset);
+	void rotate(const float angle);
 	void setPosition(const sf::Vector2f position);
+	void setRotation(const float angle);
 	virtual void step(const sf::Time dt) = 0;
 };
 

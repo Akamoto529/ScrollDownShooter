@@ -8,6 +8,21 @@ Player::Player()
 	this->gun = new Rifle(sf::Vector2f(0, -1), bullet_ID, friendly);
 }
 
+const int Player::getFullHP()
+{
+	return this->fullHP;
+}
+
+int Player::getHP() const
+{
+	return this->HP;
+}
+
+std::list<Projectile*> Player::shoot() const
+{
+	return gun->shoot(this->getPosition());
+}
+
 void Player::step(const sf::Time dt)
 {
 	sf::Vector2f dir = sf::Vector2f(0.f, 0.f);
@@ -33,20 +48,9 @@ void Player::step(const sf::Time dt)
 		this->move(speed * dt.asMicroseconds() / 1000000 * dir);
 }
 
-std::list<Projectile*> Player::shoot() const
-{
-	return gun->shoot(this->getPosition());
-}
-
-void Player::TakeDamage(const int dmg)
+void Player::takeDamage(const int dmg)
 {
 	this->HP -= dmg;
 	if (this->HP < 0)
 		this->HP = 0;
-}
-int Player::getHP() {
-	return this->HP;
-}
-const int Player::getFullHP() {
-	return this->fullHP;
 }

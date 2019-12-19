@@ -18,6 +18,7 @@ class Loader
 	std::vector<sf::Texture> textures;
 	std::vector<Hitbox> hitboxes;
 public:
+	// Убрать этот метод.
 	static Loader* get()
 	{
 		if (!instance)

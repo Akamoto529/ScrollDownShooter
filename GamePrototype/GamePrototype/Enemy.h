@@ -16,6 +16,6 @@ public:
 	void addCheckpoint(const sf::Vector2f pos);
 	std::list<Projectile*> shoot() const;
 	void step(const sf::Time dt);
-	bool TakeDamage(const int dmg);
+	bool takeDamage(const int dmg);
 };
 

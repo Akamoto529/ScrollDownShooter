@@ -10,10 +10,10 @@ private:
 	// Ненормализованный вектор направления.
 	sf::Vector2f direction;
 protected:
+	int hostility;
 	int projID;
 	sf::Time reloadTime;
 	sf::Clock timer;
-	int hostility;
 public:
 	Gun(const sf::Vector2f direction, const int projID, const sf::Time reloadTime, const int hostility);
 	sf::Vector2f getDirection() const;

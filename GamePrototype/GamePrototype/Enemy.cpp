@@ -27,17 +27,13 @@ void Enemy::step(const sf::Time dt)
 		sf::Vector2f movement(distX, distY);
 		movement = movement / length * speed * (dt.asMicroseconds() / 1000000.f);
 		if ((abs(movement.x) <= abs(distX)) && (abs(movement.y) <= abs(distY)))
-		{
 			this->move(movement);
-		}
 		else
-		{
 			this->setPosition(Path[nextCheckpoint++]);
-		}
 	}
 }
 
-bool Enemy::TakeDamage(const int dmg)
+bool Enemy::takeDamage(const int dmg)
 {
 	this->health -= dmg;
 	if (this->health <= 0)
