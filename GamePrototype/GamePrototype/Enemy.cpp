@@ -1,9 +1,9 @@
 ﻿#include "Enemy.h"
-
+#include "Rifle.h"
 Enemy::Enemy(const sf::Vector2f pos)
-	: Entity(pos, 40.f, enemy2_ID)
+	: Entity(pos, 40.f, "Enemy2")
 {
-	gun = new Rifle(sf::Vector2f(0, 1), bullet_ID, hostile);
+	gun = new Rifle(sf::Vector2f(0, 1), "Bullet", hostile);
 	health = 10;
 	nextCheckpoint = 0;
 }
@@ -21,12 +21,12 @@ std::list<Projectile*> Enemy::shoot() const
 void Enemy::step(const sf::Time dt)
 {
 	if (nextCheckpoint < Path.size()) {
-		float distX = Path[nextCheckpoint].x - this->getPosition().x;
-		float distY = Path[nextCheckpoint].y - this->getPosition().y;
-		float length = sqrt(distX*distX + distY*distY);
-		sf::Vector2f movement(distX, distY);
+		float X = Path[nextCheckpoint].x - this->getPosition().x;
+		float Y = Path[nextCheckpoint].y - this->getPosition().y;
+		float length = sqrt(X*X + Y*Y);
+		sf::Vector2f movement(X, Y);
 		movement = movement / length * speed * (dt.asMicroseconds() / 1000000.f);
-		if ((abs(movement.x) <= abs(distX)) && (abs(movement.y) <= abs(distY)))
+		if ((abs(movement.x) <= abs(X)) && (abs(movement.y) <= abs(Y)))
 		{
 			this->move(movement);
 		}

@@ -1,11 +1,12 @@
 #include "Player.h"
 #include "config.h"
+#include "Rifle.h"
 
 Player::Player()
-	: Entity(sf::Vector2f(PLAYER_POS_X,PLAYER_POS_Y), 400.f, pl_ID)
+	: Entity(sf::Vector2f(PLAYER_POS_X,PLAYER_POS_Y), 400.f, "Player")
 {
 	this->HP = 5;
-	this->gun = new Rifle(sf::Vector2f(0, -1), bullet_ID, friendly);
+	this->gun = new Rifle(sf::Vector2f(0, -1), "Bullet", friendly);
 }
 
 void Player::step(const sf::Time dt)

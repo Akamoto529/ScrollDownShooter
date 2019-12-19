@@ -67,13 +67,11 @@ void Scene::update(sf::Time dt)
 			enemy->step(dt);
 			AddEntities(enemy->shoot());
 		}
-
 		//if (Collision::CollisionTest(enemy, this->player))
 		//{
 		//	enemy = nullptr;
 		//	i = enemies.erase(i);
 		//}
-
 		if (this->enemies.empty() || j == this->enemies.end())
 			break;
 	}

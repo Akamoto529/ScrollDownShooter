@@ -16,6 +16,15 @@
     <Filter Include="Source Files\Guns">
       <UniqueIdentifier>{1690722e-933f-4ca9-af4b-0c0372cf1c5f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Guns">
+      <UniqueIdentifier>{a5592277-1dc1-471b-9f79-5f41d0b3c003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Projectiles">
+      <UniqueIdentifier>{d17dc15e-6631-4bfe-84b5-3720826c2465}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Projectiles">
+      <UniqueIdentifier>{03306b4e-2ed9-4dd5-99ac-8ffc69d07f2e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -42,9 +51,6 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Projectile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -52,9 +58,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Gun.cpp">
-      <Filter>Source Files\Guns</Filter>
-    </ClCompile>
-    <ClCompile Include="Gun1.cpp">
       <Filter>Source Files\Guns</Filter>
     </ClCompile>
     <ClCompile Include="Background.cpp">
@@ -65,6 +68,15 @@
     </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Rifle.cpp">
+      <Filter>Source Files\Guns</Filter>
+    </ClCompile>
+    <ClCompile Include="Projectile.cpp">
+      <Filter>Source Files\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Source Files\Projectiles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -80,12 +92,6 @@
     <ClInclude Include="Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Gun.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Gun1.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Hitbox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -96,9 +102,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Projectile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
@@ -119,5 +122,22 @@
     <ClInclude Include="Animation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Gun.h">
+      <Filter>Header Files\Guns</Filter>
+    </ClInclude>
+    <ClInclude Include="Rifle.h">
+      <Filter>Header Files\Guns</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectile.h">
+      <Filter>Header Files\Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Header Files\Projectiles</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GamePrototype.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
