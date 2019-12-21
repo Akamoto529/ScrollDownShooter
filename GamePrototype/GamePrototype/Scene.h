@@ -7,11 +7,13 @@
 #include "Level.h"
 #include "UI.h"
 #include "Background.h"
+#include "Bonus.h"
 
 // Игровое поле.
 class Scene : public sf::Drawable
 {
 	Background* bg;
+	std::list<Bonus*> bonuses;
 	std::list<Enemy*> enemies;
 	Level lvl;
 	Player* player;
@@ -26,6 +28,7 @@ class Scene : public sf::Drawable
 public:
 	Scene();
 	// Добавление объектов.
+	void AddEntities(std::list<Bonus*> bonuses);
 	void AddEntities(std::list<Enemy*> enemies);
 	void AddEntities(std::list<Projectile*> projectiles);
 	void update(const sf::Time dt);

@@ -4,3 +4,4 @@ Enemy2
 Bullet
 polytech
 space
+hp-bonus

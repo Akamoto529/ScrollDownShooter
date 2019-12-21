@@ -7,6 +7,7 @@ Scene::Scene()
 {
 	this->windowSize.x = (uint16_t)WINDOW_X;
 	this->windowSize.y = (uint16_t)WINDOW_Y;
+	this->bonuses = {};
 	this->enemies = {};
 	this->projectiles = {};
 
@@ -14,6 +15,14 @@ Scene::Scene()
 	this->lvl.Load(1);
 	this->player = new Player();
 	AddEntities(lvl.getEnemies());
+}
+
+void Scene::AddEntities(std::list<Bonus*> bonuses)
+{
+	for (Bonus* bonus : bonuses)
+	{
+		this->bonuses.push_back(bonus);
+	}
 }
 
 void Scene::AddEntities(std::list<Enemy*> enemies)
@@ -45,6 +54,11 @@ void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	}
 
 	target.draw(*player, states);
+
+	for (Bonus* bonus : this->bonuses)
+	{
+		target.draw(*bonus, states);
+	}
 }
 
 bool Scene::outOfBounds(const Entity* entity) const
@@ -64,6 +78,20 @@ void Scene::update(sf::Time dt)
 	player->step(dt);
 	this->AddEntities(player->shoot());
 
+	for (auto k = this->bonuses.begin(); k != this->bonuses.end(); ++k)
+	{
+		auto& bonus = *k;
+		bonus->step(dt);
+		if (Collision::CollisionTest(bonus, this->player))
+		{
+			bonus = nullptr;
+			k = this->bonuses.erase(k);
+		}
+
+		if (this->bonuses.empty() || k == this->bonuses.end())
+			break;
+	}
+
 	for (auto i = this->projectiles.begin(); i != this->projectiles.end(); ++i)
 	{
 		auto& projectile = *i;
@@ -80,6 +108,7 @@ void Scene::update(sf::Time dt)
 				{
 					if (!enemy->takeDamage(projectile->getDamage()))
 					{
+						this->AddEntities({new Bonus(enemy->getPosition(),"hp-bonus")});
 						enemy = nullptr;
 					}
 					projectile = nullptr;
@@ -89,7 +118,11 @@ void Scene::update(sf::Time dt)
 		}
 
 		if (projectile != nullptr && projectile->getHostility() != friendly && Collision::CollisionTest(this->player, projectile))
+		{
+			if (!player->takeDamage(projectile->getDamage()))
+				std::cout << "u ded\n";
 			projectile = nullptr;
+		}
 
 		if (projectile == nullptr)
 			i = projectiles.erase(i);
@@ -103,6 +136,7 @@ void Scene::update(sf::Time dt)
 		auto& enemy = *j;
 		if (Collision::CollisionTest(enemy, this->player))
 		{
+			this->AddEntities({ new Bonus(enemy->getPosition(),"hp-bonus") });
 			enemy = nullptr;
 			this->player->takeDamage(player->getFullHP());
 			std::cout << player->getHP();

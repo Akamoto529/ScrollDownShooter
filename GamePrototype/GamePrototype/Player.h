@@ -13,7 +13,7 @@ public:
 	Player();
 	const int getFullHP();
 	int getHP() const;
-	void takeDamage(const int dmg);
+	bool takeDamage(const int dmg);
 	std::list<Projectile*> shoot() const;
 	void step(const sf::Time dt);
 };

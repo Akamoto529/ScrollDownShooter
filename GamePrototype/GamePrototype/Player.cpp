@@ -49,9 +49,11 @@ void Player::step(const sf::Time dt)
 		this->move(speed * dt.asMicroseconds() / 1000000 * dir);
 }
 
-void Player::takeDamage(const int dmg)
+bool Player::takeDamage(const int dmg)
 {
 	this->HP -= dmg;
-	if (this->HP < 0)
-		this->HP = 0;
+	if (this->HP <= 0)
+		// Удаление происходит в сцене, не здесь.
+		return 0;
+	return 1;
 }

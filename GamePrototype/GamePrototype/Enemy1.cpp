@@ -2,7 +2,7 @@
 Enemy1::Enemy1(const sf::Vector2f pos)
 	: Enemy(pos,"Enemy1")
 {
-	this->HP = 10;
+	this->HP = 3;
 	this->gun = new Rifle(sf::Vector2f(0, 1), "Bullet", hostile);
 };
 void Enemy1::step(const sf::Time dt)
