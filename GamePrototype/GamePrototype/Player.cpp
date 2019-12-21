@@ -5,6 +5,7 @@
 Player::Player()
 	: Entity(sf::Vector2f(PLAYER_POS_X,PLAYER_POS_Y), 400.f, "Player")
 {
+	this->fullHP = 5;
 	this->HP = 5;
 	this->gun = new Rifle(sf::Vector2f(0, -1), "Bullet", friendly);
 }
@@ -38,7 +39,6 @@ std::list<Projectile*> Player::shoot() const
 {
 	return gun->shoot(this->getPosition());
 }
-
 void Player::TakeDamage(const int dmg)
 {
 	this->HP -= dmg;
@@ -48,6 +48,7 @@ void Player::TakeDamage(const int dmg)
 int Player::getHP() {
 	return this->HP;
 }
-const int Player::getFullHP() {
-	return this->fullHP;
+int Player::getFullHP() {
+	int a = fullHP;
+	return a;
 }

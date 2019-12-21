@@ -10,7 +10,7 @@
 // Игровое поле.
 class Scene : public sf::Drawable
 {
-	//UI ui;
+	UI *ui;
 	Player* player;
 
 	Level lvl;

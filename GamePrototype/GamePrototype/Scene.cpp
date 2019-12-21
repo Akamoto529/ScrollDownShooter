@@ -12,6 +12,7 @@ Scene::Scene()
 	this->projectiles = {};
 	this->lvl.Load(1);
 	this->player = new Player();
+	this->ui = new UI(player);
 	AddEntities(lvl.getEnemies());
 }
 
@@ -38,8 +39,8 @@ void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	{
 		target.draw(*enemy, states);
 	}
-
 	target.draw(*player, states);
+	target.draw(*ui, states);
 }
 
 bool Scene::outOfBounds(const Entity* entity) const
@@ -105,6 +106,7 @@ void Scene::update(sf::Time dt)
 		if (projectile != nullptr && projectile->getHostility() != friendly && Collision::CollisionTest(this->player, projectile))
 		{
 			projectile = nullptr;
+			player->TakeDamage(1);
 			i = projectiles.erase(i);
 		}
 
@@ -114,4 +116,5 @@ void Scene::update(sf::Time dt)
 		if (this->projectiles.empty() || i == this->projectiles.end())
 			break;
 	}
+	ui->Update();
 }

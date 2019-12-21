@@ -8,12 +8,12 @@ class Player : public Entity
 {
 	Gun* gun;
 	int HP;
-	const int fullHP=5;
-	void TakeDamage(const int dmg);
+	int fullHP;
 public:
 	Player();
 	void step(const sf::Time dt);
 	std::list<Projectile*> shoot() const;
+	void TakeDamage(const int dmg);
 	int getHP();
-	const int getFullHP();
+	int getFullHP();
 };
