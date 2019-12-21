@@ -1,9 +1,9 @@
 #include "Background.h"
 
-Background::Background(const float speed, const int ID)
+Background::Background(const float speed, const std::string Name)
 {
 	this->velocity = sf::Vector2f(0, speed);
-	this->sp.setTexture(Loader::get()->TX(ID));
+	this->sp.setTexture(Loader::get()->TX(Name));
 	// Если для текстуры repeated == true, она будет повторяться в спрайте два раза.
 	this->sp.setTextureRect(sf::IntRect(
 		sf::Vector2i(0, 0), sf::Vector2i(WINDOW_X, 2 * (int)this->sp.getTextureRect().height)));

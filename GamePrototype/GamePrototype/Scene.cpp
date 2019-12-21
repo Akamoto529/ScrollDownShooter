@@ -10,7 +10,7 @@ Scene::Scene()
 	this->enemies = {};
 	this->projectiles = {};
 
-	bg = new Background(200, space_ID);
+	bg = new Background(200, "space");
 	this->lvl.Load(1);
 	this->player = new Player();
 	AddEntities(lvl.getEnemies());
@@ -78,10 +78,10 @@ void Scene::update(sf::Time dt)
 			{
 				if (Collision::CollisionTest(enemy, projectile))
 				{
-					/*if (!enemy->takeDamage(projectile->getDamage()))
+					if (!enemy->takeDamage(projectile->getDamage()))
 					{
 						enemy = nullptr;
-					}*/
+					}
 					projectile = nullptr;
 					break;
 				}
