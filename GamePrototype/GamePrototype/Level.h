@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "Wave.h"
 #include "Loader.h"
+#include "EnemyFactory.h"
 class Level
 {
 private:

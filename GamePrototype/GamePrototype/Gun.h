@@ -2,6 +2,7 @@
 #include <list>
 #include <SFML/Graphics.hpp>
 #include "Projectile.h"
+#include "ProjFactory.h"
 
 // Базовый класс для пушек.
 class Gun

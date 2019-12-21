@@ -1,12 +1,42 @@
-﻿  Loader.cpp
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,35): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,35): warning C4244:         with
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,35): warning C4244:         [
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,35): warning C4244:             T=float
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,35): warning C4244:         ]
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,32): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,32): warning C4244:         with
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,32): warning C4244:         [
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,32): warning C4244:             T=float
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,32): warning C4244:         ]
+﻿  Enemy.cpp
+  Enemy1.cpp
+  Enemy2.cpp
+  EnemyFactory.cpp
+  Gun.cpp
+  Level.cpp
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244:         with
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244:         [
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244:             T=float
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244:         ]
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,67): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,67): warning C4244:         with
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,67): warning C4244:         [
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,67): warning C4244:             T=float
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,67): warning C4244:         ]
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244:         with
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244:         [
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244:             T=float
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244:         ]
+  Main.cpp
+  Player.cpp
+  ProjFactory.cpp
+  Rifle.cpp
+  UI.cpp
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:         with
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:         [
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:             T=float
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:         ]
+  Scene.cpp
+  Wave.cpp
+  Generating Code...
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:  'argument': conversion from 'T' to 'float', possible loss of data
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         with
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         [
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:             T=unsigned int
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         ]
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\ProjFactory.h(9): warning C4715:  'ProjFactory::getProj': not all control paths return a value
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\EnemyFactory.h(10): warning C4715:  'EnemyFactory::getEnemy': not all control paths return a value
   GamePrototype.vcxproj -> D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe

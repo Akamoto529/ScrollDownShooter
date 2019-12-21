@@ -9,9 +9,7 @@ Rifle::Rifle(const sf::Vector2f direction, std::string projName, const int hosti
 		if (this->timer.getElapsedTime() >= this->reloadTime)
 		{
 			this->timer.restart();
-			return{
-				new Bullet(position, this->getDirection(), this->hostility)
-			};
+			return{ProjFactory::getProj(position, this->getDirection(), this->hostility,"Bullet")};
 		}
 		return {};
 	}

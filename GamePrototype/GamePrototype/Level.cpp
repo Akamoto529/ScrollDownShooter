@@ -1,12 +1,16 @@
 #include "Level.h"
+#include "Enemy1.h"
+#include "Enemy2.h"
 #include <fstream>
 #include <sstream>
 Level::Level() {
+	this->curWave = 0;
 }
 void Level::Load(int Number) {
 	curWave = 0;
 	std::string path = "Levels/Lvl" + IntToStr(Number) + "/LvlInfo.txt";
 	std::ifstream fin(path);
+	std::string Type;
 	int WaveAmount,EnemyAmount,PointsAmount, x, y;
 	fin >> WaveAmount;
 	waves = new Wave[WaveAmount];
@@ -16,13 +20,14 @@ void Level::Load(int Number) {
 		fin >> EnemyAmount;
 		for (int i = 0; i < EnemyAmount; i++)
 		{
+			fin >> Type;
 			fin >> PointsAmount;
 			fin >> x >> y;
-			waves[k].Enemies.push_back(new Enemy(sf::Vector2f(x, y)));
+			waves[k].Enemies.push_back(EnemyFactory::getEnemy(sf::Vector2f(x, y),Type));
 			Enemy*& en = waves[k].Enemies.back();
 			for (int j = 0; j < PointsAmount-1; j++) {
 				fin >> x >> y;
-				en->addCheckpoint(sf::Vector2f(x, y));
+				en->addPoint(sf::Vector2f(x, y));
 			}
 		}
 	}
