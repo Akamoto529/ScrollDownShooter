@@ -172,7 +172,7 @@
     <ClInclude Include="Gun.h" />
     <ClInclude Include="Hitbox.h" />
     <ClInclude Include="Level.h" />
-    <ClInclude Include="loader.h" />
+    <ClInclude Include="Loader.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="ProjFactory.h" />
