@@ -20,5 +20,4 @@ const enum ObjectID {
 	background_ID, polytech_ID, space_ID,
 	ID_count
 };
-
 const enum Hostility { friendly, hostile, neutral };

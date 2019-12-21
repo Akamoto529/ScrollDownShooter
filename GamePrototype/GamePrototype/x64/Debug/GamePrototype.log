@@ -1,5 +1,85 @@
-﻿  Gun.cpp
+﻿  Animation.cpp
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(10,42): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(10,42): warning C4244:         with
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(10,42): warning C4244:         [
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(10,42): warning C4244:             T=int
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(10,42): warning C4244:         ]
+  Background.cpp
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(11,43): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(11,43): warning C4244:         with
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(11,43): warning C4244:         [
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(11,43): warning C4244:             T=int
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(11,43): warning C4244:         ]
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Background.cpp(6,42): error C2664: 'sf::Texture &Loader::TX(const std::string)': cannot convert argument 1 from 'const int' to 'const std::string'
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Background.cpp(6,42): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Loader.h(26,15): message : see declaration of 'Loader::TX'
+  Bullet.cpp
+  Collision.cpp
+  Enemy.cpp
+  Enemy1.cpp
+  Enemy2.cpp
+  EnemyFactory.cpp
+  Entity.cpp
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Background.cpp(11,57): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,96): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,96): warning C4244:         with
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,96): warning C4244:         [
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,96): warning C4244:             T=unsigned int
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,96): warning C4244:         ]
+  Gun.cpp
+  Hitbox.cpp
+  Level.cpp
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,56): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,56): warning C4244:         with
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,56): warning C4244:         [
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,56): warning C4244:             T=unsigned int
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,56): warning C4244:         ]
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244:         with
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244:         [
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244:             T=float
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244:         ]
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,67): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,67): warning C4244:         with
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,67): warning C4244:         [
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,67): warning C4244:             T=float
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,67): warning C4244:         ]
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244:         with
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244:         [
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244:             T=float
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244:         ]
+  Loader.cpp
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:         with
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:         [
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:             T=float
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:         ]
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,35): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,35): warning C4244:         with
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,35): warning C4244:         [
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,35): warning C4244:             T=float
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,35): warning C4244:         ]
+  Main.cpp
+  Player.cpp
   Projectile.cpp
+  ProjFactory.cpp
+  Rifle.cpp
+  UI.cpp
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,32): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,32): warning C4244:         with
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,32): warning C4244:         [
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,32): warning C4244:             T=float
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,32): warning C4244:         ]
   Scene.cpp
   Generating Code...
-  GamePrototype.vcxproj -> C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         with
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         [
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:             T=unsigned int
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         ]
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\ProjFactory.h(9): warning C4715: 'ProjFactory::getProj': not all control paths return a value
+  Compiling...
+  Wave.cpp
+  Generating Code...
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\EnemyFactory.h(10): warning C4715: 'EnemyFactory::getEnemy': not all control paths return a value

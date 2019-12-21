@@ -1,15 +1,15 @@
 #include "Entity.h"
 
-Entity::Entity(const sf::Vector2f pos, const float speed, const int entityID)
+Entity::Entity(const sf::Vector2f pos, const float speed, const std::string entityName)
 {
 	this->speed = speed;
 	this->Transformable::setPosition(pos);
 
-	this->sp.setTexture(Loader::get()->TX(entityID));
+	this->sp.setTexture(Loader::get()->TX(entityName));
 	this->sp.setOrigin(this->sp.getTexture()->getSize().x / 2, this->sp.getTexture()->getSize().y / 2);
 	this->sp.setPosition(pos);
 
-	this->hitbox = Loader::get()->HB(entityID);
+	this->hitbox = Loader::get()->HB(entityName);
 	this->hitbox.setOrigin(this->sp.getOrigin());
 	this->hitbox.setPosition(pos);
 }
