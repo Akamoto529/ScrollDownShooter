@@ -1,12 +1,2 @@
-﻿  Loader.cpp
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,35): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,35): warning C4244:         with
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,35): warning C4244:         [
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,35): warning C4244:             T=float
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,35): warning C4244:         ]
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,32): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,32): warning C4244:         with
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,32): warning C4244:         [
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,32): warning C4244:             T=float
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(22,32): warning C4244:         ]
-  GamePrototype.vcxproj -> D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe
+﻿  Scene.cpp
+  GamePrototype.vcxproj -> C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe

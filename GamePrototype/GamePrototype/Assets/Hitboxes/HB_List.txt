@@ -1,3 +1,4 @@
 Player
+Enemy1
 Enemy2
 Bullet

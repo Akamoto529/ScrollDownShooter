@@ -15,6 +15,7 @@ class Loader
 	std::map<std::string, Hitbox> Hitboxes;
 	//Hitbox loadHB(std::string Name);
 public:
+	// Убрать этот метод.
 	static Loader* get()
 	{
 		if (!instance)

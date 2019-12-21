@@ -10,6 +10,8 @@ const int PLAYER_POS_X = WINDOW_X / 2;
 const int PLAYER_POS_Y = WINDOW_Y - 100;
 
 const float SQRT_2 = 1.41421356f;
+const float PI = 3.14159265f;
+
 const enum ObjectID {
 	player_ID = 0, pl_ID,
 	enemy_ID, enemy1_ID, enemy2_ID, enemy5_ID,

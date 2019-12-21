@@ -11,6 +11,7 @@ Projectile::Projectile(const sf::Vector2f direction, const int damage, const  in
 {
 	this->damage = damage;
 	this->setVelocity(direction);
+	this->setRotation((1+direction.y)*90 + atan(direction.x/direction.y)/PI*180);
 	this->hostility = hostility;
 }
  void Projectile::step(const sf::Time dt) {
