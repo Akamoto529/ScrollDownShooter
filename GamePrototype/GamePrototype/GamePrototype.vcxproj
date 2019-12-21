@@ -155,6 +155,7 @@
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="ProjFactory.cpp" />
     <ClCompile Include="Rifle.cpp" />
+    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Wave.cpp" />
@@ -181,6 +182,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="Rifle.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="Timer.h" />
     <ClInclude Include="Wave.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>

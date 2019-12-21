@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Projectile.h"
 #include "ProjFactory.h"
+#include "Timer.h"
 
 // Базовый класс для пушек.
 class Gun
@@ -14,7 +15,7 @@ protected:
 	int hostility;
 	std::string projName;
 	sf::Time reloadTime;
-	sf::Clock timer;
+	Timer timer;
 public:
 	Gun(const sf::Vector2f direction, const std::string projName, const sf::Time reloadTime, const int hostility);
 	sf::Vector2f getDirection() const;
@@ -28,17 +29,6 @@ class Shotgun : public Gun
 };
 
 class Machinegun : public Gun
-{
-
-};
-
-// Махать мечом - получится ли?
-class Swinger : public Gun
-{
-
-};
-
-class Zapper : public Gun
 {
 
 };

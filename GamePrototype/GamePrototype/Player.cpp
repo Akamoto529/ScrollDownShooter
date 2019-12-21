@@ -44,9 +44,9 @@ void Player::step(const sf::Time dt)
 		dir.y += 1.f;
 	}
 	if (abs(dir.x) + abs(dir.y) == 2)
-		this->move(speed * dt.asMicroseconds() / 1000000 * dir / SQRT_2);
+		this->move(speed * dt.asSeconds() * dir / SQRT_2);
 	else
-		this->move(speed * dt.asMicroseconds() / 1000000 * dir);
+		this->move(speed * dt.asSeconds() * dir);
 }
 
 bool Player::takeDamage(const int dmg)

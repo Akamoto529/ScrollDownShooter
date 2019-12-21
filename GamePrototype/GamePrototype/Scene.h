@@ -8,6 +8,7 @@
 #include "UI.h"
 #include "Background.h"
 #include "Bonus.h"
+#include "Timer.h"
 
 // Игровое поле.
 class Scene : public sf::Drawable

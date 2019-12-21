@@ -11,7 +11,7 @@ Gun::Gun(const sf::Vector2f direction, const std::string projName, const sf::Tim
 	this->reloadTime = reloadTime;
 	this->projName = projName;
 	this->hostility = hostility;
-	timer.restart();
+	timer.reset();
 }
 
 sf::Vector2f Gun::getDirection() const

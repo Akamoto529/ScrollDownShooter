@@ -13,7 +13,7 @@ void Enemy2::step(const sf::Time dt)
 		float Y = Path[nextPoint].y - this->getPosition().y;
 		float length = sqrt(X * X + Y * Y);
 		sf::Vector2f movement(X, Y);
-		movement = movement / length * speed * (dt.asMicroseconds() / 1000000.f);
+		movement = movement / length * speed * dt.asSeconds();
 		if ((abs(movement.x) <= abs(X)) && (abs(movement.y) <= abs(Y)))
 		{
 			this->move(movement);

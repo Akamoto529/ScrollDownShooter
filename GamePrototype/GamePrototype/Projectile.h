@@ -15,7 +15,6 @@ private:
 public:
 	Projectile(const sf::Vector2f direction, const int damage, const int hostility,
 		const sf::Vector2f pos, const float speed, const std::string Name);
-	virtual void step(const sf::Time dt);
 	int getDamage() const;
 	int getHostility() const;
 	sf::Vector2f getVelocity() const;

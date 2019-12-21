@@ -72,7 +72,7 @@ bool Scene::outOfBounds(const Entity* entity) const
 	return 0;
 }
 
-void Scene::update(sf::Time dt)
+void Scene::update(const sf::Time dt)
 {
 	bg->step(dt);
 	player->step(dt);

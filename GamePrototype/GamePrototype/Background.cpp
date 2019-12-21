@@ -19,7 +19,7 @@ void Background::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 void Background::step(const sf::Time dt)
 {
-	this->sp.move((float)dt.asMicroseconds() / 1000000.f * this->velocity);
+	this->sp.move(dt.asSeconds() * this->velocity);
 	if (this->sp.getPosition().y >= WINDOW_Y)
 		this->sp.move(0, -this->sp.getOrigin().y);
 }
