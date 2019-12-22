@@ -16,8 +16,10 @@ class Scene : public sf::Drawable
 	Background* bg;
 	std::list<Bonus*> bonuses;
 	std::list<Enemy*> enemies;
-	Level lvl;
+	UI *ui;
 	Player* player;
+
+	Level lvl;
 	std::list<Projectile*> projectiles;
 	//UI ui;
 	// Размер игрового поля.

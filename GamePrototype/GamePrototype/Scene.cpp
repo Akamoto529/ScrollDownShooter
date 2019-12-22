@@ -14,6 +14,7 @@ Scene::Scene()
 	bg = new Background(200, "space");
 	this->lvl.Load(1);
 	this->player = new Player();
+	this->ui = new UI(player);
 	AddEntities(lvl.getEnemies());
 }
 
@@ -52,13 +53,14 @@ void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	{
 		target.draw(*enemy, states);
 	}
-
 	target.draw(*player, states);
 
 	for (Bonus* bonus : this->bonuses)
 	{
 		target.draw(*bonus, states);
 	}
+}
+	target.draw(*ui, states);
 }
 
 bool Scene::outOfBounds(const Entity* entity) const
@@ -122,6 +124,7 @@ void Scene::update(const sf::Time dt)
 			if (!player->takeDamage(projectile->getDamage()))
 				std::cout << "u ded\n";
 			projectile = nullptr;
+			i = projectiles.erase(i);
 		}
 
 		if (projectile == nullptr)

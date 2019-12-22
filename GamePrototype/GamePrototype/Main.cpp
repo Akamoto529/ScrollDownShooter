@@ -45,12 +45,6 @@ int main()
 			window.draw(scene);
 			window.display();
 		}
-		/*UI ui;
-		for (int i = 0; i < 3; i++)
-		{
-			window.draw(ui.mas[i]);
-		}
-		window.display();*/
 	}
 	return 0;
 }
