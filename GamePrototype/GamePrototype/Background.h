@@ -5,10 +5,13 @@
 class Background : public sf::Drawable
 {
 private:
+	bool frozen;
 	sf::Sprite sp;
 	sf::Vector2f velocity;
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 public:
+	void freeze();
 	Background(const float speed, const std::string Name);
 	void step(const sf::Time dt);
+	void unfreeze();
 };

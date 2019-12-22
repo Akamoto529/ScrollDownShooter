@@ -11,9 +11,11 @@ class Player : public Entity
 	int HP;
 public:
 	Player();
+	virtual void freeze() override;
 	const int getFullHP();
 	int getHP() const;
 	bool takeDamage(const int dmg);
 	std::list<Projectile*> shoot() const;
 	void step(const sf::Time dt);
+	virtual void unfreeze() override;
 };

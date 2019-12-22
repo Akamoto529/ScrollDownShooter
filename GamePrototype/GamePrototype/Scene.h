@@ -32,5 +32,7 @@ public:
 	void AddEntities(std::list<Bonus*> bonuses);
 	void AddEntities(std::list<Enemy*> enemies);
 	void AddEntities(std::list<Projectile*> projectiles);
+	void freeze();
+	void unfreeze();
 	void update(const sf::Time dt);
 };

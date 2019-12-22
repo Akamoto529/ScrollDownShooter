@@ -10,5 +10,6 @@ static void increaseHP(Player* player);
 
 void Bonus::step(const sf::Time dt)
 {
-	this->move(sf::Vector2f(cos((this->getPosition().y-this->startPos.y)/20)/5, dt.asSeconds()*speed));
+	if (!frozen)
+		this->move(sf::Vector2f(cos((this->getPosition().y-this->startPos.y)/20)/5, dt.asSeconds()*speed));
 }

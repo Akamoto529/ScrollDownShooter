@@ -5,5 +5,6 @@ Bullet::Bullet(const sf::Vector2f pos, const sf::Vector2f direction, const int h
 
 void Bullet::step(const sf::Time dt)
 {
-	this->move(dt.asSeconds() * this->getVelocity());
+	if (!frozen)
+		this->move(dt.asSeconds() * this->getVelocity());
 }

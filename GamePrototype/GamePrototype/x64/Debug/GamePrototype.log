@@ -1,13 +1,2 @@
-﻿  Bonus.cpp
-  Main.cpp
-  Player.cpp
-  UI.cpp
-  Scene.cpp
-  Wave.cpp
-  Generating Code...
-C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         with
-C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         [
-C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:             T=unsigned int
-C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         ]
+﻿  Bullet.cpp
   GamePrototype.vcxproj -> C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe

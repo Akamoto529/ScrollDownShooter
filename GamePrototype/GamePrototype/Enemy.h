@@ -15,8 +15,10 @@ protected:
 public:
 	Enemy(const sf::Vector2f pos, std::string Name);
 	void addPoint(const sf::Vector2f pos);
+	virtual void freeze() override;
 	std::list<Projectile*> shoot() const;
 	void step(const sf::Time dt);
 	bool takeDamage(const int dmg);
+	virtual void unfreeze() override;
 };
 

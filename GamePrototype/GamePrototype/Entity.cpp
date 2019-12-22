@@ -2,6 +2,8 @@
 
 Entity::Entity(const sf::Vector2f pos, const float speed, const std::string entityName)
 {
+	this->frozen = false;
+
 	this->speed = speed;
 	this->Transformable::setPosition(pos);
 
@@ -17,6 +19,11 @@ void Entity::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(this->sp, states);
 	//target.draw(this->hitbox, states);
+}
+
+void Entity::freeze()
+{
+	this->frozen = true;
 }
 
 sf::FloatRect Entity::getSpriteBounds() const{
@@ -59,4 +66,9 @@ void Entity::setRotation(const float angle)
 	this->Transformable::setRotation(angle);
 	this->sp.setRotation(angle);
 	this->hitbox.setRotation(angle);
+}
+
+void Entity::unfreeze()
+{
+	this->frozen = false;
 }

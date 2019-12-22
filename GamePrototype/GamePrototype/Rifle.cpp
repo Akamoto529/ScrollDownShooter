@@ -6,7 +6,7 @@ Rifle::Rifle(const sf::Vector2f direction, std::string projName, const int hosti
 
 	std::list<Projectile*> Rifle::shoot(const sf::Vector2f position)
 	{
-		if (this->timer.getElapsedTime() >= this->reloadTime)
+		if (!frozen && this->timer.getElapsedTime() >= this->reloadTime)
 		{
 			this->timer.reset();
 			return{ProjFactory::getProj(position, this->getDirection(), this->hostility,"Bullet")};

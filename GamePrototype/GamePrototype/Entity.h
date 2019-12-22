@@ -7,6 +7,8 @@
 class Entity : public sf::Drawable, public sf::Transformable
 {
 protected:
+	// Заморозка объекта для паузы и абилки.
+	bool frozen;
 	Hitbox hitbox;
 	float speed;
 	sf::Sprite sp;
@@ -14,6 +16,7 @@ protected:
 public:
 	Entity(const sf::Vector2f pos, const float speed, const std::string entityName);
 	//~Entity();
+	virtual void freeze();
 	Hitbox getHitbox() const;
 	sf::FloatRect getHitboxBounds() const;
 	sf::FloatRect getSpriteBounds()	const;
@@ -22,5 +25,6 @@ public:
 	void setPosition(const sf::Vector2f position);
 	void setRotation(const float angle);
 	virtual void step(const sf::Time dt) = 0;
+	virtual void unfreeze();
 };
 

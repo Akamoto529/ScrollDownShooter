@@ -8,7 +8,7 @@ Enemy2::Enemy2(const sf::Vector2f pos)
 };
 void Enemy2::step(const sf::Time dt)
 {
-	if (nextPoint < Path.size()) {
+	if (!frozen && nextPoint < Path.size()) {
 		float X = Path[nextPoint].x - this->getPosition().x;
 		float Y = Path[nextPoint].y - this->getPosition().y;
 		float length = sqrt(X * X + Y * Y);

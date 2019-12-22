@@ -17,9 +17,15 @@ std::list<Projectile*> Enemy::shoot() const
 	return gun->shoot(this->getPosition());
 }
 
+void Enemy::freeze()
+{
+	this->Entity::freeze();
+	this->gun->freeze();
+}
+
 void Enemy::step(const sf::Time dt)
 {
-	if (nextPoint < Path.size()) {
+	if (!frozen && nextPoint < Path.size()) {
 		float X = Path[nextPoint].x - this->getPosition().x;
 		float Y = Path[nextPoint].y - this->getPosition().y;
 		float length = sqrt(X*X + Y*Y);
@@ -43,4 +49,10 @@ bool Enemy::takeDamage(const int dmg)
 		// Удаление происходит в сцене, не здесь.
 		return 0;
 	return 1;
+}
+
+void Enemy::unfreeze()
+{
+	this->Entity::unfreeze();
+	this->gun->unfreeze();
 }
