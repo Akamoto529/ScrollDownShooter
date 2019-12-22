@@ -1,5 +1,5 @@
 #include "Enemy2.h"
-#include "Rifle.h"
+
 Enemy2::Enemy2(const sf::Vector2f pos)
 	: Enemy(pos, "Enemy2")
 {

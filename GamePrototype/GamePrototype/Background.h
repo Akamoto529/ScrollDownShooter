@@ -10,8 +10,8 @@ private:
 	sf::Vector2f velocity;
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 public:
-	void freeze();
 	Background(const float speed, const std::string Name);
+	void freeze();
 	void step(const sf::Time dt);
 	void unfreeze();
 };

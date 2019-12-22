@@ -6,7 +6,10 @@ Bonus::Bonus(sf::Vector2f pos, std::string name)
 	this->startPos = pos;
 }
 
-static void increaseHP(Player* player);
+//void Bonus::increaseHP(Player* player)
+//{
+//	player.
+//}
 
 void Bonus::step(const sf::Time dt)
 {

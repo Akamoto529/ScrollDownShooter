@@ -1,6 +1,5 @@
 #include "Hitbox.h"
 
-// «аглушка дл€ конструктора Entity, нужно избавитьс€.
 Hitbox::Hitbox()
 {
 	this->vertices = {};
@@ -40,6 +39,7 @@ Hitbox::Hitbox(std::list<sf::Vector2f> vertices)
 
 void Hitbox::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
+	// Bounding Box.
 	auto glob = this->getGlobalBounds();
 	sf::VertexArray rect(sf::LineStrip,5);
 	rect[0] = sf::Vector2f(glob.left, glob.top);
@@ -49,6 +49,7 @@ void Hitbox::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	rect[4] = sf::Vector2f(glob.left, glob.top);
 	target.draw(rect);
 
+	// Polygon.
 	sf::VertexArray box(sf::TrianglesStrip);
 	for (sf::Vector2f vertex : this->getVerticesAbs())
 		box.append(sf::Vertex(vertex, sf::Color::Green));

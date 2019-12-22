@@ -1,10 +1,11 @@
 ﻿#include "Enemy.h"
-#include "Rifle.h"
-#include "config.h"
+
 Enemy::Enemy(const sf::Vector2f pos, std::string Name)
 	: Entity(pos, 40.f, Name)
 {
 	this->nextPoint = 0;
+	this->HP = 0;
+	this->gun = nullptr;
 };
 
 void Enemy::addPoint(const sf::Vector2f pos)
@@ -48,7 +49,8 @@ bool Enemy::takeDamage(const int dmg)
 	if (this->HP <= 0)
 		// Удаление происходит в сцене, не здесь.
 		return 0;
-	return 1;
+	else
+		return 1;
 }
 
 void Enemy::unfreeze()

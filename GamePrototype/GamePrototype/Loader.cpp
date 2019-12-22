@@ -1,5 +1,7 @@
 #include "Loader.h"
-#include <fstream>
+
+// NB: Для всех текстур фона - setRepeated(true).
+
 Loader* Loader::instance = 0;
 Loader::Loader()
 {
@@ -8,6 +10,7 @@ Loader::Loader()
 	while (!fin.eof()) {
 		fin >> str;
 		Textures[str].loadFromFile("Assets/Textures/" + str + ".png");
+		Textures[str].setRepeated(true);
 	}
 	fin.close();
 	fin.open("Assets/Hitboxes/HB_List.txt");
@@ -23,10 +26,7 @@ Loader::Loader()
 		finHB.close();
 		Hitboxes[str] = temp;
 	}
-	fin.close();
-	//setRepeated потом тоже перепишу в файлы
-	Textures["polytech"].setRepeated(true);
-	Textures["space"].setRepeated(true);
+	fin.close();	
 }
 Hitbox& Loader::HB(const std::string Name)
 {

@@ -13,14 +13,14 @@ Background::Background(const float speed, const std::string Name)
 	this->sp.setPosition(0, -this->sp.getOrigin().y + WINDOW_Y);
 }
 
-void Background::freeze()
-{
-	this->frozen = true;
-}
-
 void Background::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(this->sp, states);
+}
+
+void Background::freeze()
+{
+	this->frozen = true;
 }
 
 void Background::step(const sf::Time dt)
@@ -28,8 +28,9 @@ void Background::step(const sf::Time dt)
 	if (!frozen)
 	{
 		this->sp.move(dt.asSeconds() * this->velocity);
-		/*if (this->sp.getPosition().y >= WINDOW_Y)
-			this->sp.move(0, -this->sp.getOrigin().y);*/
+		// Сдвиг назад на склейке.
+		if (this->sp.getPosition().y >= WINDOW_Y)
+			this->sp.move(0, -this->sp.getOrigin().y);
 	}
 }
 

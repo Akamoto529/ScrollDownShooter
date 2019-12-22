@@ -1,7 +1,4 @@
 ﻿#include "Scene.h"
-#include <iostream>
-#include "config.h"
-#include "Collision.h"
 
 Scene::Scene()
 {
@@ -37,7 +34,7 @@ void Scene::AddEntities(std::list<Enemy*> enemies)
 void Scene::AddEntities(std::list<Projectile*> projectiles)
 {
 	for (Projectile* projectile : projectiles)
-	this->projectiles.push_back(projectile);
+		this->projectiles.push_back(projectile);
 }
 
 void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
@@ -47,14 +44,11 @@ void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	{
 		target.draw(*projectile, states);
 	}
-	// ...
 	for (Enemy* enemy : this->enemies)
 	{
 		target.draw(*enemy, states);
 	}
-
 	target.draw(*player, states);
-
 	for (Bonus* bonus : this->bonuses)
 	{
 		target.draw(*bonus, states);
@@ -63,7 +57,6 @@ void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 
 void Scene::freeze()
 {
-	bg->freeze();
 	for (auto& enemy : enemies)
 		enemy->freeze();
 	for (auto& projectile : projectiles)
@@ -79,12 +72,12 @@ bool Scene::outOfBounds(const Entity* entity) const
 		|| box.top > this->windowSize.y
 		|| box.left > this->windowSize.x)
 		return 1;
-	return 0;
+	else
+		return 0;
 }
 
 void Scene::unfreeze()
 {
-	bg->unfreeze();
 	for (auto& enemy : enemies)
 		enemy->unfreeze();
 	for (auto& projectile : projectiles)

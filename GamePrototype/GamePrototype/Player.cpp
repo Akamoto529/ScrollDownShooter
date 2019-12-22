@@ -1,12 +1,16 @@
 #include "Player.h"
-#include "config.h"
-#include "Rifle.h"
 
 Player::Player()
 	: Entity(sf::Vector2f(PLAYER_POS_X,PLAYER_POS_Y), 400.f, "Player")
 {
 	this->HP = 5;
 	this->gun = new Rifle(sf::Vector2f(0, -1), "Bullet", friendly);
+}
+
+void Player::freeze()
+{
+	this->frozen = true;
+	this->gun->freeze();
 }
 
 const int Player::getFullHP()
@@ -17,12 +21,6 @@ const int Player::getFullHP()
 int Player::getHP() const
 {
 	return this->HP;
-}
-
-void Player::freeze()
-{
-	this->frozen = true;
-	this->gun->freeze();
 }
 
 std::list<Projectile*> Player::shoot() const
@@ -64,7 +62,8 @@ bool Player::takeDamage(const int dmg)
 	if (this->HP <= 0)
 		// Удаление происходит в сцене, не здесь.
 		return 0;
-	return 1;
+	else
+		return 1;
 }
 
 void Player::unfreeze()

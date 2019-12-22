@@ -1,12 +1,11 @@
 ﻿#pragma once
-#include "SFML/Graphics.hpp"
+#include <fstream>
 #include <vector>
+#include "SFML/Graphics.hpp"
 #include "config.h"
 #include "Hitbox.h"
-//#include <map>
 
 // Загружает и хранит в себе текстуры и схемы хитбоксов (Singleton).
-// список объектов - см. config.h.
 class Loader
 {
 	static Loader* instance;
