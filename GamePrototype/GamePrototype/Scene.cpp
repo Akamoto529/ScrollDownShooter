@@ -9,15 +9,18 @@ Scene::Scene()
 	this->windowSize.y = (uint16_t)WINDOW_Y;
 	this->bonuses = {};
 	this->enemies = {};
-	this->projectiles = {};
-
-	bg = new Background(200, "space");
-	this->lvl.Load(1);
+	this->PlayerProjs = {};
+	this->EnemyProjs = {};
+	LoadLevel(1);
 	this->player = new Player();
 	this->ui = new UI(player);
-	AddEntities(lvl.getEnemies());
+	this->WaveTimer.start();
 }
-
+void Scene::LoadLevel(int LvlNum) {
+	this->lvl.Load(LvlNum);
+	this->bg = lvl.getBG();
+	this->curWave = 0;
+}
 void Scene::AddEntities(std::list<Bonus*> bonuses)
 {
 	for (Bonus* bonus : bonuses)
@@ -25,7 +28,6 @@ void Scene::AddEntities(std::list<Bonus*> bonuses)
 		this->bonuses.push_back(bonus);
 	}
 }
-
 void Scene::AddEntities(std::list<Enemy*> enemies)
 {
 	for (Enemy* enemy : enemies)
@@ -34,17 +36,22 @@ void Scene::AddEntities(std::list<Enemy*> enemies)
 		this->enemies.back()->setRotation(180);
 	}
 }
-
-void Scene::AddEntities(std::list<Projectile*> projectiles)
-{
-	for (Projectile* projectile : projectiles)
-	this->projectiles.push_back(projectile);
+void Scene::AddPlayerProjs(std::list<Projectile*> Projs) {
+	for (Projectile* projectile : Projs)
+		this->PlayerProjs.push_back(projectile);
 }
-
+void Scene::AddEnemyProjs(std::list<Projectile*> Projs) {
+	for (Projectile* projectile : Projs)
+		this->EnemyProjs.push_back(projectile);
+}
 void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(*bg, states);
-	for (Projectile* projectile : this->projectiles)
+	for (Projectile* projectile : this->EnemyProjs)
+	{
+		target.draw(*projectile, states);
+	}
+	for (Projectile* projectile : this->PlayerProjs)
 	{
 		target.draw(*projectile, states);
 	}
@@ -59,10 +66,8 @@ void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	{
 		target.draw(*bonus, states);
 	}
-}
 	target.draw(*ui, states);
 }
-
 bool Scene::outOfBounds(const Entity* entity) const
 {
 	sf::FloatRect box = entity->getSpriteBounds();
@@ -73,12 +78,16 @@ bool Scene::outOfBounds(const Entity* entity) const
 		return 1;
 	return 0;
 }
-
 void Scene::update(const sf::Time dt)
 {
+	if ((curWave == 0) || (WaveTimer.getElapsedTime().asMilliseconds()/1000.f>=lvl.getWaveTime(curWave-1))) {
+		AddEntities(lvl.getEnemies(curWave++));
+		WaveTimer.reset();
+	}
 	bg->step(dt);
 	player->step(dt);
-	this->AddEntities(player->shoot());
+	//this->AddEntities(player->shoot());
+	AddPlayerProjs(player->shoot());
 
 	for (auto k = this->bonuses.begin(); k != this->bonuses.end(); ++k)
 	{
@@ -94,46 +103,57 @@ void Scene::update(const sf::Time dt)
 			break;
 	}
 
-	for (auto i = this->projectiles.begin(); i != this->projectiles.end(); ++i)
+
+
+	for (auto i = this->PlayerProjs.begin(); i != this->PlayerProjs.end(); ++i)
 	{
-		auto& projectile = *i;
-		projectile->step(dt);
-
-		if (outOfBounds(projectile))
-			projectile = nullptr;
-
-		else if (projectile->getHostility() != hostile)
+		auto& proj = *i;
+		proj->step(dt);
+		if (outOfBounds(proj))
+			proj = nullptr;
+		else if (proj->getHostility() != hostile)
 		{
 			for (auto& enemy : this->enemies)
 			{
-				if (Collision::CollisionTest(enemy, projectile))
+				if (Collision::CollisionTest(enemy, proj))
 				{
-					if (!enemy->takeDamage(projectile->getDamage()))
+					if (!enemy->takeDamage(proj->getDamage()))
 					{
-						this->AddEntities({new Bonus(enemy->getPosition(),"hp-bonus")});
+						this->AddEntities({ new Bonus(enemy->getPosition(),"hp-bonus") });
 						enemy = nullptr;
 					}
-					projectile = nullptr;
+					proj = nullptr;
 					break;
 				}
 			}
 		}
+		if (proj == nullptr)
+			i = PlayerProjs.erase(i);
 
-		if (projectile != nullptr && projectile->getHostility() != friendly && Collision::CollisionTest(this->player, projectile))
-		{
-			if (!player->takeDamage(projectile->getDamage()))
-				std::cout << "u ded\n";
-			projectile = nullptr;
-			i = projectiles.erase(i);
-		}
-
-		if (projectile == nullptr)
-			i = projectiles.erase(i);
-
-		if (this->projectiles.empty() || i == this->projectiles.end())
+		if (this->PlayerProjs.empty() || i == this->PlayerProjs.end())
 			break;
 	}
+	for (auto i = this->EnemyProjs.begin(); i != this->EnemyProjs.end(); ++i)
+	{
+		auto& proj = *i;
+		proj->step(dt);
 
+		if (outOfBounds(proj))
+			proj = nullptr;
+		if (proj != nullptr && Collision::CollisionTest(this->player, proj))
+		{
+			if (!player->takeDamage(proj->getDamage()))
+				std::cout << "u ded\n";
+			proj = nullptr;
+			i = EnemyProjs.erase(i);
+		}
+
+		if (proj == nullptr)
+			i = EnemyProjs.erase(i);
+
+		if (this->EnemyProjs.empty() || i == this->EnemyProjs.end())
+			break;
+	}
 	for (auto j = this->enemies.begin(); j != this->enemies.end(); ++j)
 	{
 		auto& enemy = *j;
@@ -150,10 +170,11 @@ void Scene::update(const sf::Time dt)
 		else
 		{
 			enemy->step(dt);
-			AddEntities(enemy->shoot());
+			AddEnemyProjs(enemy->shoot());
 		}
 
 		if (this->enemies.empty() || j == this->enemies.end())
 			break;
 	}
+	ui->Update();
 }
