@@ -12,15 +12,18 @@ private:
 	// Ненормализованный вектор направления.
 	sf::Vector2f direction;
 protected:
+	bool frozen;
 	int hostility;
 	std::string projName;
 	sf::Time reloadTime;
 	Timer timer;
 public:
 	Gun(const sf::Vector2f direction, const std::string projName, const sf::Time reloadTime, const int hostility);
+	void freeze();
 	sf::Vector2f getDirection() const;
 	void setDirection(const sf::Vector2f direction);
 	virtual std::list<Projectile*> shoot(const sf::Vector2f position) = 0;
+	void unfreeze();
 };
 
 class Shotgun : public Gun

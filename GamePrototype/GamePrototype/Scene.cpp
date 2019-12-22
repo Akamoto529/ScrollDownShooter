@@ -63,6 +63,16 @@ void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	target.draw(*ui, states);
 }
 
+void Scene::freeze()
+{
+	bg->freeze();
+	for (auto& enemy : enemies)
+		enemy->freeze();
+	for (auto& projectile : projectiles)
+		if (projectile->getHostility() != friendly)
+			projectile->freeze();
+}
+
 bool Scene::outOfBounds(const Entity* entity) const
 {
 	sf::FloatRect box = entity->getSpriteBounds();
@@ -72,6 +82,15 @@ bool Scene::outOfBounds(const Entity* entity) const
 		|| box.left > this->windowSize.x)
 		return 1;
 	return 0;
+}
+
+void Scene::unfreeze()
+{
+	bg->unfreeze();
+	for (auto& enemy : enemies)
+		enemy->unfreeze();
+	for (auto& projectile : projectiles)
+		projectile->unfreeze();
 }
 
 void Scene::update(const sf::Time dt)

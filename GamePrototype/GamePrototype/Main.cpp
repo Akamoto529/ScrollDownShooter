@@ -21,14 +21,12 @@ int main()
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
 		{
-			dt.pause();
-			frame.pause();
+			scene.freeze();
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
 		{
-			dt.start();
-			frame.start();
+			scene.unfreeze();
 		}
 
 		if (sf::milliseconds(MSEC_PER_FRAME) - (frame.getElapsedTime() + dt.getElapsedTime()) < lastUpdateDuration)
