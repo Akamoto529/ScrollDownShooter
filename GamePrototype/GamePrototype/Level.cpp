@@ -6,7 +6,7 @@
 Level::Level() {
 	this->curWave = 0;
 }
-void Level::Load(int Number) {
+void Level::Load(int Number, Entity* player) {
 	curWave = 0;
 	std::string path = "Levels/Lvl" + IntToStr(Number) + "/LvlInfo.txt";
 	std::ifstream fin(path);
@@ -31,12 +31,14 @@ void Level::Load(int Number) {
 			}
 		}
 	}
+	waves[0].Enemies.push_back(EnemyFactory::getEnemy(sf::Vector2f(100.f,100.f), "Suicider", player));
 	fin.close();
 	return;
 }
 std::list<Enemy*> Level::getEnemies() {
 	return waves[curWave].Enemies;
 }
+
 std::string Level::IntToStr(int a) {
 	std::stringstream ss;
 	ss << a;

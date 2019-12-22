@@ -1,6 +1,7 @@
 Player
 Enemy1
 Enemy2
+Suicider
 Bullet
 polytech
 space

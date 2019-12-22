@@ -9,7 +9,7 @@ private:
 	int curWave;
 public:
 	Wave *waves;
-	void Load(int Number);
+	void Load(int Number, Entity* player);
 	std::string IntToStr(int a);
 	Level();
 	std::list<Enemy*> getEnemies();

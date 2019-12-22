@@ -1,5 +1,6 @@
 Player
 Enemy1
 Enemy2
+Suicider
 Bullet
 hp-bonus

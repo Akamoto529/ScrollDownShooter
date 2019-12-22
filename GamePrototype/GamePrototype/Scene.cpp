@@ -9,8 +9,8 @@ Scene::Scene()
 	this->projectiles = {};
 
 	bg = new Background(200, "space");
-	this->lvl.Load(1);
 	this->player = new Player();
+	this->lvl.Load(1, this->player);
 	AddEntities(lvl.getEnemies());
 }
 

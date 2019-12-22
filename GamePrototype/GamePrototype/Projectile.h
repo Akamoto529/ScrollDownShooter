@@ -10,6 +10,7 @@ private:
 	int hostility;
 	// Вектор скорости снаряда (px/sec).
 	sf::Vector2f velocity;
+protected:
 	void setVelocity(const sf::Vector2f direction);
 public:
 	Projectile(const sf::Vector2f direction, const int damage, const int hostility,
@@ -30,11 +31,6 @@ class Needle : public Projectile
 };
 
 class Laser : public Projectile
-{
-
-};
-
-class Homing : public Projectile
 {
 
 };

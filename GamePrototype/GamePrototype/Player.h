@@ -5,6 +5,7 @@
 #include "Gun.h"
 #include "Loader.h"
 #include "Rifle.h"
+#include "Missile.h"
 
 // Gun = Rifle(Bullet); Health = 5; Speed = 400.
 class Player : public Entity
