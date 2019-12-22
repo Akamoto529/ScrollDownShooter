@@ -1,37 +1,9 @@
-﻿  Animation.cpp
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(10,42): warning C4244:  '=': conversion from 'float' to 'T', possible loss of data
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(10,42): warning C4244:         with
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(10,42): warning C4244:         [
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(10,42): warning C4244:             T=int
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(10,42): warning C4244:         ]
-  Background.cpp
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(11,43): warning C4244:  '=': conversion from 'float' to 'T', possible loss of data
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(11,43): warning C4244:         with
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(11,43): warning C4244:         [
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(11,43): warning C4244:             T=int
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(11,43): warning C4244:         ]
-  Bonus.cpp
+﻿  Background.cpp
   Bullet.cpp
-  Collision.cpp
-  Enemy.cpp
   Enemy1.cpp
   Enemy2.cpp
   EnemyFactory.cpp
-  Entity.cpp
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Background.cpp(11,57): warning C4244:  'argument': conversion from 'int' to 'float', possible loss of data
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,96): warning C4244:  'argument': conversion from 'T' to 'float', possible loss of data
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,96): warning C4244:         with
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,96): warning C4244:         [
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,96): warning C4244:             T=unsigned int
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,96): warning C4244:         ]
-  Gun.cpp
-  Hitbox.cpp
   Level.cpp
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,56): warning C4244:  'argument': conversion from 'T' to 'float', possible loss of data
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,56): warning C4244:         with
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,56): warning C4244:         [
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,56): warning C4244:             T=unsigned int
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,56): warning C4244:         ]
 D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
 D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244:         with
 D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244:         [
@@ -47,39 +19,23 @@ D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level
 D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244:         [
 D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244:             T=float
 D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244:         ]
-  Loader.cpp
+  ProjFactory.cpp
+  Rifle.cpp
+  UI.cpp
 D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
 D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:         with
 D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:         [
 D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:             T=float
 D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:         ]
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,35): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,35): warning C4244:         with
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,35): warning C4244:         [
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,35): warning C4244:             T=float
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,35): warning C4244:         ]
-  Main.cpp
-  Player.cpp
-  Projectile.cpp
-  ProjFactory.cpp
-  Rifle.cpp
-  Timer.cpp
-  Generating Code...
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,32): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,32): warning C4244:         with
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,32): warning C4244:         [
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,32): warning C4244:             T=float
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,32): warning C4244:         ]
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\ProjFactory.h(9): warning C4715:  'ProjFactory::getProj': not all control paths return a value
-  Compiling...
-  UI.cpp
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\EnemyFactory.h(10): warning C4715:  'EnemyFactory::getEnemy': not all control paths return a value
-  Scene.cpp
   Wave.cpp
   Generating Code...
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:  'argument': conversion from 'T' to 'float', possible loss of data
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         with
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         [
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:             T=unsigned int
-D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         ]
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(9,43): warning C4244:  'argument': conversion from 'T' to 'float', possible loss of data
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(9,43): warning C4244:         with
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(9,43): warning C4244:         [
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(9,43): warning C4244:             T=unsigned int
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(9,43): warning C4244:         ]
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\ProjFactory.h(9): warning C4715:  'ProjFactory::getProj': not all control paths return a value
+D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\GamePrototype\EnemyFactory.h(10): warning C4715:  'EnemyFactory::getEnemy': not all control paths return a value
+  LINK : D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe not found or not built by the last incremental link; performing full link
+Animation.obj : warning LNK4099: PDB 'vc142.pdb' was not found with 'Animation.obj' or at 'D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\x64\Debug\vc142.pdb'; linking object as if no debug info
   GamePrototype.vcxproj -> D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe
