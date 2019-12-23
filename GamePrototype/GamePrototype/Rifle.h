@@ -4,7 +4,7 @@
 class Rifle : public Gun
 {
 public:
-	Rifle(const sf::Vector2f direction, std::string projName, const int hostility);
+	Rifle(const sf::Vector2f direction, std::string projNamey);
 	std::list<Projectile*> shoot(const sf::Vector2f position);
 };
 

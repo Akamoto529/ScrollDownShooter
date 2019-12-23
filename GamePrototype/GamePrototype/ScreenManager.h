@@ -1,7 +1,14 @@
 #pragma once
 #include "Scene.h"
+#include "Timer.h"
+#include "SFML/Graphics.hpp"
+#include "config.h"
 class ScreenManager
 {
-	Scene GameScreen;
+	Scene GameScene;
+public:
+	ScreenManager();
+	void Update();
+	void Render(sf::RenderWindow* window);
 };
 

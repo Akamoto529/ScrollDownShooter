@@ -17,7 +17,7 @@ protected:
 	sf::Time reloadTime;
 	Timer timer;
 public:
-	Gun(const sf::Vector2f direction, const std::string projName, const sf::Time reloadTime, const int hostility);
+	Gun(const sf::Vector2f direction, const std::string projName, const sf::Time reloadTime);
 	sf::Vector2f getDirection() const;
 	void setDirection(const sf::Vector2f direction);
 	virtual std::list<Projectile*> shoot(const sf::Vector2f position) = 0;

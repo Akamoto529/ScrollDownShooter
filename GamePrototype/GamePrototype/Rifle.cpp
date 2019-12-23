@@ -1,6 +1,6 @@
 #include "Rifle.h"
-Rifle::Rifle(const sf::Vector2f direction, std::string projName, const int hostility)
-	: Gun(direction, projName, sf::milliseconds(500), hostility)
+Rifle::Rifle(const sf::Vector2f direction, std::string projName)
+	: Gun(direction, projName, sf::milliseconds(500))
 {
 }
 
@@ -9,7 +9,7 @@ Rifle::Rifle(const sf::Vector2f direction, std::string projName, const int hosti
 		if (this->timer.getElapsedTime() >= this->reloadTime)
 		{
 			this->timer.reset();
-			return{ProjFactory::getProj(position, this->getDirection(), this->hostility,"Bullet")};
+			return{ProjFactory::getProj(position, this->getDirection(),"Bullet")};
 		}
 		return {};
 	}

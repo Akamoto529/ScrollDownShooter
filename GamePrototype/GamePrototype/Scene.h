@@ -1,18 +1,17 @@
 ﻿#pragma once
-#include <list>
-#include "Projectile.h"
-#include "Player.h"
+#include "Collision.h"
 #include "Loader.h"
-#include "Enemy.h"
 #include "Level.h"
+#include "Player.h"
 #include "UI.h"
-#include "Background.h"
 #include "Bonus.h"
 #include "Timer.h"
+#include "config.h"
 
 // Игровое поле.
 class Scene : public sf::Drawable
 {
+	Timer dtTimer;
 	Timer WaveTimer;
 	int curWave;	//Отсчёт волн начинается с 1, а не с нуля. Если curWave равен нулю, то уровень ещё не начался 
 	Background* bg;
@@ -24,10 +23,8 @@ class Scene : public sf::Drawable
 	std::list<Projectile*> PlayerProjs;
 	std::list<Projectile*> EnemyProjs;
 	sf::Vector2u windowSize;
-
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-	// Проверка выхода за границы экрана.
-	bool outOfBounds(const Entity* entity) const;
+	bool outOfBounds(const Entity* entity) const;	// Проверка выхода за границы экрана.
 public:
 	Scene();
 	void LoadLevel(int LvlNum);
@@ -36,5 +33,5 @@ public:
 	void AddEntities(std::list<Projectile*> projectiles);
 	void AddPlayerProjs(std::list<Projectile*> projectiles);
 	void AddEnemyProjs(std::list<Projectile*> projectiles);
-	void update(const sf::Time dt);
+	void update();
 };

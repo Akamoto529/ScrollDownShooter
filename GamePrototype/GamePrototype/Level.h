@@ -13,7 +13,7 @@ public:
 	void Load(int Number);
 	std::string IntToStr(int a);
 	Level();
-	int getWaveTime(int WaveNum);
+	float getWaveTime(int WaveNum);
 	Background* getBG();
 	std::list<Enemy*> getEnemies(int WaveNum);
 };

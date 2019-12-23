@@ -7,13 +7,12 @@ class Projectile : public Entity
 private:
 	int damage;
 	// hostile, friendly, neutral.
-	int hostility;
 	// Вектор скорости снаряда (px/sec).
 	sf::Vector2f velocity;
 
 	void setVelocity(const sf::Vector2f direction);
 public:
-	Projectile(const sf::Vector2f direction, const int damage, const int hostility,
+	Projectile(const sf::Vector2f direction, const int damage,
 		const sf::Vector2f pos, const float speed, const std::string Name);
 	int getDamage() const;
 	int getHostility() const;

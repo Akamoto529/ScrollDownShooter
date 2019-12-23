@@ -42,7 +42,7 @@ Background* Level::getBG() {
 std::list<Enemy*> Level::getEnemies(int WaveNum) {
 	return waves[WaveNum].Enemies;
 }
-int Level::getWaveTime(int WaveNum) {
+float Level::getWaveTime(int WaveNum) {
 	return waves[WaveNum].Time;
 }
 std::string Level::IntToStr(int a) {

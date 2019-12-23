@@ -1,7 +1,5 @@
 ﻿#include "Scene.h"
 #include <iostream>
-#include "config.h"
-#include "Collision.h"
 
 Scene::Scene()
 {
@@ -15,11 +13,20 @@ Scene::Scene()
 	this->player = new Player();
 	this->ui = new UI(player);
 	this->WaveTimer.start();
+	this->dtTimer.start();
 }
 void Scene::LoadLevel(int LvlNum) {
+	this->bonuses = {};
+	this->enemies = {};
+	this->PlayerProjs = {};
+	this->EnemyProjs = {};
+	this->player = new Player();
+	this->ui = new UI(player);
 	this->lvl.Load(LvlNum);
 	this->bg = lvl.getBG();
 	this->curWave = 0;
+	this->WaveTimer.reset();
+	this->dtTimer.reset();
 }
 void Scene::AddEntities(std::list<Bonus*> bonuses)
 {
@@ -78,103 +85,95 @@ bool Scene::outOfBounds(const Entity* entity) const
 		return 1;
 	return 0;
 }
-void Scene::update(const sf::Time dt)
+void Scene::update()
 {
-	if ((curWave == 0) || (WaveTimer.getElapsedTime().asMilliseconds()/1000.f>=lvl.getWaveTime(curWave-1))) {
-		AddEntities(lvl.getEnemies(curWave++));
-		WaveTimer.reset();
-	}
-	bg->step(dt);
-	player->step(dt);
-	//this->AddEntities(player->shoot());
-	AddPlayerProjs(player->shoot());
-
-	for (auto k = this->bonuses.begin(); k != this->bonuses.end(); ++k)
-	{
-		auto& bonus = *k;
-		bonus->step(dt);
-		if (Collision::CollisionTest(bonus, this->player))
-		{
-			bonus = nullptr;
-			k = this->bonuses.erase(k);
+	sf::Time dt = dtTimer.getElapsedTime();
+	if (dt.asMicroseconds()/1000.f>= UPDATE_TIME_MSEC) {
+		dtTimer.reset();
+		if ((curWave == 0) || (WaveTimer.getElapsedTime().asMilliseconds() / 1000.f >= lvl.getWaveTime(curWave - 1))) {
+			AddEntities(lvl.getEnemies(curWave++));
+			WaveTimer.reset();
 		}
+		bg->step(dt);
+		player->step(dt);
+		//this->AddEntities(player->shoot());
+		AddPlayerProjs(player->shoot());
 
-		if (this->bonuses.empty() || k == this->bonuses.end())
-			break;
-	}
-
-
-
-	for (auto i = this->PlayerProjs.begin(); i != this->PlayerProjs.end(); ++i)
-	{
-		auto& proj = *i;
-		proj->step(dt);
-		if (outOfBounds(proj))
-			proj = nullptr;
-		else if (proj->getHostility() != hostile)
+		for (auto k = this->bonuses.begin(); k != this->bonuses.end(); ++k)
 		{
-			for (auto& enemy : this->enemies)
+			auto& bonus = *k;
+			bonus->step(dt);
+			if (Collision::CollisionTest(bonus, this->player))
 			{
-				if (Collision::CollisionTest(enemy, proj))
-				{
-					if (!enemy->takeDamage(proj->getDamage()))
-					{
-						this->AddEntities({ new Bonus(enemy->getPosition(),"hp-bonus") });
-						enemy = nullptr;
-					}
-					proj = nullptr;
-					break;
-				}
+				bonus = nullptr;
+				k = this->bonuses.erase(k);
 			}
+
+			if (this->bonuses.empty() || k == this->bonuses.end())
+				break;
 		}
-		if (proj == nullptr)
-			i = PlayerProjs.erase(i);
 
-		if (this->PlayerProjs.empty() || i == this->PlayerProjs.end())
-			break;
-	}
-	for (auto i = this->EnemyProjs.begin(); i != this->EnemyProjs.end(); ++i)
-	{
-		auto& proj = *i;
-		proj->step(dt);
 
-		if (outOfBounds(proj))
-			proj = nullptr;
-		if (proj != nullptr && Collision::CollisionTest(this->player, proj))
+
+		for (auto i = this->PlayerProjs.begin(); i != this->PlayerProjs.end(); ++i)
 		{
-			if (!player->takeDamage(proj->getDamage()))
-				std::cout << "u ded\n";
-			proj = nullptr;
-			i = EnemyProjs.erase(i);
+			auto& proj = *i;
+			proj->step(dt);
+			if (outOfBounds(proj))	proj = nullptr;
+			else
+				for (auto& enemy : this->enemies)
+				{
+					if (Collision::CollisionTest(enemy, proj))
+					{
+						if (!enemy->takeDamage(proj->getDamage()))
+						{
+							this->AddEntities({ new Bonus(enemy->getPosition(),"hp-bonus") });
+							enemy = nullptr;
+						}
+						proj = nullptr;
+						break;
+					}
+				}
+			if (proj == nullptr)	i = PlayerProjs.erase(i);
+			if (this->PlayerProjs.empty() || i == this->PlayerProjs.end())	break;
 		}
-
-		if (proj == nullptr)
-			i = EnemyProjs.erase(i);
-
-		if (this->EnemyProjs.empty() || i == this->EnemyProjs.end())
-			break;
-	}
-	for (auto j = this->enemies.begin(); j != this->enemies.end(); ++j)
-	{
-		auto& enemy = *j;
-		if (Collision::CollisionTest(enemy, this->player))
+		for (auto i = this->EnemyProjs.begin(); i != this->EnemyProjs.end(); ++i)
 		{
-			this->AddEntities({ new Bonus(enemy->getPosition(),"hp-bonus") });
-			enemy = nullptr;
-			this->player->takeDamage(player->getFullHP());
-			std::cout << player->getHP();
+			auto& proj = *i;
+			proj->step(dt);
+			if (outOfBounds(proj))	proj = nullptr;
+			if (proj != nullptr && Collision::CollisionTest(this->player, proj))
+			{
+				if (!player->takeDamage(proj->getDamage()))
+					std::cout << "u ded\n";
+				proj = nullptr;
+				i = EnemyProjs.erase(i);
+			}
+			if (proj == nullptr)	i = EnemyProjs.erase(i);
+			if (this->EnemyProjs.empty() || i == this->EnemyProjs.end())	break;
 		}
-
-		if (enemy == nullptr)
-			j = enemies.erase(j);
-		else
+		for (auto j = this->enemies.begin(); j != this->enemies.end(); ++j)
 		{
-			enemy->step(dt);
-			AddEnemyProjs(enemy->shoot());
-		}
+			auto& enemy = *j;
+			if (Collision::CollisionTest(enemy, this->player))
+			{
+				this->AddEntities({ new Bonus(enemy->getPosition(),"hp-bonus") });
+				enemy = nullptr;
+				this->player->takeDamage(player->getFullHP());
+				std::cout << player->getHP();
+			}
 
-		if (this->enemies.empty() || j == this->enemies.end())
-			break;
+			if (enemy == nullptr)
+				j = enemies.erase(j);
+			else
+			{
+				enemy->step(dt);
+				AddEnemyProjs(enemy->shoot());
+			}
+
+			if (this->enemies.empty() || j == this->enemies.end())
+				break;
+		}
+		ui->Update();
 	}
-	ui->Update();
 }

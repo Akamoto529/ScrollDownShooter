@@ -6,7 +6,7 @@ Player::Player()
 	: Entity(sf::Vector2f(PLAYER_POS_X,PLAYER_POS_Y), 400.f, "Player")
 {
 	this->HP = 5;
-	this->gun = new Rifle(sf::Vector2f(0, -1), "Bullet", friendly);
+	this->gun = new Rifle(sf::Vector2f(0, -1), "Bullet");
 }
 
 const int Player::getFullHP()
