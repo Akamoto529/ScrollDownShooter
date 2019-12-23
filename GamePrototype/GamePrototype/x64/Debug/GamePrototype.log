@@ -1,2 +1,12 @@
-﻿  Suicider.cpp
+﻿  Entity.cpp
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(10,96): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(10,96): warning C4244:         with
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(10,96): warning C4244:         [
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(10,96): warning C4244:             T=unsigned int
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(10,96): warning C4244:         ]
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(10,56): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(10,56): warning C4244:         with
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(10,56): warning C4244:         [
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(10,56): warning C4244:             T=unsigned int
+C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(10,56): warning C4244:         ]
   GamePrototype.vcxproj -> C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe

@@ -148,6 +148,7 @@
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Gun.cpp" />
     <ClCompile Include="Hitbox.cpp" />
+    <ClCompile Include="Launcher.cpp" />
     <ClCompile Include="Missile.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Loader.cpp" />
@@ -158,6 +159,7 @@
     <ClCompile Include="Rifle.cpp" />
     <ClCompile Include="Suicider.cpp" />
     <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="Turret.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Wave.cpp" />
@@ -176,6 +178,7 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Gun.h" />
     <ClInclude Include="Hitbox.h" />
+    <ClInclude Include="Launcher.h" />
     <ClInclude Include="Missile.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="Loader.h" />
@@ -187,6 +190,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Suicider.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="Turret.h" />
     <ClInclude Include="Wave.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>

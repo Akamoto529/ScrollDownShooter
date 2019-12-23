@@ -23,7 +23,7 @@ void Level::Load(int Number, Entity* player) {
 			fin >> Type;
 			fin >> PointsAmount;
 			fin >> x >> y;
-			waves[k].Enemies.push_back(EnemyFactory::getEnemy(sf::Vector2f(x, y),Type));
+			waves[k].Enemies.push_back(EnemyFactory::getEnemy(sf::Vector2f(x, y),Type,player));
 			Enemy*& en = waves[k].Enemies.back();
 			for (int j = 0; j < PointsAmount-1; j++) {
 				fin >> x >> y;
@@ -31,7 +31,7 @@ void Level::Load(int Number, Entity* player) {
 			}
 		}
 	}
-	waves[0].Enemies.push_back(EnemyFactory::getEnemy(sf::Vector2f(100.f,100.f), "Suicider", player));
+	waves[0].Enemies.push_back(EnemyFactory::getEnemy(sf::Vector2f(100, 100), "Turret", player));
 	fin.close();
 	return;
 }

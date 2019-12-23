@@ -8,7 +8,7 @@ Scene::Scene()
 	this->enemies = {};
 	this->projectiles = {};
 
-	bg = new Background(200, "space");
+	bg = new Background("space");
 	this->player = new Player();
 	this->lvl.Load(1, this->player);
 	AddEntities(lvl.getEnemies());
@@ -96,6 +96,7 @@ void Scene::update(const sf::Time dt)
 		bonus->step(dt);
 		if (Collision::CollisionTest(bonus, this->player))
 		{
+			bonus->makeAction(this->player);
 			bonus = nullptr;
 			k = this->bonuses.erase(k);
 		}

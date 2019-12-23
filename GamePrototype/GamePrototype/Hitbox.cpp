@@ -50,7 +50,7 @@ void Hitbox::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	target.draw(rect);
 
 	// Polygon.
-	sf::VertexArray box(sf::TrianglesStrip);
+	sf::VertexArray box(sf::TriangleFan);
 	for (sf::Vector2f vertex : this->getVerticesAbs())
 		box.append(sf::Vertex(vertex, sf::Color::Green));
 	box.append(sf::Vertex(this->getVerticesAbs().front(), sf::Color::Green));

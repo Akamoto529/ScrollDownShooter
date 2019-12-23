@@ -19,6 +19,7 @@ public:
 	virtual void freeze() override;
 	const int getFullHP();
 	int getHP() const;
+	void setHP(const int HP);
 	bool takeDamage(const int dmg);
 	std::list<Projectile*> shoot() const;
 	void step(const sf::Time dt);

@@ -1,6 +1,8 @@
 #include "Background.h"
 
-Background::Background(const float speed, const std::string Name)
+float Background::speed = 50.f;
+
+Background::Background(const std::string Name)
 {
 	this->frozen = false;
 	this->velocity = sf::Vector2f(0, speed);
@@ -21,6 +23,11 @@ void Background::draw(sf::RenderTarget& target, sf::RenderStates states) const
 void Background::freeze()
 {
 	this->frozen = true;
+}
+
+float Background::getSpeed()
+{
+	return Background::speed;
 }
 
 void Background::step(const sf::Time dt)

@@ -16,7 +16,7 @@ Entity::Entity(const sf::Vector2f pos, const float speed, const std::string enti
 void Entity::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(this->sp, states);
-	//target.draw(this->hitbox, states);
+	target.draw(this->hitbox, states);
 }
 
 void Entity::freeze()
@@ -64,6 +64,11 @@ void Entity::setRotation(const float angle)
 	this->Transformable::setRotation(angle);
 	this->sp.setRotation(angle);
 	this->hitbox.setRotation(angle);
+}
+
+void Entity::setRotation(const sf::Vector2f direction)
+{
+	this->setRotation(atan2(direction.x, -direction.y) / PI * 180);
 }
 
 void Entity::unfreeze()

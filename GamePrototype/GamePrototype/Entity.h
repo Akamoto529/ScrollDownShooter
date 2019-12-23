@@ -24,6 +24,7 @@ public:
 	void rotate(const float angle);
 	void setPosition(const sf::Vector2f position);
 	void setRotation(const float angle);
+	void setRotation(const sf::Vector2f direction);
 	virtual void step(const sf::Time dt) = 0;
 	virtual void unfreeze();
 };

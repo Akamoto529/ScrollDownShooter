@@ -5,12 +5,11 @@
 // Gun.
 
 
-Gun::Gun(const sf::Vector2f direction, const std::string projName, const sf::Time reloadTime, const int hostility)
+Gun::Gun(const sf::Vector2f direction, const sf::Time reloadTime, const int hostility)
 {
 	this->direction = direction;
 	this->frozen = false;
 	this->hostility = hostility;
-	this->projName = projName;
 	this->reloadTime = reloadTime;
 	timer.reset();
 }

@@ -2,7 +2,9 @@ Player
 Enemy1
 Enemy2
 Suicider
+Turret
 Bullet
+Missile
 polytech
 space
 hp-bonus

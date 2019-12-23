@@ -20,16 +20,6 @@ public:
 	sf::Vector2f getVelocity() const;
 };
 
-class Grenade : public Projectile
-{
-
-};
-
-class Needle : public Projectile
-{
-
-};
-
 class Laser : public Projectile
 {
 
