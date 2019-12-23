@@ -11,7 +11,7 @@ Background::Background(const std::string Name)
 	this->sp.setTextureRect(sf::IntRect(
 		sf::Vector2i(0, 0), sf::Vector2i(WINDOW_X, 2 * (int)this->sp.getTextureRect().height)));
 	// Место склейки.
-	this->sp.setOrigin(0, this->sp.getTextureRect().height / 2);
+	this->sp.setOrigin(0, (float)this->sp.getTextureRect().height / 2);
 	this->sp.setPosition(0, -this->sp.getOrigin().y + WINDOW_Y);
 }
 
@@ -28,6 +28,11 @@ void Background::freeze()
 float Background::getSpeed()
 {
 	return Background::speed;
+}
+
+void Background::setSpeed(const float speed)
+{
+	Background::speed = speed;
 }
 
 void Background::step(const sf::Time dt)

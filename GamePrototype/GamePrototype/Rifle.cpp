@@ -1,7 +1,7 @@
 #include "Rifle.h"
 
-Rifle::Rifle(const sf::Vector2f direction, const int hostility)
-	: Gun(direction, sf::milliseconds(500), hostility)
+Rifle::Rifle(const sf::Vector2f direction)
+	: Gun(direction, sf::milliseconds(500))
 {
 }
 
@@ -12,7 +12,7 @@ std::list<Projectile*> Rifle::shoot(const sf::Vector2f position)
 		this->timer.reset();
 		return
 		{
-			ProjFactory::getProj(position, this->getDirection(), this->hostility, "Bullet")
+			ProjFactory::getProj(position, this->getDirection(), "Bullet")
 		};
 	}
 	else

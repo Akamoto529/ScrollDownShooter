@@ -3,31 +3,41 @@
 #include "Enemy2.h"
 #include <fstream>
 #include <sstream>
-Level::Level() {
-	this->curWave = 0;
+
+Level::Level() 
+{
+	bg = nullptr;
+	waves = nullptr;
 }
-void Level::Load(int Number, Entity* player) {
-	curWave = 0;
+
+void Level::Load(int Number, Entity* player)
+	{
 	std::string path = "Levels/Lvl" + IntToStr(Number) + "/LvlInfo.txt";
 	std::ifstream fin(path);
 	std::string Type;
 	int WaveAmount,EnemyAmount,PointsAmount, x, y;
 	fin >> WaveAmount;
 	waves = new Wave[WaveAmount];
+	std::string bgTX;
+	int bgSpeed;
+	fin >>bgSpeed >> bgTX;
+	Background::setSpeed((float)bgSpeed);
+	bg = new Background(bgTX);
 	for (int k = 0; k < WaveAmount; k++) {
 		fin.close();
 		fin.open("Levels/Lvl" + IntToStr(Number) + "/Wave" + IntToStr(k + 1) + ".txt");
+		fin >> waves[k].Time;
 		fin >> EnemyAmount;
 		for (int i = 0; i < EnemyAmount; i++)
 		{
 			fin >> Type;
 			fin >> PointsAmount;
 			fin >> x >> y;
-			waves[k].Enemies.push_back(EnemyFactory::getEnemy(sf::Vector2f(x, y),Type,player));
+			waves[k].Enemies.push_back(EnemyFactory::getEnemy(sf::Vector2f((float)x, (float)y),Type,player));
 			Enemy*& en = waves[k].Enemies.back();
 			for (int j = 0; j < PointsAmount-1; j++) {
 				fin >> x >> y;
-				en->addPoint(sf::Vector2f(x, y));
+				en->addPoint(sf::Vector2f((float)x, (float)y));
 			}
 		}
 	}
@@ -35,8 +45,14 @@ void Level::Load(int Number, Entity* player) {
 	fin.close();
 	return;
 }
-std::list<Enemy*> Level::getEnemies() {
-	return waves[curWave].Enemies;
+Background* Level::getBG() {
+	return this->bg;
+}
+std::list<Enemy*> Level::getEnemies(int WaveNum) {
+	return waves[WaveNum].Enemies;
+}
+float Level::getWaveTime(int WaveNum) {
+	return waves[WaveNum].Time;
 }
 
 std::string Level::IntToStr(int a) {

@@ -4,7 +4,7 @@ Player::Player()
 	: Entity(sf::Vector2f(PLAYER_POS_X,PLAYER_POS_Y), 400.f, "Player")
 {
 	this->HP = 5;
-	this->gun = new Rifle(sf::Vector2f(0, -1), friendly);
+	this->gun = new Rifle(sf::Vector2f(0, -1));
 }
 
 void Player::freeze()
@@ -64,9 +64,11 @@ void Player::step(const sf::Time dt)
 bool Player::takeDamage(const int dmg)
 {
 	this->HP -= dmg;
-	if (this->HP <= 0)
+	if (this->HP <= 0) {
 		// Удаление происходит в сцене, не здесь.
+		this->HP = 0;
 		return 0;
+	}
 	else
 		return 1;
 }

@@ -7,7 +7,7 @@ Entity::Entity(const sf::Vector2f pos, const float speed, const std::string enti
 	this->Transformable::setPosition(pos);
 
 	this->sp.setTexture(Loader::get()->TX(entityName));
-	this->sp.setOrigin(this->sp.getTexture()->getSize().x / 2, this->sp.getTexture()->getSize().y / 2);
+	this->sp.setOrigin((float)this->sp.getTexture()->getSize().x / 2, (float)this->sp.getTexture()->getSize().y / 2);
 	this->sp.setPosition(pos);
 	this->hitbox = Loader::get()->HB(entityName);
 	this->hitbox.setOrigin(this->sp.getOrigin());

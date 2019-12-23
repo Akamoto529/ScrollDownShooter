@@ -14,6 +14,7 @@ public:
 	Background(const std::string Name);
 	void freeze();
 	static float getSpeed();
+	static void setSpeed(const float speed);
 	void step(const sf::Time dt);
 	void unfreeze();
 };

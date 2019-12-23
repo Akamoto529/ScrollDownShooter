@@ -1,11 +1,10 @@
 ﻿#include "Projectile.h"
 
-Projectile::Projectile(const sf::Vector2f direction, const int damage, const  int hostility,
+Projectile::Projectile(const sf::Vector2f direction, const int damage,
 					   const sf::Vector2f pos, const float speed, const std::string Name)
 	: Entity(pos, speed, Name)
 {
 	this->damage = damage;
-	this->hostility = hostility;
 	this->setRotation(direction);
 	this->setVelocity(direction);
 }
@@ -14,12 +13,6 @@ int Projectile::getDamage() const
 {
 	return this->damage;
 }
-
-int Projectile::getHostility() const
-{
-	return this->hostility;
-}
-
 sf::Vector2f Projectile::getVelocity() const
 { 
 	return this->velocity;

@@ -3,15 +3,20 @@
 #include "Wave.h"
 #include "Loader.h"
 #include "EnemyFactory.h"
+#include "Background.h"
+#include "Entity.h"
+
 class Level
 {
 private:
-	int curWave;
+	Wave* waves;
+	Background* bg;
 public:
-	Wave *waves;
 	void Load(int Number, Entity* player);
 	std::string IntToStr(int a);
 	Level();
-	std::list<Enemy*> getEnemies();
+	float getWaveTime(int WaveNum);
+	Background* getBG();
+	std::list<Enemy*> getEnemies(int WaveNum);
 };
 

@@ -1,7 +1,5 @@
 #include "Loader.h"
 
-// NB: Для всех текстур фона - setRepeated(true).
-
 Loader* Loader::instance = 0;
 Loader::Loader()
 {
@@ -20,8 +18,8 @@ Loader::Loader()
 		int x, y;
 		std::list<sf::Vector2f> temp;
 		while (!finHB.eof()) {
-			finHB >> x >>y;
-			temp.push_back(sf::Vector2f(x, y));
+			finHB >> x >> y;
+			temp.push_back(sf::Vector2f((float)x, (float)y));
 		}
 		finHB.close();
 		Hitboxes[str] = temp;

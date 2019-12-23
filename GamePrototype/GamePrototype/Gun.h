@@ -17,7 +17,7 @@ protected:
 	sf::Time reloadTime;
 	Timer timer;
 public:
-	Gun(const sf::Vector2f direction, const sf::Time reloadTime, const int hostility);
+	Gun(const sf::Vector2f direction, const sf::Time reloadTime);
 	void freeze();
 	sf::Vector2f getDirection() const;
 	void setDirection(const sf::Vector2f direction);

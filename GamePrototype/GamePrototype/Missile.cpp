@@ -1,10 +1,10 @@
 #include "Missile.h"
 
-Missile::Missile(const sf::Vector2f pos, const sf::Vector2f direction, const int hostility, Entity* target)
-	:Projectile(direction, 1, hostility, pos, 200.f, "Missile")
+Missile::Missile(const sf::Vector2f pos, const sf::Vector2f direction, Entity* target)
+	:Projectile(direction, 1, pos, 200.f, "Missile")
 {
 	this->target = target;
-	this->accuracy = 0.005;
+	this->accuracy = 0.005f;
 }
 
 void Missile::step(const sf::Time dt)

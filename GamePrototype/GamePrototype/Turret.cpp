@@ -4,7 +4,7 @@ Turret::Turret(const sf::Vector2f pos, Entity* target)
 	: Enemy(pos, Background::getSpeed(), "Turret")
 {
 	this->HP = 3;
-	this->gun = new Launcher(sf::Vector2f(0, 1), hostile, target);
+	this->gun = new Launcher(sf::Vector2f(0, 1), target);
 	this->target = target;
 }
 
