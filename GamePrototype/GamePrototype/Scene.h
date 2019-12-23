@@ -32,6 +32,7 @@ private:
 
 	Timer dtTimer;
 	Timer WaveTimer;
+	sf::Time lastUpdateDuration;
 
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 	bool outOfBounds(const Entity* entity) const;
@@ -49,5 +50,5 @@ public:
 	void freeze();
 	void unfreeze();
 
-	void update();
+	void update(sf::Time leftTillRender);
 };

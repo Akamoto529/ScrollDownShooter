@@ -16,7 +16,7 @@ Entity::Entity(const sf::Vector2f pos, const float speed, const std::string enti
 void Entity::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(this->sp, states);
-	target.draw(this->hitbox, states);
+	//target.draw(this->hitbox, states);
 }
 
 void Entity::freeze()

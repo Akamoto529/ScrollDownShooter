@@ -9,14 +9,23 @@
 class Level
 {
 private:
-	Wave* waves;
 	Background* bg;
+	bool frozen;
+	Wave* waves;
+	int wavesNumber;
 public:
-	void Load(int Number, Entity* player);
-	std::string IntToStr(int a);
 	Level();
-	float getWaveTime(int WaveNum);
+
+	void Load(int Number, Entity* player);
+
+	void freeze();
+	void unfreeze();
+
 	Background* getBG();
 	std::list<Enemy*> getEnemies(int WaveNum);
+	int getWavesNumber() const;
+	float getWaveTime(int WaveNum);
+
+	static std::string IntToStr(int a);
 };
 

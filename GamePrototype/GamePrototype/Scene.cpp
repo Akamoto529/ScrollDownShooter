@@ -86,6 +86,7 @@ void Scene::freeze()
 		enemy->freeze();
 	for (auto& projectile : EnemyProjs)
 		projectile->freeze();
+	this->WaveTimer.pause();
 }
 
 void Scene::unfreeze()
@@ -94,6 +95,7 @@ void Scene::unfreeze()
 		enemy->unfreeze();
 	for (auto& projectile : EnemyProjs)
 		projectile->unfreeze();
+	this->WaveTimer.start();
 }
 
 bool Scene::outOfBounds(const Entity* entity) const
@@ -108,18 +110,18 @@ bool Scene::outOfBounds(const Entity* entity) const
 		return 0;
 }
 
-void Scene::update()
+void Scene::update(sf::Time leftTillRender)
 {
 	sf::Time dt = dtTimer.getElapsedTime();
-	if (dt.asMicroseconds()/1000.f>= UPDATE_TIME_MSEC) {
-		dtTimer.reset();
-		if ((curWave == 0) || (WaveTimer.getElapsedTime().asMilliseconds() / 1000.f >= lvl.getWaveTime(curWave - 1))) {
+	if (leftTillRender - dt <= this->lastUpdateDuration)
+	{
+		if ((curWave == 0) || (lvl.getWavesNumber() >= curWave+1) && (WaveTimer.getElapsedTime().asSeconds() >= lvl.getWaveTime(curWave - 1)))
+		{
 			AddEntities(lvl.getEnemies(curWave++));
 			WaveTimer.reset();
 		}
 		bg->step(dt);
 		player->step(dt);
-		//this->AddEntities(player->shoot());
 		AddPlayerProjs(player->shoot());
 
 		for (auto k = this->bonuses.begin(); k != this->bonuses.end(); ++k)
@@ -187,7 +189,6 @@ void Scene::update()
 				this->AddEntities({ new Bonus(enemy->getPosition(),"hp-bonus") });
 				enemy = nullptr;
 				this->player->takeDamage(player->getFullHP());
-				std::cout << player->getHP();
 			}
 
 			if (enemy == nullptr)
@@ -201,6 +202,9 @@ void Scene::update()
 			if (this->enemies.empty() || j == this->enemies.end())
 				break;
 		}
-		ui->Update();
+
+		ui->update();
+		lastUpdateDuration = dtTimer.getElapsedTime() - dt;
+		dtTimer.reset();
 	}
 }

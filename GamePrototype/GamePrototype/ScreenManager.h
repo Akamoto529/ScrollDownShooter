@@ -8,7 +8,7 @@ class ScreenManager
 	Scene GameScene;
 public:
 	ScreenManager();
-	void Update();
+	void update(sf::Time leftTillRender);
 	void Render(sf::RenderWindow* window);
 };
 

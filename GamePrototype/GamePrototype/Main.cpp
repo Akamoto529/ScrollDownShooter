@@ -18,7 +18,7 @@ int main()
 				window->close();
 		}
 
-		Sm.Update();
+		Sm.update(sf::milliseconds(MSEC_PER_FRAME) - frame.getElapsedTime());
 		if (frame.getElapsedTime() >= sf::milliseconds(MSEC_PER_FRAME))
 		{
 			frame.reset();

@@ -2,7 +2,7 @@
 
 ScreenManager::ScreenManager() {}
 
-void ScreenManager::Update()
+void ScreenManager::update(sf::Time leftTillRender)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
 	{
@@ -24,7 +24,7 @@ void ScreenManager::Update()
 		GameScene.LoadLevel(2);
 	}
 
-	GameScene.update();
+	GameScene.update(leftTillRender);
 }
 void ScreenManager::Render(sf::RenderWindow* window) {
 

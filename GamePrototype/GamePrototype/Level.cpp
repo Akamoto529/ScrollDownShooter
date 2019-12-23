@@ -15,47 +15,65 @@ void Level::Load(int Number, Entity* player)
 	std::string path = "Levels/Lvl" + IntToStr(Number) + "/LvlInfo.txt";
 	std::ifstream fin(path);
 	std::string Type;
-	int WaveAmount,EnemyAmount,PointsAmount, x, y;
-	fin >> WaveAmount;
-	waves = new Wave[WaveAmount];
+	int WaveNumber,EnemyNumber,PointsNumber, x, y;
+	fin >> WaveNumber;
+	this->wavesNumber = WaveNumber;
+	waves = new Wave[WaveNumber];
 	std::string bgTX;
 	int bgSpeed;
 	fin >>bgSpeed >> bgTX;
 	Background::setSpeed((float)bgSpeed);
 	bg = new Background(bgTX);
-	for (int k = 0; k < WaveAmount; k++) {
+	for (int k = 0; k < WaveNumber; k++) {
 		fin.close();
 		fin.open("Levels/Lvl" + IntToStr(Number) + "/Wave" + IntToStr(k + 1) + ".txt");
-		fin >> waves[k].Time;
-		fin >> EnemyAmount;
-		for (int i = 0; i < EnemyAmount; i++)
+		fin >> waves[k].time;
+		fin >> EnemyNumber;
+		for (int i = 0; i < EnemyNumber; i++)
 		{
 			fin >> Type;
-			fin >> PointsAmount;
+			fin >> PointsNumber;
 			fin >> x >> y;
 			waves[k].Enemies.push_back(EnemyFactory::getEnemy(sf::Vector2f((float)x, (float)y),Type,player));
 			Enemy*& en = waves[k].Enemies.back();
-			for (int j = 0; j < PointsAmount-1; j++) {
+			for (int j = 0; j < PointsNumber-1; j++) {
 				fin >> x >> y;
 				en->addPoint(sf::Vector2f((float)x, (float)y));
 			}
 		}
 	}
-	waves[0].Enemies.push_back(EnemyFactory::getEnemy(sf::Vector2f(100, 100), "Turret", player));
 	fin.close();
 	return;
 }
-Background* Level::getBG() {
-	return this->bg;
-}
-std::list<Enemy*> Level::getEnemies(int WaveNum) {
-	return waves[WaveNum].Enemies;
-}
-float Level::getWaveTime(int WaveNum) {
-	return waves[WaveNum].Time;
+
+void Level::freeze()
+{
+	this->frozen = true;
+
 }
 
-std::string Level::IntToStr(int a) {
+Background* Level::getBG()
+{
+	return this->bg;
+}
+
+std::list<Enemy*> Level::getEnemies(int WaveNum)
+{
+	return waves[WaveNum].Enemies;
+}
+
+int Level::getWavesNumber() const
+{
+	return this->wavesNumber;
+}
+
+float Level::getWaveTime(int WaveNum)
+{
+	return waves[WaveNum].time;
+}
+
+std::string Level::IntToStr(int a)
+{
 	std::stringstream ss;
 	ss << a;
 	std::string str = ss.str();

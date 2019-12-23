@@ -2,9 +2,10 @@
 #include"Enemy.h"
 #include<vector>
 #include <list>
+
 class Wave
 {
 public:
-	float Time;
+	float time;
 	std::list<Enemy*> Enemies;
 };

@@ -8,3 +8,5 @@ Missile
 polytech
 space
 hp-bonus
+Empty-heart
+Full-heart
