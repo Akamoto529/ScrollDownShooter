@@ -1,0 +1,82 @@
+﻿'GamePrototype.exe' (Win32): Loaded 'C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe'. Symbols loaded.
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\ntdll.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\kernel32.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\KernelBase.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\sfml-graphics-d-2.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\sfml-system-d-2.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\GamePrototype\sfml-window-d-2.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\gdi32.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\win32u.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\gdi32full.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\msvcp_win.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\ucrtbase.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\user32.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\advapi32.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\msvcrt.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\sechost.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\rpcrt4.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\msvcp140d.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\vcruntime140d.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\vcruntime140_1d.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\ucrtbased.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\opengl32.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\combase.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\bcryptprimitives.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\winmm.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\glu32.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\winmmbase.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\cfgmgr32.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\DXCore.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\imm32.dll'. 
+The thread 0x6c4c has exited with code 0 (0x0).
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\uxtheme.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\msctf.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\oleaut32.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\windows.storage.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\SHCore.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\profapi.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\powrprof.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\umpdc.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\shlwapi.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\kernel.appcore.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\DriverStore\FileRepository\nvlti.inf_amd64_c76e6fcd108a9f7d\nvdlistx.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\version.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\DriverStore\FileRepository\ki125410.inf_amd64_c4292f15a0e8e24a\ig9icd64.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\shell32.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\cryptsp.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\dxgi.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\dwmapi.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\wtsapi32.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\ResourcePolicyClient.dll'. 
+'GamePrototype.exe' (Win32): Unloaded 'C:\Windows\System32\ResourcePolicyClient.dll'
+'GamePrototype.exe' (Win32): Unloaded 'C:\Windows\System32\version.dll'
+'GamePrototype.exe' (Win32): Unloaded 'C:\Windows\System32\DriverStore\FileRepository\nvlti.inf_amd64_c76e6fcd108a9f7d\nvdlistx.dll'
+The thread 0x8484 has exited with code 0 (0x0).
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\version.dll'. 
+'GamePrototype.exe' (Win32): Unloaded 'C:\Windows\System32\version.dll'
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\DriverStore\FileRepository\ki125410.inf_amd64_c4292f15a0e8e24a\igc64.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\dinput8.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\InputHost.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\CoreMessaging.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\CoreUIComponents.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\WinTypes.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\propsys.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\ntmarta.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\hid.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\setupapi.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\bcrypt.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\devobj.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\wintrust.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\msasn1.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\crypt32.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\TextInputFramework.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\iertutil.dll'. 
+'GamePrototype.exe' (Win32): Loaded 'C:\Windows\System32\ole32.dll'. 
+The thread 0xf3c has exited with code 0 (0x0).
+The thread 0x8b0c has exited with code 0 (0x0).
+The thread 0x8a6c has exited with code 0 (0x0).
+The thread 0x778 has exited with code 0 (0x0).
+The thread 0x7698 has exited with code 0 (0x0).
+The thread 0x3638 has exited with code 0 (0x0).
+The thread 0x6d78 has exited with code 0 (0x0).
+The program '[19404] GamePrototype.exe' has exited with code 0 (0x0).

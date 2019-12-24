@@ -1,14 +1,13 @@
 #pragma once
 #include "Player.h"
-class UI
+class UI : public sf::Drawable
 {
 	Player* player;
-	sf::Texture FullHeart;
-	sf::Texture EmptyHeart;
+	std::vector<sf::Sprite> mas;
 public:
-	sf::Sprite *mas;
 	UI(Player *pl);
-	void Update();
+	void update();
+	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 
 

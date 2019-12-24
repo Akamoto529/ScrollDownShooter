@@ -1,6 +1,7 @@
 #pragma once
 #include "Enemy.h"
 #include "Rifle.h"
+
 class Enemy1 : public Enemy
 {
 public:
