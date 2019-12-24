@@ -1,57 +1,69 @@
 #include "MenuScene.h"
-#include "ScreenManager.h"
-#include <iostream>
 MenuScene::MenuScene() {
-	this->selectedItemIndex = 0;
+	Up = Down = false;
+	Enter = true;
+	this->curButton = 0;
 	this->bg.setTexture(Loader::get()->TX("polytech"));
 	this->font.loadFromFile("Assets/font.ttf");
-	this->menu[0].setFont(font);
+	for (int i = 0; i < 2; i++) {
+		menu[i].setFont(font);
+		menu[i].setFillColor(sf::Color::Red);
+		menu[i].setCharacterSize(36);
+	}
 	this->menu[0].setString("Play");
-	this->menu[0].setFillColor(sf::Color::Red);
-	this->menu[0].setCharacterSize(36);
+	this->menu[0].setFillColor(sf::Color::White);
 	this->menu[0].setPosition(sf::Vector2f(WINDOW_X / 3+50, WINDOW_Y / 6 + 130));
-
-	this->menu[1].setFont(font);
-	this->menu[1].setFillColor(sf::Color::Red);
 	this->menu[1].setString("End");
-	this->menu[0].setCharacterSize(36);
 	this->menu[1].setPosition(sf::Vector2f(WINDOW_X / 3+50, WINDOW_Y / 4 + 130));
 }
+void MenuScene::Reset() {
+	curButton = 0;
+	Up = Down = false;
+	Enter = true;
+}
 void MenuScene::MoveUp() {
-	if (selectedItemIndex - 1 >= 0) {
-		menu[selectedItemIndex].setFillColor(sf::Color::Red);
-		selectedItemIndex--;
-		menu[selectedItemIndex].setFillColor(sf::Color::White);
+	if (curButton > 0) {
+		menu[curButton].setFillColor(sf::Color::Red);
+		curButton--;
+		menu[curButton].setFillColor(sf::Color::White);
 	}
 }
 void MenuScene::MoveDown() {
-		if (selectedItemIndex + 1 < 2) {
-			menu[selectedItemIndex].setFillColor(sf::Color::Red);
-			selectedItemIndex++;
-			menu[selectedItemIndex].setFillColor(sf::Color::White);
+		if (curButton < 1) {
+			menu[curButton].setFillColor(sf::Color::Red);
+			curButton++;
+			menu[curButton].setFillColor(sf::Color::White);
 		}
 }
-void MenuScene::draw(sf::RenderTarget &target, sf::RenderStates states) const {
+void MenuScene::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 	target.draw(bg);
-	target.draw(menu[1],states);
-	target.draw(menu[0],states);
+	for (sf::Text tx : menu) {
+		target.draw(tx, states);
 	}
+}
 int MenuScene::update(){
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-		MoveUp();
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up)) {
+		if (!Up) MoveUp();
+		Up = true;
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-		MoveDown();
+	else Up = false;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down)) {
+		if (!Down) MoveDown();
+		Down = true;
 	}
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
-		if (selectedItemIndex == 0) {
-			return 1;
+	else Down = false;
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)) {
+		if (!Enter) {
+			switch (curButton)
+			{
+			case  0:
+				return -1;
+			case 1:
+				return -3;
+			}
 		}
-		if (selectedItemIndex == 1) {
-			
-			return -1;
-		}
+		Enter = true;
 	}
+	else Enter = false;
 	return 0;
 }

@@ -50,5 +50,5 @@ public:
 	void freeze();
 	void unfreeze();
 
-	void update(sf::Time leftTillRender);
+	int update(sf::Time leftTillRender);
 };

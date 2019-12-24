@@ -6,16 +6,18 @@
 class ChangeLevelScene : public sf::Drawable
 {
 private:
+	int curButton;
+	bool Up, Down, Enter;
 	sf::Sprite bg;
 	sf::Font font;
+	sf::Text menu[4];
+	void MoveUp();
+	void MoveDown();
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
-public:	int update();
-	  sf::Text menu[4];
-	  void MoveUp();
-	  void MoveDown();
-public:
+public:	
 	ChangeLevelScene();
-	int selectedItemIndex;
+	int update();	
+	void Reset();
 };
 
 

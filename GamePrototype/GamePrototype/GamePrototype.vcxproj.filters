@@ -43,6 +43,18 @@
     <Filter Include="Source Files\Factories">
       <UniqueIdentifier>{5675fb4f-8746-4f63-b890-0df9497e3425}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Scenes&amp;Screens">
+      <UniqueIdentifier>{b92f4657-f0a9-41bd-99d4-e98c8d424ccf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes&amp;Screens">
+      <UniqueIdentifier>{4f9c2d9c-045a-44e9-8e0d-5acebdfef699}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Collisions">
+      <UniqueIdentifier>{37e0ea9b-3157-417a-adc7-8f39c1b9dd91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Collisions">
+      <UniqueIdentifier>{3afde825-ae43-4067-9d76-b9ccb9b96598}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -51,19 +63,10 @@
     <ClCompile Include="Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Collision.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Hitbox.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Loader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Gun.cpp">
@@ -126,36 +129,36 @@
     <ClCompile Include="Background.cpp">
       <Filter>Source Files\Level</Filter>
     </ClCompile>
-    <ClCompile Include="ScreenManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MenuScene.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Scenes&amp;Screens</Filter>
     </ClCompile>
     <ClCompile Include="ChangeLevelScene.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Scenes&amp;Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="ScreenManager.cpp">
+      <Filter>Source Files\Scenes&amp;Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Source Files\Scenes&amp;Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Hitbox.cpp">
+      <Filter>Source Files\Collisions</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Source Files\Collisions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Collision.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Hitbox.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UI.h">
@@ -221,14 +224,23 @@
     <ClInclude Include="Background.h">
       <Filter>Header Files\Level</Filter>
     </ClInclude>
+    <ClInclude Include="ChangeLevelScene.h">
+      <Filter>Header Files\Scenes&amp;Screens</Filter>
+    </ClInclude>
     <ClInclude Include="ScreenManager.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Scenes&amp;Screens</Filter>
     </ClInclude>
     <ClInclude Include="MenuScene.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Scenes&amp;Screens</Filter>
     </ClInclude>
-    <ClInclude Include="ChangeLevelScene.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files\Scenes&amp;Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Header Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="Hitbox.h">
+      <Filter>Header Files\Collisions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

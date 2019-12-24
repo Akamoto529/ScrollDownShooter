@@ -110,8 +110,17 @@ bool Scene::outOfBounds(const Entity* entity) const
 		return 0;
 }
 
-void Scene::update(sf::Time leftTillRender)
+int Scene::update(sf::Time leftTillRender)
 {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
+	{
+		freeze();
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
+	{
+		unfreeze();
+	}
 	sf::Time dt = dtTimer.getElapsedTime();
 	if (leftTillRender - dt <= this->lastUpdateDuration)
 	{
@@ -206,5 +215,11 @@ void Scene::update(sf::Time leftTillRender)
 		ui->update();
 		lastUpdateDuration = dtTimer.getElapsedTime() - dt;
 		dtTimer.reset();
+	}
+	if (player->getHP() == 0) {
+		return -2;
+	}
+	else {
+		return 0;
 	}
 }

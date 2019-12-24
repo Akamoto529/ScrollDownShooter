@@ -6,16 +6,17 @@
 class MenuScene : public sf::Drawable
 {
 private:
+	int curButton;
+	bool Up, Down, Enter;
 	sf::Sprite bg;
-	sf::Sprite pl;
 	sf::Font font;
-	void draw(sf::RenderTarget& target, sf::RenderStates states) const ;
-public:	int update();
 	sf::Text menu[2];
 	void MoveUp();
 	void MoveDown();
+	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 public:
 	MenuScene();
-	int selectedItemIndex;
+	int update();
+	void Reset();
 };
 
