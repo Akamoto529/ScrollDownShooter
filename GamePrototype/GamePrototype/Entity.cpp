@@ -5,7 +5,11 @@ Entity::Entity(const sf::Vector2f pos, const float speed, const std::string enti
 	this->frozen = false;
 	this->speed = speed;
 	this->Transformable::setPosition(pos);
+	changeAsset(pos, entityName);
+}
 
+void Entity::changeAsset(const sf::Vector2f pos, const std::string entityName)
+{
 	this->sp.setTexture(Loader::get()->TX(entityName));
 	this->sp.setOrigin((float)this->sp.getTexture()->getSize().x / 2, (float)this->sp.getTexture()->getSize().y / 2);
 	this->sp.setPosition(pos);
@@ -13,6 +17,12 @@ Entity::Entity(const sf::Vector2f pos, const float speed, const std::string enti
 	this->hitbox.setOrigin(this->sp.getOrigin());
 	this->hitbox.setPosition(pos);
 }
+
+void Entity::setColor(const sf::Color color)
+{
+	this->sp.setColor(color);
+}
+
 void Entity::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(this->sp, states);

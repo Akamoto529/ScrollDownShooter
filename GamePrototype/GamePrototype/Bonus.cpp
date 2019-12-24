@@ -10,7 +10,10 @@ Bonus::Bonus(sf::Vector2f pos, std::string name)
 void Bonus::makeAction(Player* player) const
 {
 	if (this->name == "hp-bonus")
-		player->setHP(player->getFullHP());
+	{
+		player->heal();
+		player->setColor(sf::Color(0, 255, 0));
+	}
 }
 
 void Bonus::step(const sf::Time dt)

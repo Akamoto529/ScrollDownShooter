@@ -16,16 +16,23 @@ protected:
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 public:
 	Entity(const sf::Vector2f pos, const float speed, const std::string entityName);
+	
+	void changeAsset(const sf::Vector2f pos, const std::string entityName);
+	void setColor(const sf::Color color);
+
 	virtual void freeze();
+	virtual void unfreeze();
+
 	Hitbox getHitbox() const;
 	sf::FloatRect getHitboxBounds() const;
 	sf::FloatRect getSpriteBounds()	const;
+
 	void move(const sf::Vector2f offset);
-	void rotate(const float angle);
 	void setPosition(const sf::Vector2f position);
+
+	void rotate(const float angle);
 	void setRotation(const float angle);
 	void setRotation(const sf::Vector2f direction);
-	virtual void step(const sf::Time dt) = 0;
-	virtual void unfreeze();
-};
 
+	virtual void step(const sf::Time dt) = 0;
+};
