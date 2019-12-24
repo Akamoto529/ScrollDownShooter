@@ -129,6 +129,9 @@
     <ClCompile Include="ScreenManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MenuScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Collision.h">
@@ -210,12 +213,15 @@
       <Filter>Header Files\Guns</Filter>
     </ClInclude>
     <ClInclude Include="Turret.h">
-        <Filter>Header Files\Enemies</Filter>
+      <Filter>Header Files\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="Background.h">
       <Filter>Header Files\Level</Filter>
     </ClInclude>
     <ClInclude Include="ScreenManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

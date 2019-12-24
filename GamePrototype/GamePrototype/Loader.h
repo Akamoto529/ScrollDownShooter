@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include <fstream>
 #include "SFML/Graphics.hpp"
 #include "Hitbox.h"
 
