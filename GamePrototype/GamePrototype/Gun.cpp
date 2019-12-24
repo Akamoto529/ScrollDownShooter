@@ -1,17 +1,10 @@
 ﻿#include "Gun.h"
-#include <iostream>
 
-
-// Gun.
-
-
-Gun::Gun(const sf::Vector2f direction, const std::string projName, const sf::Time reloadTime, const int hostility)
+Gun::Gun(const sf::Vector2f direction, const sf::Time reloadTime)
 {
 	this->direction = direction;
 	this->frozen = false;
 	this->reloadTime = reloadTime;
-	this->projName = projName;
-	this->hostility = hostility;
 	timer.reset();
 }
 

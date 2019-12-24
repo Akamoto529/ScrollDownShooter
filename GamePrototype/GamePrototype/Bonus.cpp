@@ -3,10 +3,18 @@
 Bonus::Bonus(sf::Vector2f pos, std::string name)
 	: Entity(pos, 100.f, name)
 {
+	this->name = name;
 	this->startPos = pos;
 }
 
-static void increaseHP(Player* player);
+void Bonus::makeAction(Player* player) const
+{
+	if (this->name == "hp-bonus")
+	{
+		player->heal();
+		player->setColor(sf::Color(0, 255, 0));
+	}
+}
 
 void Bonus::step(const sf::Time dt)
 {

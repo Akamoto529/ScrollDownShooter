@@ -1,5 +1,5 @@
 #include "Loader.h"
-#include <fstream>
+
 Loader* Loader::instance = 0;
 Loader::Loader()
 {
@@ -8,6 +8,7 @@ Loader::Loader()
 	while (!fin.eof()) {
 		fin >> str;
 		Textures[str].loadFromFile("Assets/Textures/" + str + ".png");
+		Textures[str].setRepeated(true);
 	}
 	fin.close();
 	fin.open("Assets/Hitboxes/HB_List.txt");
@@ -17,16 +18,13 @@ Loader::Loader()
 		int x, y;
 		std::list<sf::Vector2f> temp;
 		while (!finHB.eof()) {
-			finHB >> x >>y;
-			temp.push_back(sf::Vector2f(x, y));
+			finHB >> x >> y;
+			temp.push_back(sf::Vector2f((float)x, (float)y));
 		}
 		finHB.close();
 		Hitboxes[str] = temp;
 	}
-	fin.close();
-	//setRepeated потом тоже перепишу в файлы
-	Textures["polytech"].setRepeated(true);
-	Textures["space"].setRepeated(true);
+	fin.close();	
 }
 Hitbox& Loader::HB(const std::string Name)
 {

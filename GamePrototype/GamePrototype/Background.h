@@ -7,11 +7,14 @@ class Background : public sf::Drawable
 private:
 	bool frozen;
 	sf::Sprite sp;
+	static float speed;
 	sf::Vector2f velocity;
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 public:
+	Background(const std::string Name);
 	void freeze();
-	Background(const float speed, const std::string Name);
+	static float getSpeed();
+	static void setSpeed(const float speed);
 	void step(const sf::Time dt);
 	void unfreeze();
 };

@@ -1,10 +1,12 @@
 #include "Enemy1.h"
+
 Enemy1::Enemy1(const sf::Vector2f pos)
-	: Enemy(pos,"Enemy1")
+	: Enemy(pos, 40.f, "Enemy1")
 {
 	this->HP = 3;
-	this->gun = new Rifle(sf::Vector2f(0, 1), "Bullet", hostile);
+	this->gun = new Rifle(sf::Vector2f(0, 1));
 };
+
 void Enemy1::step(const sf::Time dt)
 {
 	if (!frozen && nextPoint < Path.size()) {

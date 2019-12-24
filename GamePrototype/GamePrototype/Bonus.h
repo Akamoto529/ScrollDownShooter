@@ -5,9 +5,10 @@
 class Bonus : public Entity
 {
 private:
+	std::string name;
 	sf::Vector2f startPos;
 public:
 	Bonus(sf::Vector2f pos, std::string name);
-	static void increaseHP(Player* player);
+	void makeAction(Player* player) const;
 	virtual void step(const sf::Time dt) override;
 };

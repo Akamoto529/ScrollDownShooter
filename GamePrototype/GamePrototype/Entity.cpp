@@ -3,18 +3,26 @@
 Entity::Entity(const sf::Vector2f pos, const float speed, const std::string entityName)
 {
 	this->frozen = false;
-
 	this->speed = speed;
 	this->Transformable::setPosition(pos);
+	changeAsset(pos, entityName);
+}
 
+void Entity::changeAsset(const sf::Vector2f pos, const std::string entityName)
+{
 	this->sp.setTexture(Loader::get()->TX(entityName));
-	this->sp.setOrigin(this->sp.getTexture()->getSize().x / 2, this->sp.getTexture()->getSize().y / 2);
+	this->sp.setOrigin((float)this->sp.getTexture()->getSize().x / 2, (float)this->sp.getTexture()->getSize().y / 2);
 	this->sp.setPosition(pos);
-
 	this->hitbox = Loader::get()->HB(entityName);
 	this->hitbox.setOrigin(this->sp.getOrigin());
 	this->hitbox.setPosition(pos);
 }
+
+void Entity::setColor(const sf::Color color)
+{
+	this->sp.setColor(color);
+}
+
 void Entity::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(this->sp, states);
@@ -26,8 +34,9 @@ void Entity::freeze()
 	this->frozen = true;
 }
 
-sf::FloatRect Entity::getSpriteBounds() const{
-	return this->sp.getGlobalBounds();
+Hitbox Entity::getHitbox() const
+{
+	return this->hitbox;
 }
 
 sf::FloatRect Entity::getHitboxBounds() const
@@ -35,9 +44,8 @@ sf::FloatRect Entity::getHitboxBounds() const
 	return this->hitbox.getGlobalBounds();
 }
 
-Hitbox Entity::getHitbox() const
-{
-	return this->hitbox;
+sf::FloatRect Entity::getSpriteBounds() const{
+	return this->sp.getGlobalBounds();
 }
 
 void Entity::move(const sf::Vector2f offset)
@@ -66,6 +74,11 @@ void Entity::setRotation(const float angle)
 	this->Transformable::setRotation(angle);
 	this->sp.setRotation(angle);
 	this->hitbox.setRotation(angle);
+}
+
+void Entity::setRotation(const sf::Vector2f direction)
+{
+	this->setRotation(atan2(direction.x, -direction.y) / PI * 180);
 }
 
 void Entity::unfreeze()
