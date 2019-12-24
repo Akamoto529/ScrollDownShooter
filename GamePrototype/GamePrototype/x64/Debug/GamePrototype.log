@@ -1,2 +1,130 @@
-﻿  Scene.cpp
-  GamePrototype.vcxproj -> C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe
+﻿  Animation.cpp
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(10,42): warning C4244: =: преобразование "float" в "T", возможна потеря данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(10,42): warning C4244:         with
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(10,42): warning C4244:         [
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(10,42): warning C4244:             T=int
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(10,42): warning C4244:         ]
+  Background.cpp
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(11,43): warning C4244: =: преобразование "float" в "T", возможна потеря данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(11,43): warning C4244:         with
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(11,43): warning C4244:         [
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(11,43): warning C4244:             T=int
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Animation.cpp(11,43): warning C4244:         ]
+  Bullet.cpp
+  Collision.cpp
+  Enemy.cpp
+  Enemy1.cpp
+  Enemy2.cpp
+  EnemyFactory.cpp
+  Entity.cpp
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Background.cpp(11,57): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,96): warning C4244: аргумент: преобразование "T" в "float", возможна потеря данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,96): warning C4244:         with
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,96): warning C4244:         [
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,96): warning C4244:             T=unsigned int
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,96): warning C4244:         ]
+  Gun.cpp
+  Hitbox.cpp
+  Level.cpp
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,56): warning C4244: аргумент: преобразование "T" в "float", возможна потеря данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,56): warning C4244:         with
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,56): warning C4244:         [
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,56): warning C4244:             T=unsigned int
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Entity.cpp(9,56): warning C4244:         ]
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244:         with
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244:         [
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244:             T=float
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,70): warning C4244:         ]
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,67): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,67): warning C4244:         with
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,67): warning C4244:         [
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,67): warning C4244:             T=float
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(26,67): warning C4244:         ]
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244:         with
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244:         [
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244:             T=float
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,34): warning C4244:         ]
+  Loader.cpp
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:         with
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:         [
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:             T=float
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Level.cpp(30,31): warning C4244:         ]
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,35): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,35): warning C4244:         with
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,35): warning C4244:         [
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,35): warning C4244:             T=float
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,35): warning C4244:         ]
+  Main.cpp
+  MenuScene.cpp
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,32): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,32): warning C4244:         with
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,32): warning C4244:         [
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,32): warning C4244:             T=float
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\Loader.cpp(21,32): warning C4244:         ]
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.h(23,1): error C2011: MenuScene: переопределение типа "class"
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.h(6): message : см. объявление "MenuScene"
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(4,12): error C2027: использование неопределенного типа "MenuScene"
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.h(6): message : см. объявление "MenuScene"
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(4,24): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(5,2): error C2355: "this": может указываться только в нестатических членах-функциях или инициализаторах нестатических членов данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(6,2): error C2355: "this": может указываться только в нестатических членах-функциях или инициализаторах нестатических членов данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(7,2): error C2355: "this": может указываться только в нестатических членах-функциях или инициализаторах нестатических членов данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(8,2): error C2355: "this": может указываться только в нестатических членах-функциях или инициализаторах нестатических членов данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(8,24): error C2065: font: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(9,2): error C2355: "this": может указываться только в нестатических членах-функциях или инициализаторах нестатических членов данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(10,2): error C2355: "this": может указываться только в нестатических членах-функциях или инициализаторах нестатических членов данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(11,2): error C2355: "this": может указываться только в нестатических членах-функциях или инициализаторах нестатических членов данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(12,2): error C2355: "this": может указываться только в нестатических членах-функциях или инициализаторах нестатических членов данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(14,2): error C2355: "this": может указываться только в нестатических членах-функциях или инициализаторах нестатических членов данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(14,24): error C2065: font: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(15,2): error C2355: "this": может указываться только в нестатических членах-функциях или инициализаторах нестатических членов данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(16,2): error C2355: "this": может указываться только в нестатических членах-функциях или инициализаторах нестатических членов данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(17,2): error C2355: "this": может указываться только в нестатических членах-функциях или инициализаторах нестатических членов данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(18,2): error C2355: "this": может указываться только в нестатических членах-функциях или инициализаторах нестатических членов данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(19,1): warning C4508: {ctor}: функция должна возвращать значение; предполагается возвращаемый тип "void"
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(20,17): error C2027: использование неопределенного типа "MenuScene"
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.h(6): message : см. объявление "MenuScene"
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(21,6): error C2065: selectedItemIndex: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(22,3): error C2065: menu: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(22,8): error C2065: selectedItemIndex: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(23,3): error C2065: selectedItemIndex: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(24,3): error C2065: menu: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(24,8): error C2065: selectedItemIndex: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(27,17): error C2027: использование неопределенного типа "MenuScene"
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.h(6): message : см. объявление "MenuScene"
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(28,7): error C2065: selectedItemIndex: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(29,4): error C2065: menu: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(29,9): error C2065: selectedItemIndex: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(30,4): error C2065: selectedItemIndex: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(31,4): error C2065: menu: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(31,9): error C2065: selectedItemIndex: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(34,17): error C2027: использование неопределенного типа "MenuScene"
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.h(6): message : см. объявление "MenuScene"
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(34,79): error C2270: draw: модификаторы недопустимы для функций, не являющихся членами
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(35,14): error C2065: bg: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(36,14): error C2065: menu: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(37,14): error C2065: menu: необъявленный идентификатор
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(39,16): error C2027: использование неопределенного типа "MenuScene"
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.h(6): message : см. объявление "MenuScene"
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(48,7): error C2065: selectedItemIndex: необъявленный идентификатор
+  Player.cpp
+  Projectile.cpp
+  ProjFactory.cpp
+  Rifle.cpp
+  UI.cpp
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\MenuScene.cpp(51,7): error C2065: selectedItemIndex: необъявленный идентификатор
+  Создание кода...
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244: аргумент: преобразование "T" в "float", возможна потеря данных
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         with
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         [
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:             T=unsigned int
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\UI.cpp(8,43): warning C4244:         ]
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\ProjFactory.h(9): warning C4715: ProjFactory::getProj: значение возвращается не при всех путях выполнения
+  Компиляция...
+  Scene.cpp
+  Wave.cpp
+  Создание кода...
+C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\GamePrototype\EnemyFactory.h(10): warning C4715: EnemyFactory::getEnemy: значение возвращается не при всех путях выполнения
