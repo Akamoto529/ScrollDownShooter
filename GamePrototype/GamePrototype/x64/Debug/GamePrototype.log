@@ -1,19 +1,2 @@
-﻿  Blue_enemy.cpp
-  Bonus.cpp
-  ChangeLevelScene.cpp
-  Enemy.cpp
-  EnemyFactory.cpp
-  Green_enemy.cpp
-  Grey_enemy.cpp
-  Invader.cpp
-  Level.cpp
-  Main.cpp
-  MenuScene.cpp
-  Purple_enemy.cpp
-  Scene.cpp
-  ScreenManager.cpp
-  Suicider.cpp
-  Turret.cpp
-  Wave.cpp
-  Generating Code...
+﻿  Scene.cpp
   GamePrototype.vcxproj -> D:\Programms\Programming\C++\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe

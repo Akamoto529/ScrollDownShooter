@@ -241,10 +241,7 @@ int Scene::update(sf::Time leftTillRender)
 	}
 
 	Bonus::update(this, this->player);
-
-	if (player->getHP() == 0) {
-		return -2;
-	}
+	if ((curWave>= lvl.getWavesNumber() && enemies.empty()) || player->getHP() == 0) { return -2; }
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 		return -1;
 	else {
