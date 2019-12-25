@@ -1,0 +1,3 @@
+3 2
+Purple_enemy 2 100 0 250 800
+Purple_enemy 2 500 0 350 800

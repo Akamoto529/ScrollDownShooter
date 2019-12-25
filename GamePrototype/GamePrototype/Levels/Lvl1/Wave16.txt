@@ -1,0 +1,5 @@
+7 4
+Blue_enemy 2 126 0 126 800
+Blue_enemy 2 242 0 242 800
+Blue_enemy 2 358 0 358 800
+Blue_enemy 2 474 0 474 800

@@ -1,0 +1,4 @@
+3 3
+Blue_enemy 2 250 0 250 800 
+Blue_enemy 2 300 10 300 800
+Blue_enemy 2 350 0 350 800

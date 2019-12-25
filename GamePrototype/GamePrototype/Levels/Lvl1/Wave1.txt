@@ -1,6 +1,2 @@
-10 5
-Purple_enemy 3 100 100 100 200 200 100
-Blue_enemy 3 200 100 300 100 500 500
-Purple_enemy 4 300 300 500 300 300 500 500 500
-Turret 1 100 100
-Suicider 1 0 0
+1 1
+Blue_enemy 2 300 0 300 800

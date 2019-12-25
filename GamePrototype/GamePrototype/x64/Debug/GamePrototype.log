@@ -1,2 +1,8 @@
-﻿  Entity.cpp
+﻿  Blue_bullet.cpp
+  Bullet.cpp
+  ChangeLevelScene.cpp
+  Turret.cpp
+  Wave.cpp
+  Generating Code...
+  LINK : C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe not found or not built by the last incremental link; performing full link
   GamePrototype.vcxproj -> C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe
