@@ -1,0 +1,3 @@
+4 2
+Green_Enemy 2 0 250 800 250
+Green_enemy 2 0 400 800 400
