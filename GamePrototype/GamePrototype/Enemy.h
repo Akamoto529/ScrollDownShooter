@@ -19,7 +19,7 @@ public:
 	void addPoint(const sf::Vector2f pos);
 	virtual void freeze() override;
 	virtual std::list<Projectile*> shoot() const;
-	bool takeDamage(const int dmg);
+	virtual bool takeDamage(const int dmg);
 	virtual void unfreeze() override;
 	virtual void step(sf::Time dt) override;
 };

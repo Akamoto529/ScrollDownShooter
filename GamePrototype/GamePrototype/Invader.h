@@ -12,6 +12,7 @@ private:
 public:
 	Invader(sf::Vector2f pos);
 	void step(sf::Time dt);
+	virtual bool takeDamage(const int dmg) override;
 	virtual std::list<Projectile*> shoot() const override;
 };
 

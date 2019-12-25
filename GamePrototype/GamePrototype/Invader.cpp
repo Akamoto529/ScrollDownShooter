@@ -14,13 +14,14 @@ void Invader::step(sf::Time dt)
 {
 	if (!frozen)
 		this->move(sf::Vector2f(cos((this->getPosition().y - this->startPos.y) / 20) / 5, dt.asSeconds() * speed));
-
-	if (overlay.getElapsedTime() >= sf::milliseconds(MSEC_PER_FRAME * 10))
-	{
-		this->overlay.reset();
-		this->overlay.pause();
-		this->setColor(sf::Color(255, 255, 255));
-	}
+}
+bool Invader::takeDamage(const int dmg)
+{
+	this->HP -= dmg;
+	if (this->HP <= 0)
+		return 0;
+	else
+		return 1;
 }
 std::list<Projectile*> Invader::shoot() const
 {
