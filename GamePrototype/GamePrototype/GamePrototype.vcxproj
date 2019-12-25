@@ -146,6 +146,7 @@
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Blue_enemy.cpp" />
+    <ClCompile Include="Green_bullet.cpp" />
     <ClCompile Include="Purple_bullet.cpp" />
     <ClCompile Include="Purple_enemy.cpp" />
     <ClCompile Include="EnemyFactory.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="config.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Blue_enemy.h" />
+    <ClInclude Include="Green_bullet.h" />
     <ClInclude Include="Purple_bullet.h" />
     <ClInclude Include="Purple_enemy.h" />
     <ClInclude Include="EnemyFactory.h" />

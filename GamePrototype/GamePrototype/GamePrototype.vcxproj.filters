@@ -159,6 +159,9 @@
     <ClCompile Include="Purple_bullet.cpp">
       <Filter>Source Files\Projectiles</Filter>
     </ClCompile>
+    <ClCompile Include="Green_bullet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="config.h">
@@ -265,6 +268,9 @@
     </ClInclude>
     <ClInclude Include="Purple_bullet.h">
       <Filter>Header Files\Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Green_bullet.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
