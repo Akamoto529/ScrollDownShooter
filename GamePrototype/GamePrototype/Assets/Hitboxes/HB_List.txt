@@ -10,7 +10,7 @@ Blue_bullet
 Green_bullet
 Purple_bullet
 Missile
+Christmas_proj
 freeze-bonus
 hp-bonus
-Christmas_proj
 Spread-bonus
