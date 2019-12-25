@@ -168,6 +168,9 @@
     <ClCompile Include="Green_enemy.cpp">
       <Filter>Source Files\Enemies</Filter>
     </ClCompile>
+    <ClCompile Include="Grey_Enemy.cpp">
+      <Filter>Source Files\Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="config.h">
@@ -282,6 +285,9 @@
       <Filter>Header Files\Guns</Filter>
     </ClInclude>
     <ClInclude Include="Green_enemy.h">
+      <Filter>Header Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Grey_Enemy.h">
       <Filter>Header Files\Enemies</Filter>
     </ClInclude>
   </ItemGroup>

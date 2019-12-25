@@ -2,6 +2,7 @@ Player
 Blue_enemy
 Green_enemy
 Purple_enemy
+Grey_enemy
 Suicider
 Turret
 Bullet
