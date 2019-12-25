@@ -40,6 +40,7 @@ void MenuScene::draw(sf::RenderTarget& target, sf::RenderStates states) const {
 	for (sf::Text tx : menu) {
 		target.draw(tx, states);
 	}
+
 }
 int MenuScene::update(){
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up)) {

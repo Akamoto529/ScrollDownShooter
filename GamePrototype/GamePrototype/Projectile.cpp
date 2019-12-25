@@ -25,3 +25,9 @@ void Projectile::setVelocity(const sf::Vector2f direction)
 	this->velocity.x = direction.x / length * this->speed;
 	this->velocity.y = direction.y / length * this->speed;
 }
+
+void Projectile::step(const sf::Time dt)
+{
+	if (!frozen)
+		this->move(dt.asSeconds() * this->getVelocity());
+}

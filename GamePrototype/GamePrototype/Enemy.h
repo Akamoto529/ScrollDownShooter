@@ -9,7 +9,9 @@ class Enemy : public Entity
 {
 protected:
 	int HP;
+	Timer overlay;
 	Gun* gun;
+
 	int nextPoint;
 	std::vector<sf::Vector2f> Path;
 public:
@@ -19,5 +21,6 @@ public:
 	virtual std::list<Projectile*> shoot() const;
 	bool takeDamage(const int dmg);
 	virtual void unfreeze() override;
+	virtual void step(sf::Time dt) override;
 };
 

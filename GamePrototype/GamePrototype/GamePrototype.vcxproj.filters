@@ -87,17 +87,11 @@
     <ClCompile Include="Enemy.cpp">
       <Filter>Source Files\Enemies</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy1.cpp">
-      <Filter>Source Files\Enemies</Filter>
-    </ClCompile>
     <ClCompile Include="Wave.cpp">
       <Filter>Source Files\Level</Filter>
     </ClCompile>
     <ClCompile Include="Level.cpp">
       <Filter>Source Files\Level</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy2.cpp">
-      <Filter>Source Files\Enemies</Filter>
     </ClCompile>
     <ClCompile Include="EnemyFactory.cpp">
       <Filter>Source Files\Factories</Filter>
@@ -147,6 +141,24 @@
     <ClCompile Include="Collision.cpp">
       <Filter>Source Files\Collisions</Filter>
     </ClCompile>
+    <ClCompile Include="Blue_enemy.cpp">
+      <Filter>Source Files\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Blue_gun.cpp">
+      <Filter>Source Files\Guns</Filter>
+    </ClCompile>
+    <ClCompile Include="Blue_bullet.cpp">
+      <Filter>Source Files\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Purple_enemy.cpp">
+      <Filter>Source Files\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Purple_gun.cpp">
+      <Filter>Source Files\Guns</Filter>
+    </ClCompile>
+    <ClCompile Include="Purple_bullet.cpp">
+      <Filter>Source Files\Projectiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="config.h">
@@ -182,17 +194,11 @@
     <ClInclude Include="Enemy.h">
       <Filter>Header Files\Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy1.h">
-      <Filter>Header Files\Enemies</Filter>
-    </ClInclude>
     <ClInclude Include="Level.h">
       <Filter>Header Files\Level</Filter>
     </ClInclude>
     <ClInclude Include="Wave.h">
       <Filter>Header Files\Level</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy2.h">
-      <Filter>Header Files\Enemies</Filter>
     </ClInclude>
     <ClInclude Include="EnemyFactory.h">
       <Filter>Header Files\Factories</Filter>
@@ -241,6 +247,24 @@
     </ClInclude>
     <ClInclude Include="Hitbox.h">
       <Filter>Header Files\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="Blue_enemy.h">
+      <Filter>Header Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Blue_gun.h">
+      <Filter>Header Files\Guns</Filter>
+    </ClInclude>
+    <ClInclude Include="Blue_bullet.h">
+      <Filter>Header Files\Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Purple_enemy.h">
+      <Filter>Header Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Purple_gun.h">
+      <Filter>Header Files\Guns</Filter>
+    </ClInclude>
+    <ClInclude Include="Purple_bullet.h">
+      <Filter>Header Files\Projectiles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

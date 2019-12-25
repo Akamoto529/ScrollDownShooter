@@ -1,6 +1,9 @@
 #pragma once
 #include "Bullet.h"
 #include "Missile.h"
+#include "Blue_bullet.h"
+#include "Purple_bullet.h"
+#include <iostream>
 
 class ProjFactory
 {
@@ -11,7 +14,14 @@ public:
 			return new Bullet(pos, dir);
 		else if (ProjName == "Missile")
 			return new Missile(pos, dir, target);
+		else if (ProjName == "Blue_bullet")
+			return new Blue_bullet(pos, dir);
+		else if (ProjName == "Purple_bullet")
+			return new Purple_bullet(pos, dir);
 		else
+		{
+			std::cout << "Projectile " << ProjName << " not loaded\n";
 			return nullptr;
+		}
 	}
 };

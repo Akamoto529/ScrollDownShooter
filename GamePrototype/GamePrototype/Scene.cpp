@@ -5,6 +5,9 @@ Scene::Scene()
 {
 	this->windowSize.x = (uint16_t)WINDOW_X;
 	this->windowSize.y = (uint16_t)WINDOW_Y;
+	this->overlay = new sf::RectangleShape(sf::Vector2f(windowSize));
+	overlay->setPosition(0, 0);
+	overlay->setFillColor(sf::Color::Transparent);
 
 	this->bonuses = {};
 	this->enemies = {};
@@ -77,16 +80,24 @@ void Scene::draw(sf::RenderTarget& target, sf::RenderStates states) const
 	{
 		target.draw(*bonus, states);
 	}
+	target.draw(*overlay,states);
 	target.draw(*ui, states);
+}
+
+void Scene::setOverlay(const sf::Color color)
+{
+	this->overlay->setFillColor(color);
 }
 
 void Scene::freeze()
 {
+	this->setOverlay(sf::Color(0, 128, 255, 128));
 	for (auto& enemy : enemies)
 		enemy->freeze();
 	for (auto& projectile : EnemyProjs)
 		projectile->freeze();
 	this->WaveTimer.pause();
+	this->setOverlay(sf::Color(0, 128, 255, 100));
 }
 
 void Scene::unfreeze()
@@ -96,6 +107,7 @@ void Scene::unfreeze()
 	for (auto& projectile : EnemyProjs)
 		projectile->unfreeze();
 	this->WaveTimer.start();
+	this->setOverlay(sf::Color::Transparent);
 }
 
 bool Scene::outOfBounds(const Entity* entity) const

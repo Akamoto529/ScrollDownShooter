@@ -1,6 +1,6 @@
 #include "Level.h"
-#include "Enemy1.h"
-#include "Enemy2.h"
+#include "Blue_enemy.h"
+#include "Purple_enemy.h"
 #include <fstream>
 #include <sstream>
 

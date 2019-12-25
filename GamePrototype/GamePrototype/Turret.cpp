@@ -16,4 +16,11 @@ void Turret::step(const sf::Time dt)
 		this->gun->setDirection(newDir);
 		this->setRotation(newDir);
 	}
+
+	if (overlay.getElapsedTime() >= sf::milliseconds(MSEC_PER_FRAME * 10))
+	{
+		this->overlay.reset();
+		this->overlay.pause();
+		this->setColor(sf::Color(255, 255, 255));
+	}
 }

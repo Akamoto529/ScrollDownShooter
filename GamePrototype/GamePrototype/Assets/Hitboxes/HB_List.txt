@@ -1,8 +1,10 @@
 Player
-Enemy1
-Enemy2
+Blue_enemy
+Purple_enemy
 Suicider
 Turret
 Bullet
+Blue_bullet
+Purple_bullet
 Missile
 hp-bonus

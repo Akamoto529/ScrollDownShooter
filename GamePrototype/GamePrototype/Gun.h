@@ -18,11 +18,11 @@ protected:
 	Timer timer;
 public:
 	Gun(const sf::Vector2f direction, const sf::Time reloadTime);
-	void freeze();
+	virtual void freeze();
 	sf::Vector2f getDirection() const;
 	void setDirection(const sf::Vector2f direction);
 	virtual std::list<Projectile*> shoot(const sf::Vector2f position) = 0;
-	void unfreeze();
+	virtual void unfreeze();
 };
 
 class Shotgun : public Gun

@@ -17,6 +17,8 @@ public:
 	int getDamage() const;
 	int getHostility() const;
 	sf::Vector2f getVelocity() const;
+
+	virtual void step(sf::Time dt);
 };
 
 class Laser : public Projectile

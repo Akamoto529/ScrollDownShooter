@@ -19,6 +19,7 @@ class Scene : public sf::Drawable
 private:
 	int curWave;	//Отсчёт волн начинается с 1, а не с нуля. Если curWave равен нулю, то уровень ещё не начался 
 	Background* bg;
+	sf::RectangleShape* overlay;
 
 	std::list<Bonus*> bonuses;
 	std::list<Enemy*> enemies;
@@ -46,6 +47,8 @@ public:
 	void AddEntities(std::list<Projectile*> projectiles);
 	void AddEnemyProjs(std::list<Projectile*> projectiles);
 	void AddPlayerProjs(std::list<Projectile*> projectiles);
+
+	void setOverlay(const sf::Color);
 
 	void freeze();
 	void unfreeze();
