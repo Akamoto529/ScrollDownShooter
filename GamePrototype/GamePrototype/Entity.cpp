@@ -26,7 +26,7 @@ void Entity::setColor(const sf::Color color)
 void Entity::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	target.draw(this->sp, states);
-	//target.draw(this->hitbox, states);
+	target.draw(this->hitbox, states);
 }
 
 void Entity::freeze()

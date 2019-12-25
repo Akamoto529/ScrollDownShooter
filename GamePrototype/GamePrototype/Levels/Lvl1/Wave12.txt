@@ -1,3 +1,6 @@
-3 2
-Purple_enemy 2 100 -50 250 800
-Purple_enemy 2 500 -50 350 800
+5 5
+Blue_enemy 2 126 -50 126 800
+Blue_enemy 2 242 -50 242 800
+Blue_enemy 2 358 -50 358 800
+Blue_enemy 2 474 -50 474 800
+
