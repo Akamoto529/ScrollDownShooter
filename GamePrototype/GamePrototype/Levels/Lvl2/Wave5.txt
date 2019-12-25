@@ -1,2 +1,6 @@
-2 1
-Suicider 2 300 0 300 800
+6 5
+Suicider 2  100 -100 300 800
+Suicider 2  200 -100 300 800
+Suicider 2  300 -100 300 800
+Suicider 2  400 -100 300 800
+Suicider 2  500 -100 300 800

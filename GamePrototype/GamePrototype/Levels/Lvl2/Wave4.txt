@@ -1,3 +1,6 @@
-4 2
-Green_enemy 2 0 250 800 250
-Green_enemy 2 0 400 800 400
+3 5
+Suicider 2  100 -100 300 800
+Suicider 2  200 -100 300 800
+Suicider 2  300 -100 300 800
+Suicider 2  400 -100 300 800
+Suicider 2  500 -100 300 800

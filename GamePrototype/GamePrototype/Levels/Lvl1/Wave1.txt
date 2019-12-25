@@ -1,2 +1,4 @@
-2 1
+7 3
 Green_enemy 2 300 -50 300 800
+Green_enemy 2 200 -150 200 800
+Green_enemy 2 400 -150 400 800
