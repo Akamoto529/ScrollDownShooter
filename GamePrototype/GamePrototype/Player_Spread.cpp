@@ -1,6 +1,6 @@
 #include "Player_Spread.h"
 Player_Spread::Player_Spread(const sf::Vector2f direction)
-	: Gun(direction, sf::milliseconds(450))
+	: Gun(direction, sf::milliseconds(650))
 {
 }
 

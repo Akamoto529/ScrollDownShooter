@@ -1,2 +1,4 @@
-2 1
-Suicider 2 150 0 150 800
+6 3
+Turret 1 100 -150
+Turret 1 300 -50
+Turret 1 500 -150
