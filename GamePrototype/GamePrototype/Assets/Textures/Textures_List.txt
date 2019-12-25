@@ -1,6 +1,7 @@
 Player
 Enemy1
 Enemy2
+Enemy3
 Suicider
 Turret
 Bullet

@@ -1,9 +1,9 @@
 #include "Enemy2.h"
 
 Enemy2::Enemy2(const sf::Vector2f pos)
-	: Enemy(pos, 40.f, "Enemy2")
+	: Enemy(pos, 100.f, "Enemy2")
 {
-	this->HP = 10;
+	this->HP = 2;
 	this->gun = new Rifle(sf::Vector2f(0, 1));
 }
 
