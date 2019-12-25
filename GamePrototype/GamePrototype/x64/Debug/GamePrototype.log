@@ -1,27 +1,2 @@
-﻿  Blue_bullet.cpp
-  Blue_enemy.cpp
-  Blue_gun.cpp
-  Bonus.cpp
-  Bullet.cpp
-  ChangeLevelScene.cpp
-  EnemyFactory.cpp
-  Green_bullet.cpp
-  Launcher.cpp
-  Level.cpp
-  MenuScene.cpp
-  Missile.cpp
-  ProjFactory.cpp
-  Purple_bullet.cpp
-  Purple_enemy.cpp
-  Purple_gun.cpp
-  Rifle.cpp
-  ScreenManager.cpp
-  Suicider.cpp
-  Turret.cpp
-  Generating Code...
-  Compiling...
-  UI.cpp
-  Wave.cpp
-  Generating Code...
-  LINK : C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe not found or not built by the last incremental link; performing full link
-  GamePrototype.vcxproj -> C:\Users\Maksim\Desktop\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe
+﻿  Blue_enemy.cpp
+  GamePrototype.vcxproj -> C:\Users\User\source\repos\Akamoto529\ScrollDownShooter\GamePrototype\x64\Debug\GamePrototype.exe
