@@ -168,8 +168,14 @@
     <ClCompile Include="Green_enemy.cpp">
       <Filter>Source Files\Enemies</Filter>
     </ClCompile>
-    <ClCompile Include="Grey_Enemy.cpp">
+    <ClCompile Include="Grey_enemy.cpp">
       <Filter>Source Files\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="Player_Spread.cpp">
+      <Filter>Source Files\Guns</Filter>
+    </ClCompile>
+    <ClCompile Include="Christmas_proj.cpp">
+      <Filter>Source Files\Projectiles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -287,8 +293,14 @@
     <ClInclude Include="Green_enemy.h">
       <Filter>Header Files\Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="Grey_Enemy.h">
+    <ClInclude Include="Grey_enemy.h">
       <Filter>Header Files\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="Player_Spread.h">
+      <Filter>Header Files\Guns</Filter>
+    </ClInclude>
+    <ClInclude Include="Christmas_proj.h">
+      <Filter>Header Files\Projectiles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

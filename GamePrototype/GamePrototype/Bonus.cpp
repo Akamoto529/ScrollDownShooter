@@ -1,5 +1,5 @@
 #include "Bonus.h"
-
+#include "Player_Spread.h"
 Timer Bonus::freezeTimer;
 
 Bonus::Bonus(sf::Vector2f pos, std::string name)
@@ -17,6 +17,8 @@ Bonus* Bonus::dropBonus(const sf::Vector2f pos)
 		return new Bonus(pos, "hp-bonus");
 	else if (random > 200 && random <= 300)
 		return new Bonus(pos, "freeze-bonus");
+	else if (random > 300 && random <= 400)
+		return new Bonus(pos, "Spread-bonus");
 	else
 		return {};
 }
@@ -44,6 +46,10 @@ void Bonus::makeAction(Scene* scene, Player* player) const
 	{
 		freezeTimer.reset();
 		scene->freeze();
+	}
+	else if (this->name == "Spread-bonus")
+	{
+		player->ChangeGun(new Player_Spread(sf::Vector2f(0, -1)));
 	}
 }
 

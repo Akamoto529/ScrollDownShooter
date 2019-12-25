@@ -4,6 +4,7 @@
 #include "Blue_bullet.h"
 #include "Green_bullet.h"
 #include "Purple_bullet.h"
+#include "Christmas_proj.h"
 #include <iostream>
 
 class ProjFactory
@@ -21,6 +22,8 @@ public:
 			return new Green_bullet(pos, dir);
 		else if (ProjName == "Purple_bullet")
 			return new Purple_bullet(pos, dir);
+		else if (ProjName == "Christmas_proj")
+			return new Christmas_proj(pos, dir);
 		else
 		{
 			std::cout << "Projectile " << ProjName << " not loaded\n";

@@ -7,6 +7,7 @@
 #include "Rifle.h"
 #include "Missile.h"
 #include "Timer.h"
+#include "Player_Spread.h"
 
 // Gun = Rifle(Bullet); Health = 5; Speed = 400.
 class Player : public Entity
@@ -30,7 +31,7 @@ public:
 
 	std::list<Projectile*> shoot() const;
 	void step(const sf::Time dt);
-
+	void ChangeGun(Gun* newGun);
 	virtual void freeze() override;
 	virtual void unfreeze() override;
 };

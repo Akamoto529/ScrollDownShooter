@@ -1,6 +1,7 @@
 Player
 Blue_enemy
 Green_enemy
+Grey_enemy
 Purple_enemy
 Suicider
 Turret
@@ -11,3 +12,5 @@ Purple_bullet
 Missile
 freeze-bonus
 hp-bonus
+Christmas_proj
+Spread-bonus

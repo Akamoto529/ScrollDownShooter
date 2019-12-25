@@ -14,7 +14,6 @@ Scene::Scene()
 	this->PlayerProjs = {};
 	this->EnemyProjs = {};
 
-	LoadLevel(1);
 }
 
 void Scene::LoadLevel(int LvlNum) {
@@ -129,11 +128,17 @@ int Scene::update(sf::Time leftTillRender)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
 	{
+		player->freeze();
+		for (auto& projectile : PlayerProjs)
+			projectile->freeze();
 		freeze();
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
 	{
+		player->unfreeze();
+		for (auto& projectile : PlayerProjs)
+			projectile->unfreeze();
 		unfreeze();
 	}
 	sf::Time dt = dtTimer.getElapsedTime();
@@ -142,6 +147,7 @@ int Scene::update(sf::Time leftTillRender)
 		if ((curWave == 0) || (lvl.getWavesNumber() >= curWave+1) && (WaveTimer.getElapsedTime().asSeconds() >= lvl.getWaveTime(curWave - 1)))
 		{
 			AddEntities(lvl.getEnemies(curWave++));
+			std::cout << curWave <<std::endl;
 			WaveTimer.reset();
 		}
 		bg->step(dt);

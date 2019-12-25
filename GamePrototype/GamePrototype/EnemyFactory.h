@@ -2,6 +2,7 @@
 #include "Blue_enemy.h"
 #include "Green_enemy.h"
 #include "Purple_enemy.h"
+#include "Grey_enemy.h"
 #include "Suicider.h"
 #include "Turret.h"
 #include <iostream>
@@ -20,6 +21,8 @@ public:
 			return new Suicider(pos, target);
 		else if (EnemyName == "Turret")
 			return new Turret(pos, target);
+		if (EnemyName == "Grey_enemy")
+			return new Grey_enemy(pos);
 		else
 		{
 			std::cout << "Enemy " << EnemyName << " not loaded\n";

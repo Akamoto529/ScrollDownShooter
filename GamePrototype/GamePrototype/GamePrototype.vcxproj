@@ -143,13 +143,15 @@
     <ClCompile Include="Bonus.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="ChangeLevelScene.cpp" />
+    <ClCompile Include="Christmas_proj.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Blue_enemy.cpp" />
     <ClCompile Include="Green_bullet.cpp" />
     <ClCompile Include="Green_enemy.cpp" />
     <ClCompile Include="Green_gun.cpp" />
-    <ClCompile Include="Grey_Enemy.cpp" />
+    <ClCompile Include="Grey_enemy.cpp" />
+    <ClCompile Include="Player_Spread.cpp" />
     <ClCompile Include="Purple_bullet.cpp" />
     <ClCompile Include="Purple_enemy.cpp" />
     <ClCompile Include="EnemyFactory.cpp" />
@@ -183,6 +185,7 @@
     <ClInclude Include="Bonus.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="ChangeLevelScene.h" />
+    <ClInclude Include="Christmas_proj.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="Enemy.h" />
@@ -190,7 +193,8 @@
     <ClInclude Include="Green_bullet.h" />
     <ClInclude Include="Green_enemy.h" />
     <ClInclude Include="Green_gun.h" />
-    <ClInclude Include="Grey_Enemy.h" />
+    <ClInclude Include="Grey_enemy.h" />
+    <ClInclude Include="Player_Spread.h" />
     <ClInclude Include="Purple_bullet.h" />
     <ClInclude Include="Purple_enemy.h" />
     <ClInclude Include="EnemyFactory.h" />

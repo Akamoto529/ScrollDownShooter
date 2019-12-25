@@ -1,7 +1,7 @@
 #include "Rifle.h"
 
 Rifle::Rifle(const sf::Vector2f direction)
-	: Gun(direction, sf::milliseconds(500))
+	: Gun(direction, sf::milliseconds(250))
 {
 }
 

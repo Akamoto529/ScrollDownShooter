@@ -8,7 +8,9 @@ Player::Player()
 	this->overlay.pause();
 	this->shield.pause();
 }
-
+void Player::ChangeGun(Gun* newGun) {
+	this->gun = newGun;
+}
 void Player::freeze()
 {
 	this->frozen = true;

@@ -1,3 +1,2 @@
 3 1
-Green_Enemy 2 0 220 800 220
-
+Grey_enemy 2 0 220 600 220
