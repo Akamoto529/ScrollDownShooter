@@ -34,9 +34,6 @@
     <Filter Include="Header Files\Level">
       <UniqueIdentifier>{73cd1ac1-aa5b-461e-b321-9a9d0afa6130}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Level">
-      <UniqueIdentifier>{7eea01e5-63ca-42f6-a3aa-ece5e86d6ee0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Factories">
       <UniqueIdentifier>{49f4a017-5c73-43a0-be71-a0b3f7eeb021}</UniqueIdentifier>
     </Filter>
@@ -54,6 +51,9 @@
     </Filter>
     <Filter Include="Header Files\Collisions">
       <UniqueIdentifier>{3afde825-ae43-4067-9d76-b9ccb9b96598}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Level">
+      <UniqueIdentifier>{7eea01e5-63ca-42f6-a3aa-ece5e86d6ee0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -160,9 +160,12 @@
       <Filter>Source Files\Projectiles</Filter>
     </ClCompile>
     <ClCompile Include="Green_bullet.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Projectiles</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy3.cpp">
+    <ClCompile Include="Green_gun.cpp">
+      <Filter>Source Files\Guns</Filter>
+    </ClCompile>
+    <ClCompile Include="Green_enemy.cpp">
       <Filter>Source Files\Enemies</Filter>
     </ClCompile>
   </ItemGroup>
@@ -273,9 +276,12 @@
       <Filter>Header Files\Projectiles</Filter>
     </ClInclude>
     <ClInclude Include="Green_bullet.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Projectiles</Filter>
     </ClInclude>
-    <ClInclude Include="Enemy3.h">
+    <ClInclude Include="Green_gun.h">
+      <Filter>Header Files\Guns</Filter>
+    </ClInclude>
+    <ClInclude Include="Green_enemy.h">
       <Filter>Header Files\Enemies</Filter>
     </ClInclude>
   </ItemGroup>

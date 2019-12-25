@@ -13,6 +13,7 @@
 #include "Timer.h"
 #include "UI.h"
 
+class Bonus;
 // Игровое поле.
 class Scene : public sf::Drawable
 {

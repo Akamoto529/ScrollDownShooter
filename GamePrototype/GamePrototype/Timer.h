@@ -10,6 +10,7 @@ private:
 	bool paused;
 public:
 	Timer();
+	bool isPaused() const;
 	sf::Time getElapsedTime();
 	void pause();
 	void reset();

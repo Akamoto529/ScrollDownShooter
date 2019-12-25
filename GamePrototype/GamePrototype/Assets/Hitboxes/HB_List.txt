@@ -1,10 +1,13 @@
 Player
 Blue_enemy
+Green_enemy
 Purple_enemy
 Suicider
 Turret
 Bullet
 Blue_bullet
+Green_bullet
 Purple_bullet
 Missile
+freeze-bonus
 hp-bonus

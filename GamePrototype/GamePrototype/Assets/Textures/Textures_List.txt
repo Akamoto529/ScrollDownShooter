@@ -1,14 +1,17 @@
 Player
 Blue_enemy
+Green_enemy
 Purple_enemy
 Suicider
 Turret
 Bullet
 Blue_bullet
+Green_bullet
 Purple_bullet
 Missile
 polytech
 space
+freeze-bonus
 hp-bonus
 Empty-heart
 Full-heart

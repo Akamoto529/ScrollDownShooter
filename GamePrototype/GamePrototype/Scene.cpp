@@ -37,7 +37,8 @@ void Scene::AddEntities(std::list<Bonus*> bonuses)
 {
 	for (Bonus* bonus : bonuses)
 	{
-		this->bonuses.push_back(bonus);
+		if (bonus != nullptr)
+			this->bonuses.push_back(bonus);
 	}
 }
 
@@ -102,6 +103,8 @@ void Scene::freeze()
 
 void Scene::unfreeze()
 {
+	for (auto& bonus : bonuses)
+		bonus->unfreeze();
 	for (auto& enemy : enemies)
 		enemy->unfreeze();
 	for (auto& projectile : EnemyProjs)
@@ -151,7 +154,7 @@ int Scene::update(sf::Time leftTillRender)
 			bonus->step(dt);
 			if (Collision::CollisionTest(bonus, this->player))
 			{
-				bonus->makeAction(this->player);
+				bonus->makeAction(this, this->player);
 				bonus = nullptr;
 				k = this->bonuses.erase(k);
 			}
@@ -171,7 +174,7 @@ int Scene::update(sf::Time leftTillRender)
 					{
 						if (!enemy->takeDamage(proj->getDamage()))
 						{
-							this->AddEntities({ new Bonus(enemy->getPosition(),"hp-bonus") });
+							this->AddEntities({ Bonus::dropBonus(enemy->getPosition()) });
 							enemy = nullptr;
 						}
 						proj = nullptr;
@@ -205,11 +208,14 @@ int Scene::update(sf::Time leftTillRender)
 		for (auto j = this->enemies.begin(); j != this->enemies.end(); ++j)
 		{
 			auto& enemy = *j;
-			if (Collision::CollisionTest(enemy, this->player))
+			if (enemy != nullptr && enemy->getPosition().y > WINDOW_Y && outOfBounds(enemy))
 			{
-				this->AddEntities({ new Bonus(enemy->getPosition(),"hp-bonus") });
 				enemy = nullptr;
-				this->player->takeDamage(player->getFullHP());
+			}
+			else if (Collision::CollisionTest(enemy, this->player))
+			{
+				enemy = nullptr;
+				this->player->takeDamage(2);
 			}
 
 			if (enemy == nullptr)
@@ -223,11 +229,13 @@ int Scene::update(sf::Time leftTillRender)
 			if (this->enemies.empty() || j == this->enemies.end())
 				break;
 		}
-
 		ui->update();
 		lastUpdateDuration = dtTimer.getElapsedTime() - dt;
 		dtTimer.reset();
 	}
+
+	Bonus::update(this, this->player);
+
 	if (player->getHP() == 0) {
 		return -2;
 	}

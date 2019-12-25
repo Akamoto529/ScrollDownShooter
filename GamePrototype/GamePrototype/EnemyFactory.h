@@ -1,5 +1,6 @@
 #pragma once
 #include "Blue_enemy.h"
+#include "Green_enemy.h"
 #include "Purple_enemy.h"
 #include "Suicider.h"
 #include "Turret.h"
@@ -11,6 +12,8 @@ public:
 	static Enemy* getEnemy(sf::Vector2f pos,std::string EnemyName, Entity* target = nullptr) {
 		if (EnemyName == "Blue_enemy")
 			return new Blue_enemy(pos);
+		if (EnemyName == "Green_enemy")
+			return new Green_enemy(pos);
 		else if (EnemyName == "Purple_enemy")
 			return new Purple_enemy(pos);
 		else if (EnemyName == "Suicider")

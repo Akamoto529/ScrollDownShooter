@@ -6,6 +6,11 @@ Timer::Timer() {
 	clock.restart();
 }
 
+bool Timer::isPaused() const
+{
+	return this->paused;
+}
+
 sf::Time Timer::getElapsedTime() {
 	if (!paused) {
 		return sf::microseconds(runtime.asMicroseconds() + clock.getElapsedTime().asMicroseconds());

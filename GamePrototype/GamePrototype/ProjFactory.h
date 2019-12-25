@@ -2,6 +2,7 @@
 #include "Bullet.h"
 #include "Missile.h"
 #include "Blue_bullet.h"
+#include "Green_bullet.h"
 #include "Purple_bullet.h"
 #include <iostream>
 
@@ -16,6 +17,8 @@ public:
 			return new Missile(pos, dir, target);
 		else if (ProjName == "Blue_bullet")
 			return new Blue_bullet(pos, dir);
+		else if (ProjName == "Green_bullet")
+			return new Green_bullet(pos, dir);
 		else if (ProjName == "Purple_bullet")
 			return new Purple_bullet(pos, dir);
 		else

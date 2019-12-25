@@ -13,7 +13,6 @@ private:
 	sf::Vector2f direction;
 protected:
 	bool frozen;
-	int hostility;
 	sf::Time reloadTime;
 	Timer timer;
 public:
