@@ -6,6 +6,7 @@
 
 int main()
 {
+	srand((int)time(0));
 	ScreenManager Sm;
 	Timer frame;
 	while (true)

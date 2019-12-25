@@ -11,6 +11,7 @@ private:
 	sf::Vector2f startPos;
 
 	static Timer freezeTimer;
+	static Timer damageTimer;
 public:
 	Bonus(sf::Vector2f pos, std::string name);
 

@@ -11,10 +11,11 @@ Bonus::Bonus(sf::Vector2f pos, std::string name)
 
 Bonus* Bonus::dropBonus(const sf::Vector2f pos)
 {
-	int random = std::rand() % 100;
-	if (random <= 20)
+	int random = rand() % 1000;
+	std::cout << random << std::endl;
+	if (random <= 200)
 		return new Bonus(pos, "hp-bonus");
-	else if (random > 20 && random <= 40)
+	else if (random > 200 && random <= 300)
 		return new Bonus(pos, "freeze-bonus");
 	else
 		return {};
