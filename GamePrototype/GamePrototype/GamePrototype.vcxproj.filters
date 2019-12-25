@@ -177,6 +177,9 @@
     <ClCompile Include="Christmas_proj.cpp">
       <Filter>Source Files\Projectiles</Filter>
     </ClCompile>
+    <ClCompile Include="Invader.cpp">
+      <Filter>Source Files\Enemies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="config.h">
@@ -301,6 +304,9 @@
     </ClInclude>
     <ClInclude Include="Christmas_proj.h">
       <Filter>Header Files\Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Invader.h">
+      <Filter>Header Files\Enemies</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

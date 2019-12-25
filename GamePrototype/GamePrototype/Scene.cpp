@@ -221,7 +221,7 @@ int Scene::update(sf::Time leftTillRender)
 			else if (Collision::CollisionTest(enemy, this->player))
 			{
 				enemy = nullptr;
-				this->player->takeDamage(2);
+				this->player->takeDamage(player->getFullHP());
 			}
 
 			if (enemy == nullptr)
@@ -245,6 +245,8 @@ int Scene::update(sf::Time leftTillRender)
 	if (player->getHP() == 0) {
 		return -2;
 	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+		return -1;
 	else {
 		return 0;
 	}

@@ -24,6 +24,10 @@ void ChangeLevelScene::Reset() {
 	curButton = 0;
 	Up = Down = false;
 	Enter = true;
+	menu[0].setFillColor(sf::Color::Red);
+	menu[1].setFillColor(sf::Color::White);
+	menu[2].setFillColor(sf::Color::White);
+	menu[3].setFillColor(sf::Color::White);
 }
 void ChangeLevelScene::MoveUp() {
 	if (curButton > 0) {

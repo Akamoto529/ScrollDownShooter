@@ -5,6 +5,7 @@
 #include "Grey_enemy.h"
 #include "Suicider.h"
 #include "Turret.h"
+#include "Invader.h"
 #include <iostream>
 
 class EnemyFactory
@@ -21,8 +22,10 @@ public:
 			return new Suicider(pos, target);
 		else if (EnemyName == "Turret")
 			return new Turret(pos, target);
-		if (EnemyName == "Grey_enemy")
+		else if (EnemyName == "Grey_enemy")
 			return new Grey_enemy(pos);
+		else if (EnemyName == "Invader")
+			return new Invader(pos);
 		else
 		{
 			std::cout << "Enemy " << EnemyName << " not loaded\n";

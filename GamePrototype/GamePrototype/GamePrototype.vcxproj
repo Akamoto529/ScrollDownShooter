@@ -151,6 +151,7 @@
     <ClCompile Include="Green_enemy.cpp" />
     <ClCompile Include="Green_gun.cpp" />
     <ClCompile Include="Grey_enemy.cpp" />
+    <ClCompile Include="Invader.cpp" />
     <ClCompile Include="Player_Spread.cpp" />
     <ClCompile Include="Purple_bullet.cpp" />
     <ClCompile Include="Purple_enemy.cpp" />
@@ -194,6 +195,7 @@
     <ClInclude Include="Green_enemy.h" />
     <ClInclude Include="Green_gun.h" />
     <ClInclude Include="Grey_enemy.h" />
+    <ClInclude Include="Invader.h" />
     <ClInclude Include="Player_Spread.h" />
     <ClInclude Include="Purple_bullet.h" />
     <ClInclude Include="Purple_enemy.h" />
